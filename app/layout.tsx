@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "JPortfolio Dashboard",
-  description: "Portfolio 1 (JSAF) & Portfolio 2 (Ind) — cash, dividends, holdings, performance.",
+  description: "Portfolio 1 & Portfolio 2 — cash, dividends, holdings, performance.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,7 +1,7 @@
 [
   {
     "portfolio_id": "portfolio_1",
-    "portfolio_name": "Portfolio 1 — JSAF",
+    "portfolio_name": "Portfolio 1",
     "statement_folder": "JSAF",
     "accounts": [
       "CommSec",
@@ -12,7 +12,7 @@
   },
   {
     "portfolio_id": "portfolio_2",
-    "portfolio_name": "Portfolio 2 — Ind",
+    "portfolio_name": "Portfolio 2",
     "statement_folder": "Ind",
     "accounts": [
       "Stake"

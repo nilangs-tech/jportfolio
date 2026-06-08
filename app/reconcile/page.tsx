@@ -35,8 +35,8 @@ export default function ReconcilePage() {
     <Shell title="🔄 Run Reconciliation" subtitle="Hybrid engine: TypeScript orchestrates the Python reconciliation, then writes the dashboard JSON contract.">
       <div className="card">
         <div className="table-controls">
-          <label style={{ fontSize: 13 }}><input type="checkbox" checked={p1} onChange={(e) => setP1(e.target.checked)} /> Portfolio 1 (JSAF)</label>
-          <label style={{ fontSize: 13 }}><input type="checkbox" checked={p2} onChange={(e) => setP2(e.target.checked)} /> Portfolio 2 (Ind)</label>
+          <label style={{ fontSize: 13 }}><input type="checkbox" checked={p1} onChange={(e) => setP1(e.target.checked)} /> Portfolio 1</label>
+          <label style={{ fontSize: 13 }}><input type="checkbox" checked={p2} onChange={(e) => setP2(e.target.checked)} /> Portfolio 2</label>
           <span style={{ marginLeft: 12, fontSize: 12, fontWeight: 600 }}>Provider:</span>
           <LlmProviderSelect value={provider} onChange={setProvider} />
           <label style={{ fontSize: 13, marginLeft: 12 }}><input type="checkbox" checked={runPython} onChange={(e) => setRunPython(e.target.checked)} /> Re-run Python engine first</label>

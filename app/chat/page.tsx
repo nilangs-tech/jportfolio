@@ -42,8 +42,8 @@ export default function ChatPage() {
           <span style={{ fontSize: 12, fontWeight: 600 }}>Scope:</span>
           <select className="search-input" style={{ width: "auto" }} value={portfolioId} onChange={(e) => setPortfolioId(e.target.value)}>
             <option value="combined">Combined</option>
-            <option value="portfolio_1">Portfolio 1 — JSAF</option>
-            <option value="portfolio_2">Portfolio 2 — Ind</option>
+            <option value="portfolio_1">Portfolio 1</option>
+            <option value="portfolio_2">Portfolio 2</option>
           </select>
           <span style={{ fontSize: 12, fontWeight: 600, marginLeft: 12 }}>Provider:</span>
           <LlmProviderSelect value={provider} onChange={setProvider} />

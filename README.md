@@ -1,6 +1,6 @@
 # JPortfolio Dashboard
 
-Local-first + hosted portfolio dashboard for the JPortfolio vault (Portfolio 1 = JSAF, Portfolio 2 = Ind).
+Local-first + hosted portfolio dashboard for the JPortfolio vault (Portfolio 1 & Portfolio 2).
 
 One Next.js codebase, two runtime modes (gated by `JPORTFOLIO_IS_LOCAL`):
 
@@ -27,7 +27,7 @@ Or use `Launch-JPortfolio-App.bat` from the vault root.
 ## Architecture
 
 ```
-Upload → vault (JSAF/ or Ind/)
+Upload → vault (Portfolio 1 or Portfolio 2 folder)
        → POST /api/reconcile  (TS orchestrator)
        → Python engine (build_portfolio_balances.py)   [local only, std-lib only]
        → lib/adapter.ts maps Python JSON → 17-file contract in /data

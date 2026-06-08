@@ -211,9 +211,9 @@ const summary = [
 ];
 
 const portfolios = [
-  { portfolio_id:"portfolio_1", portfolio_name:"Portfolio 1 — JSAF", statement_folder:"JSAF",
+  { portfolio_id:"portfolio_1", portfolio_name:"Portfolio 1", statement_folder:"JSAF",
     accounts:["CommSec","Stake"], as_of_date:AS_OF, status:"active" },
-  { portfolio_id:"portfolio_2", portfolio_name:"Portfolio 2 — Ind", statement_folder:"Ind",
+  { portfolio_id:"portfolio_2", portfolio_name:"Portfolio 2", statement_folder:"Ind",
     accounts:["Stake"], as_of_date:AS_OF, status:"active" },
 ];
 
@@ -338,10 +338,19 @@ const uiSeries = {
       {period:"Feb 2026",detail:"1 transfer — 10 Feb",amt:4000},
     ],
     costBridge:[
-      {label:"Opening (30 Jun '25)",val:903497,color:"#6b7280",kind:"line"},
-      {label:"+ FY26 Buys",val:201074,color:"#2563eb",kind:"line"},
-      {label:"− Sold (at cost)",val:-51960,color:"#f87171",kind:"line"},
-      {label:"Current Basis",val:1052611,color:"#16a34a",kind:"grand"},
+      {label:"Opening cost basis (shares)",val:903497,color:"#2563eb",kind:"line"},
+      {label:"+ Buys (at purchase price)",val:201074,color:"#16a34a",kind:"line"},
+      {label:"− Sells removed (at avg cost)",val:-51960,color:"#dc2626",kind:"line"},
+      {label:"= Closing cost basis (shares)",val:1052611,color:"#1d4ed8",kind:"subtotal"},
+      {kind:"spacer"},
+      {label:"Opening cash",val:0,color:"#2563eb",kind:"line"},
+      {label:"+ Net capital added",val:86805,color:"#7c3aed",kind:"line"},
+      {label:"+ Dividends received",val:47971,color:"#0d9488",kind:"line"},
+      {label:"− Net deployed into shares",val:-131787,color:"#dc2626",kind:"line"},
+      {label:"− Brokerage",val:-24,color:"#dc2626",kind:"line"},
+      {label:"= Closing cash",val:2965,color:"#1d4ed8",kind:"subtotal"},
+      {kind:"spacer"},
+      {label:"Total portfolio value (at cost + cash)",val:1055576,color:"#1d4ed8",kind:"grand"},
     ],
     perfBridge:[
       {label:"Opening (30 Jun '25)",val:893817,color:"#7c3aed",kind:"line"},

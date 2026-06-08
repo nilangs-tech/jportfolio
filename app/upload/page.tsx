@@ -25,13 +25,13 @@ export default function UploadPage() {
   }
 
   return (
-    <Shell title="📤 Upload Statements" subtitle="Files are saved into the Obsidian vault — Portfolio 1 → JSAF, Portfolio 2 → Ind.">
+    <Shell title="📤 Upload Statements" subtitle="Files are saved into the Obsidian vault — Portfolio 1 or Portfolio 2.">
       <div className="card">
         <div className="table-controls">
           <label style={{ fontSize: 12, fontWeight: 600 }}>Portfolio:</label>
           <select className="search-input" style={{ width: "auto" }} value={portfolioId} onChange={(e) => setPortfolioId(e.target.value)}>
-            <option value="portfolio_1">Portfolio 1 — JSAF</option>
-            <option value="portfolio_2">Portfolio 2 — Ind</option>
+            <option value="portfolio_1">Portfolio 1</option>
+            <option value="portfolio_2">Portfolio 2</option>
           </select>
         </div>
         <input type="file" multiple onChange={(e) => setFiles(e.target.files)} style={{ margin: "10px 0" }} />

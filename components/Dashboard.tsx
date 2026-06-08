@@ -29,7 +29,7 @@ export default function Dashboard({ summary, performance, holdings, positions, u
       <div className="header">
         <div>
           <h1>📊 Portfolio Dashboard</h1>
-          <p>FY2026 · Portfolio 1 (JSAF) &amp; Portfolio 2 (Ind)</p>
+          <p>FY2026 · Portfolio 1 &amp; Portfolio 2</p>
         </div>
         <div className="toolbar">
           <PriceRefresh symbols={allSymbols} asOf={asOf} />
@@ -93,7 +93,7 @@ function SummaryTab({ summary }: { summary: Summary[] }) {
 
       <div className="summary-grid">
         <div className="port-card">
-          <h3 style={{ color: "#2563eb" }}>📊 Portfolio 1 — JSAF</h3>
+          <h3 style={{ color: "#2563eb" }}>📊 Portfolio 1</h3>
           <div className="pc-val">{money(p1.market_value_total)}</div>
           <div className="pc-sub" style={{ marginBottom: 14 }}>Shares {shares(p1)} + Cash {money(p1.closing_cash_total)}</div>
           <PcRow label={`Opening (${p1.period_start})`} value={money(p1.opening_market_value_total)} />
@@ -103,7 +103,7 @@ function SummaryTab({ summary }: { summary: Summary[] }) {
           <PcRow label="Realised Gains" value={money(p1.realized_pl_total ?? 0)} color="var(--orange)" />
         </div>
         <div className="port-card">
-          <h3 style={{ color: "#0f4c81" }}>🏦 Portfolio 2 — Ind</h3>
+          <h3 style={{ color: "#0f4c81" }}>🏦 Portfolio 2</h3>
           <div className="pc-val">{money(p2.market_value_total)}</div>
           <div className="pc-sub" style={{ marginBottom: 14 }}>Shares {shares(p2)} + Cash {money(p2.closing_cash_total)}</div>
           <PcRow label={`Opening (${p2.period_start})`} value={money(p2.opening_market_value_total)} />

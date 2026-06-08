@@ -478,27 +478,75 @@
     ],
     "costBridge": [
       {
-        "label": "Opening (30 Jun '25)",
+        "label": "Opening cost basis (shares)",
         "val": 903497,
-        "color": "#6b7280",
-        "kind": "line"
-      },
-      {
-        "label": "+ FY26 Buys",
-        "val": 201074,
         "color": "#2563eb",
         "kind": "line"
       },
       {
-        "label": "− Sold (at cost)",
-        "val": -51960,
-        "color": "#f87171",
+        "label": "+ Buys (at purchase price)",
+        "val": 201074,
+        "color": "#16a34a",
         "kind": "line"
       },
       {
-        "label": "Current Basis",
+        "label": "− Sells removed (at avg cost)",
+        "val": -51960,
+        "color": "#dc2626",
+        "kind": "line"
+      },
+      {
+        "label": "= Closing cost basis (shares)",
         "val": 1052611,
-        "color": "#16a34a",
+        "color": "#1d4ed8",
+        "kind": "subtotal"
+      },
+      {
+        "kind": "spacer"
+      },
+      {
+        "label": "Opening cash",
+        "val": 0,
+        "color": "#2563eb",
+        "kind": "line"
+      },
+      {
+        "label": "+ Net capital added",
+        "val": 86805,
+        "color": "#7c3aed",
+        "kind": "line"
+      },
+      {
+        "label": "+ Dividends received",
+        "val": 47971,
+        "color": "#0d9488",
+        "kind": "line"
+      },
+      {
+        "label": "− Net deployed into shares",
+        "val": -131787,
+        "color": "#dc2626",
+        "kind": "line"
+      },
+      {
+        "label": "− Brokerage",
+        "val": -24,
+        "color": "#dc2626",
+        "kind": "line"
+      },
+      {
+        "label": "= Closing cash",
+        "val": 2965,
+        "color": "#1d4ed8",
+        "kind": "subtotal"
+      },
+      {
+        "kind": "spacer"
+      },
+      {
+        "label": "Total portfolio value (at cost + cash)",
+        "val": 1055576,
+        "color": "#1d4ed8",
         "kind": "grand"
       }
     ],

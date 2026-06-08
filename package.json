@@ -2,7 +2,7 @@
   "name": "jportfolio-dashboard",
   "version": "0.1.0",
   "private": true,
-  "description": "Local-first + hosted portfolio dashboard for the JPortfolio vault (Portfolio 1 JSAF, Portfolio 2 Ind).",
+  "description": "Local-first + hosted portfolio dashboard for the JPortfolio vault.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
