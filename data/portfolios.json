@@ -1,0 +1,23 @@
+[
+  {
+    "portfolio_id": "portfolio_1",
+    "portfolio_name": "Portfolio 1 — JSAF",
+    "statement_folder": "JSAF",
+    "accounts": [
+      "CommSec",
+      "Stake"
+    ],
+    "as_of_date": "2026-06-08",
+    "status": "active"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "portfolio_name": "Portfolio 2 — Ind",
+    "statement_folder": "Ind",
+    "accounts": [
+      "Stake"
+    ],
+    "as_of_date": "2026-06-08",
+    "status": "active"
+  }
+]

@@ -1,0 +1,312 @@
+[
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "APE",
+    "change_type": "new",
+    "current_units": 300,
+    "current_price": 20.82,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "AQLT",
+    "change_type": "new",
+    "current_units": 200,
+    "current_price": 33.8,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "CAR",
+    "change_type": "new",
+    "current_units": 700,
+    "current_price": 26.46,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "CAT",
+    "change_type": "new",
+    "current_units": 750,
+    "current_price": 3.65,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "DMNHA",
+    "change_type": "new",
+    "current_units": 200,
+    "current_price": 95.53,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "MCCL",
+    "change_type": "new",
+    "current_units": 1000,
+    "current_price": 21.9,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "ORI",
+    "change_type": "new",
+    "current_units": 200,
+    "current_price": 22.95,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "PGA1",
+    "change_type": "new",
+    "current_units": 400,
+    "current_price": 14.58,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "PMGOLD",
+    "change_type": "new",
+    "current_units": 100,
+    "current_price": 17.94,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "PNI",
+    "change_type": "new",
+    "current_units": 500,
+    "current_price": 14.98,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "SXE",
+    "change_type": "new",
+    "current_units": 2500,
+    "current_price": 4.17,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "TLX",
+    "change_type": "new",
+    "current_units": 1200,
+    "current_price": 13.31,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "WTC",
+    "change_type": "new",
+    "current_units": 250,
+    "current_price": 39.81,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "XRO",
+    "change_type": "new",
+    "current_units": 260,
+    "current_price": 79.27,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "AD8",
+    "change_type": "closed",
+    "current_units": 0,
+    "notes": "Closed in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "ALD",
+    "change_type": "closed",
+    "current_units": 0,
+    "notes": "Closed in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "HVN",
+    "change_type": "closed",
+    "current_units": 0,
+    "notes": "Closed in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "INIF",
+    "change_type": "closed",
+    "current_units": 0,
+    "notes": "Closed in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "MOAT",
+    "change_type": "closed",
+    "current_units": 0,
+    "notes": "Closed in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "PIC",
+    "change_type": "closed",
+    "current_units": 0,
+    "notes": "Closed in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "symbol": "VAS",
+    "change_type": "closed",
+    "current_units": 0,
+    "notes": "Closed in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "NNUK",
+    "change_type": "new",
+    "current_units": 12500,
+    "current_price": 2.42,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "QRI",
+    "change_type": "new",
+    "current_units": 31000,
+    "current_price": 1.525,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "QUAL",
+    "change_type": "new",
+    "current_units": 310,
+    "current_price": 62.39,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "RHC",
+    "change_type": "new",
+    "current_units": 415,
+    "current_price": 36.62,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "DDR",
+    "change_type": "new",
+    "current_units": 2000,
+    "current_price": 11.16,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "GCI",
+    "change_type": "new",
+    "current_units": 35000,
+    "current_price": 2.05,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "KKC",
+    "change_type": "new",
+    "current_units": 34500,
+    "current_price": 2.06,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "PL8",
+    "change_type": "new",
+    "current_units": 37000,
+    "current_price": 1.385,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "WHC",
+    "change_type": "new",
+    "current_units": 5000,
+    "current_price": 9.37,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "QLTY",
+    "change_type": "new",
+    "current_units": 450,
+    "current_price": 32.82,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "IEU",
+    "change_type": "new",
+    "current_units": 200,
+    "current_price": 101.29,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "PMV",
+    "change_type": "new",
+    "current_units": 300,
+    "current_price": 12.9,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "PGA1",
+    "change_type": "new",
+    "current_units": 400,
+    "current_price": 14.58,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "ETPMPM",
+    "change_type": "new",
+    "current_units": 20,
+    "current_price": 403.31,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "NDIA",
+    "change_type": "new",
+    "current_units": 140,
+    "current_price": 59.14,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "WPR",
+    "change_type": "new",
+    "current_units": 5500,
+    "current_price": 2.39,
+    "notes": "Opened in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "BOE",
+    "change_type": "closed",
+    "current_units": 0,
+    "notes": "Closed in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "APA",
+    "change_type": "closed",
+    "current_units": 0,
+    "notes": "Closed in FY2026"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "symbol": "S32",
+    "change_type": "closed",
+    "current_units": 0,
+    "notes": "Closed in FY2026"
+  }
+]

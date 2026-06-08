@@ -1,0 +1,552 @@
+{
+  "portfolio_1": {
+    "divByMonth": {
+      "Jul 25": 8275,
+      "Aug 25": 781,
+      "Sep 25": 39100,
+      "Oct 25": 18059,
+      "Nov 25": 491,
+      "Dec 25": 4983,
+      "Jan 26": 583,
+      "Feb 26": 5002,
+      "Mar 26": 33199,
+      "Apr 26": 23095,
+      "May 26": 1407,
+      "Jun 26": 403
+    },
+    "topDivPayers": [
+      [
+        "FMG",
+        15840
+      ],
+      [
+        "BHP",
+        11138
+      ],
+      [
+        "STO",
+        10091
+      ],
+      [
+        "RIO",
+        8924
+      ],
+      [
+        "BSL",
+        7925
+      ],
+      [
+        "WOW",
+        6290
+      ],
+      [
+        "QBE",
+        5902
+      ],
+      [
+        "TLS",
+        4210
+      ],
+      [
+        "QAN",
+        4158
+      ],
+      [
+        "PAI",
+        4021
+      ],
+      [
+        "NHC",
+        3200
+      ],
+      [
+        "SHL",
+        2658
+      ],
+      [
+        "S32",
+        2447
+      ],
+      [
+        "EDV",
+        2376
+      ],
+      [
+        "AZJ",
+        2090
+      ],
+      [
+        "ANZ",
+        2053
+      ],
+      [
+        "IAG",
+        1932
+      ],
+      [
+        "WOR",
+        1908
+      ],
+      [
+        "MQG",
+        1776
+      ],
+      [
+        "WDS",
+        1653
+      ]
+    ],
+    "months": [
+      "Jul 25",
+      "Aug 25",
+      "Sep 25",
+      "Oct 25",
+      "Nov 25",
+      "Dec 25",
+      "Jan 26",
+      "Feb 26",
+      "Apr 26",
+      "May 26",
+      "Jun 26"
+    ],
+    "buys": [
+      25458,
+      68621,
+      31093,
+      50243,
+      9675,
+      59957,
+      70726,
+      76576,
+      79284,
+      35860,
+      6117
+    ],
+    "sells": [
+      29964,
+      103877,
+      29629,
+      26940,
+      19535,
+      61864,
+      94751,
+      31742,
+      30957,
+      26623,
+      0
+    ],
+    "cash": {
+      "commsec": 43296.9,
+      "stake": 5456.16,
+      "total": 48753.06
+    },
+    "openCash": 20182.7,
+    "costBridge": [
+      {
+        "label": "Opening cost basis (shares)",
+        "val": 3105475,
+        "color": "#2563eb",
+        "kind": "line"
+      },
+      {
+        "label": "+ Buys (at purchase price)",
+        "val": 513610,
+        "color": "#16a34a",
+        "kind": "line"
+      },
+      {
+        "label": "− Sells removed (at avg cost)",
+        "val": -310452,
+        "color": "#dc2626",
+        "kind": "line"
+      },
+      {
+        "label": "= Closing cost basis (shares)",
+        "val": 3308633,
+        "color": "#1d4ed8",
+        "kind": "subtotal"
+      },
+      {
+        "kind": "spacer"
+      },
+      {
+        "label": "Opening cash",
+        "val": 20183,
+        "color": "#2563eb",
+        "kind": "line"
+      },
+      {
+        "label": "+ Dividends received",
+        "val": 135277,
+        "color": "#0d9488",
+        "kind": "line"
+      },
+      {
+        "label": "+ Realised gains (proceeds − cost)",
+        "val": 145430,
+        "color": "#ea580c",
+        "kind": "line"
+      },
+      {
+        "label": "+ ATO tax refund (29 Apr 2026)",
+        "val": 32057,
+        "color": "#7c3aed",
+        "kind": "line"
+      },
+      {
+        "label": "+ Bank interest & other inflows",
+        "val": 25299,
+        "color": "#7c3aed",
+        "kind": "line"
+      },
+      {
+        "label": "− Pension / payments out",
+        "val": -128177,
+        "color": "#dc2626",
+        "kind": "line"
+      },
+      {
+        "label": "= Closing cash",
+        "val": 48753,
+        "color": "#1d4ed8",
+        "kind": "subtotal"
+      },
+      {
+        "kind": "spacer"
+      },
+      {
+        "label": "Total portfolio value (at cost + cash)",
+        "val": 3357386,
+        "color": "#1d4ed8",
+        "kind": "grand"
+      }
+    ],
+    "perfBridge": [
+      {
+        "label": "Opening portfolio at market (1 Jul 2025)",
+        "val": 3610874,
+        "color": "#2563eb",
+        "kind": "line"
+      },
+      {
+        "label": "  Shares at Jul '25 market prices",
+        "val": 3590691,
+        "color": "#93c5fd",
+        "kind": "sub"
+      },
+      {
+        "label": "  Cash balance",
+        "val": 20183,
+        "color": "#93c5fd",
+        "kind": "sub"
+      },
+      {
+        "kind": "spacer"
+      },
+      {
+        "label": "+ Market price gains on continuing positions",
+        "val": 502785,
+        "color": "#16a34a",
+        "kind": "line"
+      },
+      {
+        "label": "+ Dividends received",
+        "val": 135277,
+        "color": "#0d9488",
+        "kind": "line"
+      },
+      {
+        "label": "+ Realised gains from sales",
+        "val": 145430,
+        "color": "#ea580c",
+        "kind": "line"
+      },
+      {
+        "label": "+ ATO tax refund (29 Apr 2026)",
+        "val": 32057,
+        "color": "#7c3aed",
+        "kind": "line"
+      },
+      {
+        "label": "+ Bank interest",
+        "val": 468,
+        "color": "#7c3aed",
+        "kind": "line"
+      },
+      {
+        "label": "+ New positions & rebalancing (residual)",
+        "val": -4285,
+        "color": "#9ca3af",
+        "kind": "line"
+      },
+      {
+        "kind": "spacer"
+      },
+      {
+        "label": "− Pension paid (11 × $7,500 + 2 × NAB)",
+        "val": -122500,
+        "color": "#dc2626",
+        "kind": "line"
+      },
+      {
+        "label": "− Operating expenses (accounting + ASIC)",
+        "val": -5677,
+        "color": "#f87171",
+        "kind": "line"
+      },
+      {
+        "kind": "spacer"
+      },
+      {
+        "label": "= Current portfolio value (8 Jun 2026)",
+        "val": 4294429,
+        "color": "#047857",
+        "kind": "grand"
+      },
+      {
+        "label": "Market-to-market return (+18.9%)",
+        "val": 683555,
+        "color": "#047857",
+        "kind": "subtotal"
+      },
+      {
+        "label": "Economic return incl. pension (+22.5%)",
+        "val": 811732,
+        "color": "#059669",
+        "kind": "grand"
+      }
+    ],
+    "expenses": [
+      {
+        "cat": "Pension",
+        "name": "Monthly pension",
+        "detail": "11 × $7,500/mo (Jul 2025 – May 2026)",
+        "amt": 82500
+      },
+      {
+        "cat": "Pension",
+        "name": "NAB transfer — 21 Aug 2025",
+        "detail": "NAB bank transfer",
+        "amt": 20000
+      },
+      {
+        "cat": "Pension",
+        "name": "NAB transfer — 10 Oct 2025",
+        "detail": "NAB bank transfer",
+        "amt": 20000
+      },
+      {
+        "cat": "Professional",
+        "name": "Mtwo Accounting Partners",
+        "detail": "Tax & accounting (Apr 2026)",
+        "amt": 5610
+      },
+      {
+        "cat": "Regulatory",
+        "name": "ASIC annual fee",
+        "detail": "Nov 23, 2025",
+        "amt": 67
+      },
+      {
+        "cat": "Transaction",
+        "name": "CommSec brokerage (est.)",
+        "detail": "~$20 × 7 trades",
+        "amt": 140
+      }
+    ]
+  },
+  "portfolio_2": {
+    "divByMonth": {
+      "Jul": 3578,
+      "Aug": 3286,
+      "Sep": 4829,
+      "Oct": 6485,
+      "Nov": 4567,
+      "Dec": 3038,
+      "Jan": 4742,
+      "Feb": 3025,
+      "Mar": 4089,
+      "Apr": 8130,
+      "May": 3340,
+      "Jun": 230
+    },
+    "topDivPayers": [
+      [
+        "MXT",
+        4239
+      ],
+      [
+        "KKC",
+        3816
+      ],
+      [
+        "AYLD",
+        3296
+      ],
+      [
+        "QRI",
+        2784
+      ],
+      [
+        "PCI",
+        2519
+      ],
+      [
+        "GCI",
+        2457
+      ],
+      [
+        "PL8",
+        2239
+      ],
+      [
+        "NHC",
+        2225
+      ],
+      [
+        "WLE",
+        1968
+      ],
+      [
+        "BHP",
+        1451
+      ]
+    ],
+    "months": [
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun"
+    ],
+    "buys": [
+      74328,
+      11500,
+      6395,
+      8028,
+      8121,
+      13131,
+      32040,
+      29324,
+      4150,
+      8282,
+      5777,
+      0
+    ],
+    "sells": [
+      2835,
+      0,
+      0,
+      0,
+      0,
+      11126,
+      37346,
+      15023,
+      0,
+      0,
+      0,
+      0
+    ],
+    "capitalAdded": [
+      {
+        "period": "Jul 2025",
+        "detail": "4 transfers — 1, 4, 9, 10 Jul",
+        "amt": 90000
+      },
+      {
+        "period": "Aug 2025",
+        "detail": "3 transfers — 22 Aug (×3)",
+        "amt": 15000
+      },
+      {
+        "period": "Oct 2025",
+        "detail": "1 transfer — 13 Oct",
+        "amt": 5000
+      },
+      {
+        "period": "Feb 2026",
+        "detail": "1 transfer — 10 Feb",
+        "amt": 4000
+      }
+    ],
+    "costBridge": [
+      {
+        "label": "Opening (30 Jun '25)",
+        "val": 903497,
+        "color": "#6b7280",
+        "kind": "line"
+      },
+      {
+        "label": "+ FY26 Buys",
+        "val": 201074,
+        "color": "#2563eb",
+        "kind": "line"
+      },
+      {
+        "label": "− Sold (at cost)",
+        "val": -51960,
+        "color": "#f87171",
+        "kind": "line"
+      },
+      {
+        "label": "Current Basis",
+        "val": 1052611,
+        "color": "#16a34a",
+        "kind": "grand"
+      }
+    ],
+    "perfBridge": [
+      {
+        "label": "Opening (30 Jun '25)",
+        "val": 893817,
+        "color": "#7c3aed",
+        "kind": "line"
+      },
+      {
+        "label": "+ Net Capital Added",
+        "val": 86805,
+        "color": "#2563eb",
+        "kind": "line"
+      },
+      {
+        "label": "+ FY26 MTM + Dist.",
+        "val": 92891,
+        "color": "#16a34a",
+        "kind": "line"
+      },
+      {
+        "label": "+ Dividends Received",
+        "val": 47971,
+        "color": "#0d9488",
+        "kind": "line"
+      },
+      {
+        "label": "+ Realised P&L",
+        "val": 16615,
+        "color": "#ea580c",
+        "kind": "line"
+      },
+      {
+        "label": "= Current Portfolio",
+        "val": 1138099,
+        "color": "#1d4ed8",
+        "kind": "grand"
+      }
+    ],
+    "expenses": [
+      {
+        "cat": "FY2026 · Stake",
+        "name": "Stake brokerage — 8 trades",
+        "detail": "Most trades were $0 fee",
+        "amt": 24
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "effective_date": "2025-12-01",
+    "portfolio_id": "portfolio_1",
+    "action_type": "acquisition",
+    "from_symbol": "BKW",
+    "cost_base_treatment": "Scheme of arrangement — Soul Pattinson (late 2025)",
+    "source": "ASX scheme announcement"
+  },
+  {
+    "effective_date": "2025-08-01",
+    "portfolio_id": "portfolio_1",
+    "action_type": "ticker_change",
+    "from_symbol": "PAI",
+    "to_symbol": "PAXX",
+    "cost_base_treatment": "Converted to PAXX ETF (Aug 2025)",
+    "source": "Issuer notice"
+  },
+  {
+    "effective_date": "2026-02-01",
+    "portfolio_id": "portfolio_1",
+    "action_type": "acquisition",
+    "from_symbol": "RUL",
+    "cost_base_treatment": "Acquired by Caterpillar subsidiary (Feb 2026)",
+    "source": "ASX takeover announcement"
+  }
+]

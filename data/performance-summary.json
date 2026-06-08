@@ -1,0 +1,44 @@
+[
+  {
+    "portfolio_id": "portfolio_1",
+    "opening_market_value": 3610874,
+    "current_market_value": 4294429,
+    "market_to_market_return": 683555,
+    "market_to_market_return_pct": 18.9,
+    "continuing_position_mtm_gain": 502785,
+    "new_positions_rebalancing_residual": -4285,
+    "dividends_received": 135277,
+    "realized_pl": 145430,
+    "ato_refund": 32057,
+    "bank_interest": 468,
+    "pension_distributions": -122500,
+    "operating_expenses": -5677,
+    "economic_return": 811732,
+    "economic_return_pct": 22.5
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "opening_market_value": 893817,
+    "current_market_value": 1138099,
+    "market_to_market_return": 244282,
+    "market_to_market_return_pct": 27.3,
+    "continuing_position_mtm_gain": 65696,
+    "new_positions_rebalancing_residual": 86805,
+    "dividends_received": 47971,
+    "realized_pl": 16615,
+    "operating_expenses": -24,
+    "economic_return": 157477,
+    "economic_return_pct": 17.6
+  },
+  {
+    "portfolio_id": "combined",
+    "opening_market_value": 4475749,
+    "current_market_value": 5432528,
+    "market_to_market_return": 956779,
+    "market_to_market_return_pct": 21.4,
+    "dividends_received": 183248,
+    "realized_pl": 162045,
+    "economic_return": 969209,
+    "economic_return_pct": 21.7
+  }
+]

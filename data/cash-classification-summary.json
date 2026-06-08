@@ -1,0 +1,66 @@
+[
+  {
+    "portfolio_id": "portfolio_1",
+    "period_start": "2025-07-01",
+    "period_end": "2026-06-08",
+    "category": "dividends",
+    "amount": 135277,
+    "cash_direction": "inflow",
+    "source_count": 199
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "category": "ato_refund",
+    "amount": 32057,
+    "cash_direction": "inflow",
+    "notes": "29 Apr 2026 — FY2025 tax return"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "category": "bank_interest",
+    "amount": 468,
+    "cash_direction": "inflow",
+    "notes": "CommSec CDIA"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "category": "pension_distribution",
+    "amount": 122500,
+    "cash_direction": "outflow",
+    "notes": "11 × $7,500 + 2 × NAB transfers"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "category": "operating_expense",
+    "amount": 5677,
+    "cash_direction": "outflow",
+    "notes": "Accounting + ASIC"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "category": "brokerage",
+    "amount": 140,
+    "cash_direction": "outflow",
+    "notes": "~$20 × 7 CommSec trades"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "category": "dividends",
+    "amount": 47971,
+    "cash_direction": "inflow"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "category": "transfer",
+    "amount": 86805,
+    "cash_direction": "inflow",
+    "notes": "Net new capital: $114k deposits − $27.2k withdrawals"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "category": "brokerage",
+    "amount": 24,
+    "cash_direction": "outflow",
+    "notes": "Stake — 8 trades"
+  }
+]

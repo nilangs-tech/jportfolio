@@ -1,0 +1,17 @@
+# Netlify config — hosted DASHBOARD-ONLY build.
+# Local-only features (upload / reconcile / chat / amendments) are disabled at runtime
+# because JPORTFOLIO_IS_LOCAL is not set to "true" in the Netlify environment.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # Do NOT set JPORTFOLIO_IS_LOCAL=true here — keep the hosted site dashboard-only.
+  # Set DASHBOARD_AUTH_USER / DASHBOARD_AUTH_PASSWORD and YAHOO_FINANCE_ENABLED
+  # in the Netlify UI (Site settings → Environment variables).
+
+# The official Next.js runtime (auto-installed by Netlify, pinned here for clarity).
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

@@ -1,0 +1,24 @@
+[
+  {
+    "portfolio_id": "portfolio_1",
+    "severity": "info",
+    "area": "market_price",
+    "message": "BKW/PAI/RUL delisted — current prices from scheme/acquisition announcements, not Yahoo.",
+    "source": "corporate-actions",
+    "resolution_status": "reviewed"
+  },
+  {
+    "portfolio_id": "portfolio_2",
+    "severity": "info",
+    "area": "holdings",
+    "message": "4 new positions (ETPMPM, NDIA, PGA1, PMV, WPR) have no opening-date price; excluded from continuing-position MTM.",
+    "resolution_status": "reviewed"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "severity": "info",
+    "area": "source",
+    "message": "Dataset seeded from HTML prototype (8 Jun 2026). Re-run reconciliation to regenerate from statements.",
+    "resolution_status": "open"
+  }
+]
