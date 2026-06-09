@@ -18,16 +18,16 @@
   {
     "portfolio_id": "portfolio_1",
     "category": "bank_interest",
-    "amount": 468,
+    "amount": 672.46,
     "cash_direction": "inflow",
-    "notes": "CommSec CDIA"
+    "notes": "CommSec CDIA + CommBank Jun 2026 interest"
   },
   {
     "portfolio_id": "portfolio_1",
     "category": "pension_distribution",
-    "amount": 122500,
+    "amount": 140810,
     "cash_direction": "outflow",
-    "notes": "11 × $7,500 + 2 × NAB transfers"
+    "notes": "12 × $7,500 + 2 × NAB transfers + May $3,310 top-up"
   },
   {
     "portfolio_id": "portfolio_1",
@@ -35,13 +35,6 @@
     "amount": 5677,
     "cash_direction": "outflow",
     "notes": "Accounting + ASIC"
-  },
-  {
-    "portfolio_id": "portfolio_1",
-    "category": "brokerage",
-    "amount": 140,
-    "cash_direction": "outflow",
-    "notes": "~$20 × 7 CommSec trades"
   },
   {
     "portfolio_id": "portfolio_2",
@@ -60,7 +53,7 @@
     "portfolio_id": "portfolio_2",
     "category": "brokerage",
     "amount": 24,
-    "cash_direction": "outflow",
-    "notes": "Stake — 8 trades"
+    "cash_direction": "display_only",
+    "notes": "Stake — 8 trades — informational; embedded in net settlement amounts, not deducted from cash balance"
   }
 ]

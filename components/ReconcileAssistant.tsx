@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import type { Provider } from "@/components/LlmProviderSelect";
 import LlmProviderSelect from "@/components/LlmProviderSelect";
 import type { ParseResult } from "@/lib/statementParser/types";
+import type { ReversalInfo } from "@/components/StatementReview";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -171,9 +172,11 @@ interface Props {
   portfolioLabel: string;
   /** When provided, the assistant reviews only this freshly-merged file (upload-review mode) */
   parseResult?: ParseResult;
+  /** Reversal pairs detected during merge — surfaced to LLM for explanation */
+  reversals?: ReversalInfo[];
 }
 
-export default function ReconcileAssistant({ portfolioId, portfolioLabel, parseResult }: Props) {
+export default function ReconcileAssistant({ portfolioId, portfolioLabel, parseResult, reversals = [] }: Props) {
   const [provider, setProvider] = useState<Provider>("anthropic");
   const [messages, setMessages] = useState<MsgWithAmendments[]>([]);
   const [allAmendments, setAllAmendments] = useState<Record<string, Amendment>>({});
@@ -197,7 +200,12 @@ export default function ReconcileAssistant({ portfolioId, portfolioLabel, parseR
       if (parseResult.trades.length)      parts.push(`${parseResult.trades.length} trade(s)`);
       if (parseResult.dividends.length)   parts.push(`${parseResult.dividends.length} dividend(s)`);
       if (parseResult.cashEntries.length) parts.push(`${parseResult.cashEntries.length} cash entries`);
-      initMsg = parts.join(" — ") + " were added.\n\nPlease review these specific records and let me know if anything looks wrong, uncategorised, or needs correction.";
+      initMsg = parts.join(" — ") + " were added.";
+      if (reversals.length > 0) {
+        initMsg += `\n\n**${reversals.length} reversal(s) were detected** and excluded from the expenses panel. Please explain what each reversal means and whether any follow-up action is needed.`;
+      } else {
+        initMsg += "\n\nPlease review these specific records and let me know if anything looks wrong, uncategorised, or needs correction.";
+      }
     } else {
       initMsg = `Please analyse the reconciliation data for ${portfolioLabel} and identify any discrepancies, uncategorised entries, or items that need review.`;
     }
@@ -220,7 +228,7 @@ export default function ReconcileAssistant({ portfolioId, portfolioLabel, parseR
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ portfolioId, provider, mode, messages: apiMessages, parseResult }),
+        body: JSON.stringify({ portfolioId, provider, mode, messages: apiMessages, parseResult, reversals }),
       });
       const data = await res.json();
       const replyRaw: string = data.ok ? data.reply : `⚠️ ${data.error}`;

@@ -28,10 +28,17 @@ function applyPricesToHoldings(holdings: HoldingRow[], prices: LivePrices): Hold
     if (!lp) return h;
     const newPrice = lp.price;
     const newMktVal = h.units * newPrice;
-    const openMktVal = h.opening_market_value ?? (h.units * (h.opening_price ?? newPrice));
-    const mtmGain = openMktVal > 0 ? newMktVal - openMktVal : 0;
-    const mtmPct = openMktVal > 0 ? (mtmGain / openMktVal) * 100 : 0;
-    return { ...h, current_price: newPrice, current_market_value: newMktVal, market_to_market_gain: mtmGain, market_to_market_pct: mtmPct };
+    // Unrealised P&L: how much you're up/down vs what you paid
+    const unrealisedPl = newMktVal - (h.cost_base ?? 0);
+    // FY MTM: vs opening price for existing positions; vs avg cost for new FY positions
+    const op = h.opening_price ?? null;
+    const refPrice = op ?? h.avg_cost ?? null;
+    const contUnits = op !== null
+      ? (h.continuing_mtm_units ?? Math.min(h.opening_units ?? h.units, h.units))
+      : h.units;
+    const mtmGain = refPrice != null ? (newPrice - refPrice) * contUnits : null;
+    const mtmPct = refPrice != null && refPrice > 0 ? ((newPrice - refPrice) / refPrice) * 100 : null;
+    return { ...h, current_price: newPrice, current_market_value: newMktVal, unrealised_pl: unrealisedPl, market_to_market_gain: mtmGain, market_to_market_pct: mtmPct };
   });
 }
 

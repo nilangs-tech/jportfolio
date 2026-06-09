@@ -136,9 +136,9 @@
       0
     ],
     "cash": {
-      "commsec": 43296.9,
+      "commbank": 32589.13,
       "stake": 5456.16,
-      "total": 48753.06
+      "total": 38045.29
     },
     "openCash": 20182.7,
     "costBridge": [
@@ -176,15 +176,9 @@
         "kind": "line"
       },
       {
-        "label": "+ Dividends received",
+        "label": "+ Dividends & distributions received",
         "val": 135277,
         "color": "#0d9488",
-        "kind": "line"
-      },
-      {
-        "label": "+ Realised gains (proceeds − cost)",
-        "val": 145430,
-        "color": "#ea580c",
         "kind": "line"
       },
       {
@@ -194,20 +188,32 @@
         "kind": "line"
       },
       {
-        "label": "+ Bank interest & other inflows",
-        "val": 25299,
+        "label": "+ Bank interest",
+        "val": 672,
         "color": "#7c3aed",
         "kind": "line"
       },
       {
-        "label": "− Pension / payments out",
-        "val": -128177,
+        "label": "− Net cash into shares (buys − sale proceeds)",
+        "val": -11157,
+        "color": "#9ca3af",
+        "kind": "line"
+      },
+      {
+        "label": "− Pension paid (12 × $7,500 + 2 × NAB + $3,310 top-up)",
+        "val": -133310,
         "color": "#dc2626",
         "kind": "line"
       },
       {
+        "label": "− Operating expenses (accounting + ASIC)",
+        "val": -5677,
+        "color": "#f87171",
+        "kind": "line"
+      },
+      {
         "label": "= Closing cash",
-        "val": 48753,
+        "val": 38045,
         "color": "#1d4ed8",
         "kind": "subtotal"
       },
@@ -216,7 +222,7 @@
       },
       {
         "label": "Total portfolio value (at cost + cash)",
-        "val": 3357386,
+        "val": 3346678,
         "color": "#1d4ed8",
         "kind": "grand"
       }
@@ -244,15 +250,15 @@
         "kind": "spacer"
       },
       {
-        "label": "+ Market price gains on continuing positions",
+        "label": "+ Continuing positions — price gain",
         "val": 502785,
         "color": "#16a34a",
         "kind": "line"
       },
       {
-        "label": "+ Dividends received",
-        "val": 135277,
-        "color": "#0d9488",
+        "label": "+ New positions & rebalancing (residual)",
+        "val": -19032,
+        "color": "#9ca3af",
         "kind": "line"
       },
       {
@@ -262,56 +268,50 @@
         "kind": "line"
       },
       {
-        "label": "+ ATO tax refund (29 Apr 2026)",
-        "val": 32057,
-        "color": "#7c3aed",
-        "kind": "line"
-      },
-      {
-        "label": "+ Bank interest",
-        "val": 468,
-        "color": "#7c3aed",
-        "kind": "line"
-      },
-      {
-        "label": "+ New positions & rebalancing (residual)",
-        "val": -4285,
-        "color": "#9ca3af",
-        "kind": "line"
-      },
-      {
         "kind": "spacer"
       },
       {
-        "label": "− Pension paid (11 × $7,500 + 2 × NAB)",
-        "val": -122500,
-        "color": "#dc2626",
+        "label": "+ Net income retained (after pension & expenses)",
+        "val": 29019,
+        "color": "#0d9488",
         "kind": "line"
       },
       {
-        "label": "− Operating expenses (accounting + ASIC)",
+        "label": "  Income earned (dividends $135,277 + ATO $32,057 + interest $672)",
+        "val": 168006,
+        "color": "#6ee7b7",
+        "kind": "sub"
+      },
+      {
+        "label": "  Less: pension distributions",
+        "val": -133310,
+        "color": "#fca5a5",
+        "kind": "sub"
+      },
+      {
+        "label": "  Less: operating expenses",
         "val": -5677,
-        "color": "#f87171",
-        "kind": "line"
+        "color": "#fca5a5",
+        "kind": "sub"
       },
       {
         "kind": "spacer"
       },
       {
-        "label": "= Current portfolio value (8 Jun 2026)",
-        "val": 4294429,
+        "label": "= Current portfolio value (9 Jun 2026)",
+        "val": 4269076,
         "color": "#047857",
         "kind": "grand"
       },
       {
-        "label": "Market-to-market return (+18.9%)",
-        "val": 683555,
+        "label": "Market-to-market return (+18.2%)",
+        "val": 658202,
         "color": "#047857",
         "kind": "subtotal"
       },
       {
-        "label": "Economic return incl. pension (+22.5%)",
-        "val": 811732,
+        "label": "Economic return incl. pension (+22.1%)",
+        "val": 797189,
         "color": "#059669",
         "kind": "grand"
       }
@@ -348,10 +348,16 @@
         "amt": 67
       },
       {
-        "cat": "Transaction",
-        "name": "CommSec brokerage (est.)",
-        "detail": "~$20 × 7 trades",
-        "amt": 140
+        "cat": "Pension",
+        "name": "Transfer To Harshaben Joshi CommBank App pension top up 30th",
+        "detail": "2026-05-06 — CommBank (uploaded)",
+        "amt": 3310
+      },
+      {
+        "cat": "Pension",
+        "name": "Transfer to other Bank NetBank Monthly Pension",
+        "detail": "2026-06-01 — CommBank (uploaded)",
+        "amt": 7500
       }
     ]
   },
@@ -523,14 +529,8 @@
         "kind": "line"
       },
       {
-        "label": "− Net deployed into shares",
-        "val": -131787,
-        "color": "#dc2626",
-        "kind": "line"
-      },
-      {
-        "label": "− Brokerage",
-        "val": -24,
+        "label": "− Net deployed into shares (incl. brokerage)",
+        "val": -131811,
         "color": "#dc2626",
         "kind": "line"
       },
@@ -604,12 +604,6 @@
       },
       {
         "kind": "spacer"
-      },
-      {
-        "label": "− Brokerage (Stake)",
-        "val": -24,
-        "color": "#f87171",
-        "kind": "line"
       },
       {
         "kind": "spacer"

@@ -123,7 +123,18 @@ export async function buildReconcileContext(portfolioId: string): Promise<string
  * Builds a focused context from a just-merged ParseResult.
  * Used by upload-review mode — LLM only sees what was just added, nothing else.
  */
-export function buildUploadReviewContext(result: ParseResult): string {
+export interface ReversalSummary {
+  amount: number;
+  daysBetween: number;
+  reason: string;
+  debit:  { date: string; description: string; amount: number };
+  credit: { date: string; description: string; amount: number };
+}
+
+export function buildUploadReviewContext(
+  result: ParseResult,
+  reversals: ReversalSummary[] = [],
+): string {
   const parts: string[] = [];
   parts.push(`FILE: ${result.filename}`);
   parts.push(`SOURCE: ${result.source}`);
@@ -139,6 +150,15 @@ export function buildUploadReviewContext(result: ParseResult): string {
   }
   if (result.warnings.length > 0)
     parts.push(`PARSE_WARNINGS:\n` + result.warnings.join("\n"));
+
+  if (reversals.length > 0) {
+    parts.push(
+      `REVERSALS_DETECTED (${reversals.length}):\n` +
+      `These debit/credit pairs were identified as reversals (they net to zero and are excluded from the expenses panel).\n` +
+      `Please explain each one to the user — what likely happened and whether any action is needed.\n` +
+      JSON.stringify(reversals, null, 0)
+    );
+  }
 
   return parts.join("\n\n");
 }

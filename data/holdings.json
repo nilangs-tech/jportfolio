@@ -13,13 +13,14 @@
     "current_price": 60.08,
     "current_market_value": 338971.36,
     "continuing_mtm_units": 5642,
-    "market_to_market_gain": 106612.35999999999,
-    "market_to_market_pct": 45.88260407386845,
+    "market_to_market_gain": 132643.42,
+    "market_to_market_pct": 64.29,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 8.14,
-    "price_date": "2026-06-09T06:18:55.000Z"
+    "price_date": "2026-06-09T06:18:55.000Z",
+    "unrealised_pl": 106612.36
   },
   {
     "portfolio_id": "portfolio_1",
@@ -35,13 +36,14 @@
     "current_price": 36.48,
     "current_market_value": 261342.71999999997,
     "continuing_mtm_units": 6564,
-    "market_to_market_gain": 50691.02999999997,
-    "market_to_market_pct": 24.06390853071246,
+    "market_to_market_gain": 34395.36,
+    "market_to_market_pct": 16.77,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 6.02,
-    "price_date": "2026-06-09T06:12:20.000Z"
+    "price_date": "2026-06-09T06:12:20.000Z",
+    "unrealised_pl": 50691.03
   },
   {
     "portfolio_id": "portfolio_1",
@@ -57,13 +59,14 @@
     "current_price": 7.87,
     "current_market_value": 220360,
     "continuing_mtm_units": 28000,
-    "market_to_market_gain": 39449.20000000001,
-    "market_to_market_pct": 21.80588444692081,
+    "market_to_market_gain": 6160,
+    "market_to_market_pct": 2.88,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 5.16,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 39449.2
   },
   {
     "portfolio_id": "portfolio_1",
@@ -79,13 +82,14 @@
     "current_price": 5.08,
     "current_market_value": 101600,
     "continuing_mtm_units": 20000,
-    "market_to_market_gain": -52,
-    "market_to_market_pct": -0.0511549207098729,
+    "market_to_market_gain": 4800,
+    "market_to_market_pct": 4.96,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 2.34,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": -52
   },
   {
     "portfolio_id": "portfolio_1",
@@ -101,13 +105,14 @@
     "current_price": 181.23,
     "current_market_value": 274563.45,
     "continuing_mtm_units": 1515,
-    "market_to_market_gain": 178198.54,
-    "market_to_market_pct": 184.92056911587426,
+    "market_to_market_gain": 113791.65,
+    "market_to_market_pct": 70.78,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 6.59,
-    "price_date": "2026-06-09T06:17:39.000Z"
+    "price_date": "2026-06-09T06:17:39.000Z",
+    "unrealised_pl": 178198.54
   },
   {
     "portfolio_id": "portfolio_1",
@@ -123,13 +128,14 @@
     "current_price": 4.53,
     "current_market_value": 113250,
     "continuing_mtm_units": 25000,
-    "market_to_market_gain": 17317.5,
-    "market_to_market_pct": 18.051755140333047,
+    "market_to_market_gain": 39000,
+    "market_to_market_pct": 52.53,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 2.73,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 17317.5
   },
   {
     "portfolio_id": "portfolio_1",
@@ -145,13 +151,14 @@
     "current_price": 19.75,
     "current_market_value": 67466,
     "continuing_mtm_units": 3000,
-    "market_to_market_gain": -25196.42,
-    "market_to_market_pct": -27.19162741486786,
+    "market_to_market_gain": -20910,
+    "market_to_market_pct": -26.09,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 1.56,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": -25196.42
   },
   {
     "portfolio_id": "portfolio_1",
@@ -167,13 +174,14 @@
     "current_price": 28,
     "current_market_value": 186648,
     "continuing_mtm_units": 5716,
-    "market_to_market_gain": 95284.47,
-    "market_to_market_pct": 104.29158111557204,
+    "market_to_market_gain": -63161.8,
+    "market_to_market_pct": -28.3,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 4.34,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": 95284.47
   },
   {
     "portfolio_id": "portfolio_1",
@@ -189,13 +197,14 @@
     "current_price": 22.87,
     "current_market_value": 123841.05,
     "continuing_mtm_units": 5415,
-    "market_to_market_gain": 41048.95,
-    "market_to_market_pct": 49.580757101221,
+    "market_to_market_gain": -3086.55,
+    "market_to_market_pct": -2.43,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 2.89,
-    "price_date": "2026-06-09T06:12:18.000Z"
+    "price_date": "2026-06-09T06:12:18.000Z",
+    "unrealised_pl": 41048.95
   },
   {
     "portfolio_id": "portfolio_1",
@@ -211,13 +220,14 @@
     "current_price": 2.97,
     "current_market_value": 48304.08,
     "continuing_mtm_units": 13264,
-    "market_to_market_gain": -23818.630000000005,
-    "market_to_market_pct": -33.02514561640849,
+    "market_to_market_gain": -14457.76,
+    "market_to_market_pct": -26.85,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 1.14,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": -23818.63
   },
   {
     "portfolio_id": "portfolio_1",
@@ -233,13 +243,14 @@
     "current_price": 19.75,
     "current_market_value": 237000,
     "continuing_mtm_units": 12000,
-    "market_to_market_gain": 165204,
-    "market_to_market_pct": 230.10195554069864,
+    "market_to_market_gain": 52440,
+    "market_to_market_pct": 28.41,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 5.8,
-    "price_date": "2026-06-09T06:14:53.000Z"
+    "price_date": "2026-06-09T06:14:53.000Z",
+    "unrealised_pl": 165204
   },
   {
     "portfolio_id": "portfolio_1",
@@ -255,13 +266,14 @@
     "current_price": 65.84,
     "current_market_value": 105344,
     "continuing_mtm_units": 1600,
-    "market_to_market_gain": 34636.32000000001,
-    "market_to_market_pct": 48.98523045869984,
+    "market_to_market_gain": 70544,
+    "market_to_market_pct": 202.71,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 2.55,
-    "price_date": "2026-06-09T06:19:51.000Z"
+    "price_date": "2026-06-09T06:19:51.000Z",
+    "unrealised_pl": 34636.32
   },
   {
     "portfolio_id": "portfolio_1",
@@ -277,13 +289,14 @@
     "current_price": 6.11,
     "current_market_value": 85540,
     "continuing_mtm_units": 11000,
-    "market_to_market_gain": 22257.199999999997,
-    "market_to_market_pct": 35.17101013229503,
+    "market_to_market_gain": 25850,
+    "market_to_market_pct": 62.5,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 2,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 22257.2
   },
   {
     "portfolio_id": "portfolio_1",
@@ -299,13 +312,14 @@
     "current_price": 99.47,
     "current_market_value": 24867.5,
     "continuing_mtm_units": 150,
-    "market_to_market_gain": -35242.63,
-    "market_to_market_pct": -58.630101116068126,
+    "market_to_market_gain": -20815.5,
+    "market_to_market_pct": -58.25,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.58,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": -35242.63
   },
   {
     "portfolio_id": "portfolio_1",
@@ -321,13 +335,14 @@
     "current_price": 34.71,
     "current_market_value": 61401.99,
     "continuing_mtm_units": 1769,
-    "market_to_market_gain": 5955.3399999999965,
-    "market_to_market_pct": 10.74066692938166,
+    "market_to_market_gain": 1485.96,
+    "market_to_market_pct": 2.48,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 1.45,
-    "price_date": "2026-06-09T06:10:13.000Z"
+    "price_date": "2026-06-09T06:10:13.000Z",
+    "unrealised_pl": 5955.34
   },
   {
     "portfolio_id": "portfolio_1",
@@ -343,13 +358,14 @@
     "current_price": 9.22,
     "current_market_value": 82980,
     "continuing_mtm_units": 9000,
-    "market_to_market_gain": 30600.9,
-    "market_to_market_pct": 58.42196601316174,
+    "market_to_market_gain": -13860,
+    "market_to_market_pct": -14.31,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 1.95,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 30600.9
   },
   {
     "portfolio_id": "portfolio_1",
@@ -365,13 +381,14 @@
     "current_price": 33.19,
     "current_market_value": 134884.16,
     "continuing_mtm_units": 4064,
-    "market_to_market_gain": 83138.87,
-    "market_to_market_pct": 160.6694445040312,
+    "market_to_market_gain": 41940.48,
+    "market_to_market_pct": 45.12,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 3.18,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 83138.87
   },
   {
     "portfolio_id": "portfolio_1",
@@ -387,13 +404,14 @@
     "current_price": 31.32,
     "current_market_value": 62640,
     "continuing_mtm_units": 1660,
-    "market_to_market_gain": 11544.800000000003,
-    "market_to_market_pct": 22.594685997901962,
+    "market_to_market_gain": -15687,
+    "market_to_market_pct": -23.18,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 1.51,
-    "price_date": "2026-06-09T06:12:29.000Z"
+    "price_date": "2026-06-09T06:12:29.000Z",
+    "unrealised_pl": 11544.8
   },
   {
     "portfolio_id": "portfolio_1",
@@ -409,13 +427,14 @@
     "current_price": 11.19,
     "current_market_value": 13237.769999999999,
     "continuing_mtm_units": 1183,
-    "market_to_market_gain": -36873.64000000001,
-    "market_to_market_pct": -73.5833216427157,
+    "market_to_market_gain": -1975.61,
+    "market_to_market_pct": -12.99,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.31,
-    "price_date": "2026-06-09T06:16:18.000Z"
+    "price_date": "2026-06-09T06:16:18.000Z",
+    "unrealised_pl": -36873.64
   },
   {
     "portfolio_id": "portfolio_1",
@@ -431,13 +450,14 @@
     "current_price": 58.72,
     "current_market_value": 41104,
     "continuing_mtm_units": 375,
-    "market_to_market_gain": -8674.330000000002,
-    "market_to_market_pct": -17.425916056243754,
+    "market_to_market_gain": -6791.25,
+    "market_to_market_pct": -23.57,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.98,
-    "price_date": "2026-06-09T05:59:53.000Z"
+    "price_date": "2026-06-09T05:59:53.000Z",
+    "unrealised_pl": -8674.33
   },
   {
     "portfolio_id": "portfolio_1",
@@ -453,13 +473,14 @@
     "current_price": 4.33,
     "current_market_value": 47630,
     "continuing_mtm_units": 11000,
-    "market_to_market_gain": 2492.5999999999985,
-    "market_to_market_pct": 5.522249841594771,
+    "market_to_market_gain": 13970,
+    "market_to_market_pct": 41.5,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 1.11,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 2492.6
   },
   {
     "portfolio_id": "portfolio_1",
@@ -475,13 +496,14 @@
     "current_price": 13.03,
     "current_market_value": 49709.45,
     "continuing_mtm_units": 3815,
-    "market_to_market_gain": 4714.959999999999,
-    "market_to_market_pct": 10.478971980791425,
+    "market_to_market_gain": 686.7,
+    "market_to_market_pct": 1.4,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 1.17,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": 4714.96
   },
   {
     "portfolio_id": "portfolio_1",
@@ -497,13 +519,14 @@
     "current_price": 7.71,
     "current_market_value": 48056.43,
     "continuing_mtm_units": 6233,
-    "market_to_market_gain": 3716.1100000000006,
-    "market_to_market_pct": 8.380882230890533,
+    "market_to_market_gain": -7853.58,
+    "market_to_market_pct": -14.05,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 1.11,
-    "price_date": "2026-06-09T06:10:14.000Z"
+    "price_date": "2026-06-09T06:10:14.000Z",
+    "unrealised_pl": 3716.11
   },
   {
     "portfolio_id": "portfolio_1",
@@ -519,13 +542,14 @@
     "current_price": 13.4,
     "current_market_value": 30820,
     "continuing_mtm_units": 500,
-    "market_to_market_gain": -9297.29,
-    "market_to_market_pct": -23.175269316546558,
+    "market_to_market_gain": -3500,
+    "market_to_market_pct": -34.31,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.7,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": -9297.29
   },
   {
     "portfolio_id": "portfolio_1",
@@ -541,13 +565,14 @@
     "current_price": 4.58,
     "current_market_value": 36640,
     "continuing_mtm_units": 4500,
-    "market_to_market_gain": -1638.4000000000015,
-    "market_to_market_pct": -4.2802206988797895,
+    "market_to_market_gain": -1305,
+    "market_to_market_pct": -5.95,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.87,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": -1638.4
   },
   {
     "portfolio_id": "portfolio_1",
@@ -563,13 +588,14 @@
     "current_price": 34.27,
     "current_market_value": 46675.740000000005,
     "continuing_mtm_units": 1362,
-    "market_to_market_gain": 8628.130000000005,
-    "market_to_market_pct": 22.677193127242433,
+    "market_to_market_gain": 5965.56,
+    "market_to_market_pct": 14.65,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 1.09,
-    "price_date": "2026-06-09T06:19:38.000Z"
+    "price_date": "2026-06-09T06:19:38.000Z",
+    "unrealised_pl": 8628.13
   },
   {
     "portfolio_id": "portfolio_1",
@@ -585,13 +611,14 @@
     "current_price": 238.04,
     "current_market_value": 63080.6,
     "continuing_mtm_units": 265,
-    "market_to_market_gain": 25952.299999999996,
-    "market_to_market_pct": 69.89897194323466,
+    "market_to_market_gain": 3066.05,
+    "market_to_market_pct": 5.11,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 1.48,
-    "price_date": "2026-06-09T06:11:54.000Z"
+    "price_date": "2026-06-09T06:11:54.000Z",
+    "unrealised_pl": 25952.3
   },
   {
     "portfolio_id": "portfolio_1",
@@ -607,13 +634,14 @@
     "current_price": 6.83,
     "current_market_value": 36444.88,
     "continuing_mtm_units": 4836,
-    "market_to_market_gain": 532,
-    "market_to_market_pct": 1.4813626754523725,
+    "market_to_market_gain": -1499.16,
+    "market_to_market_pct": -4.34,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.86,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 532
   },
   {
     "portfolio_id": "portfolio_1",
@@ -629,13 +657,14 @@
     "current_price": 11.31,
     "current_market_value": 39585,
     "continuing_mtm_units": 3150,
-    "market_to_market_gain": 6011.949999999997,
-    "market_to_market_pct": 17.907071296769274,
+    "market_to_market_gain": 9859.5,
+    "market_to_market_pct": 38.26,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.92,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": 6011.95
   },
   {
     "portfolio_id": "portfolio_1",
@@ -651,13 +680,14 @@
     "current_price": 47.9,
     "current_market_value": 28740,
     "continuing_mtm_units": 600,
-    "market_to_market_gain": -2227.2000000000007,
-    "market_to_market_pct": -7.19212586220259,
+    "market_to_market_gain": -13134,
+    "market_to_market_pct": -31.37,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.67,
-    "price_date": "2026-06-09T06:13:01.000Z"
+    "price_date": "2026-06-09T06:13:01.000Z",
+    "unrealised_pl": -2227.2
   },
   {
     "portfolio_id": "portfolio_1",
@@ -673,13 +703,14 @@
     "current_price": 116.57,
     "current_market_value": 34971,
     "continuing_mtm_units": 75,
-    "market_to_market_gain": 4214.639999999999,
-    "market_to_market_pct": 13.703312095449524,
+    "market_to_market_gain": 929.25,
+    "market_to_market_pct": 11.89,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.84,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 4214.64
   },
   {
     "portfolio_id": "portfolio_1",
@@ -695,13 +726,14 @@
     "current_price": 3.82,
     "current_market_value": 31048.96,
     "continuing_mtm_units": 8128,
-    "market_to_market_gain": 793.2900000000009,
-    "market_to_market_pct": 2.621954826979541,
+    "market_to_market_gain": 9022.08,
+    "market_to_market_pct": 40.96,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.74,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 793.29
   },
   {
     "portfolio_id": "portfolio_1",
@@ -717,13 +749,14 @@
     "current_price": 7.45,
     "current_market_value": 26075,
     "continuing_mtm_units": 3500,
-    "market_to_market_gain": -1983.0999999999985,
-    "market_to_market_pct": -7.067834243943811,
+    "market_to_market_gain": 13125,
+    "market_to_market_pct": 101.35,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.64,
-    "price_date": "2026-06-09T06:11:04.000Z"
+    "price_date": "2026-06-09T06:11:04.000Z",
+    "unrealised_pl": -1983.1
   },
   {
     "portfolio_id": "portfolio_1",
@@ -744,7 +777,8 @@
     "price_status": "fallback",
     "position_status": "delisted",
     "cost_status": "complete",
-    "portfolio_weight": 0.78
+    "portfolio_weight": 0.78,
+    "unrealised_pl": 6593
   },
   {
     "portfolio_id": "portfolio_1",
@@ -760,13 +794,14 @@
     "current_price": 17.82,
     "current_market_value": 26409.24,
     "continuing_mtm_units": 1482,
-    "market_to_market_gain": 889.3500000000022,
-    "market_to_market_pct": 3.484928814348346,
+    "market_to_market_gain": -5779.8,
+    "market_to_market_pct": -17.96,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.61,
-    "price_date": "2026-06-09T06:10:14.000Z"
+    "price_date": "2026-06-09T06:10:14.000Z",
+    "unrealised_pl": 889.35
   },
   {
     "portfolio_id": "portfolio_1",
@@ -782,13 +817,14 @@
     "current_price": 0.039,
     "current_market_value": 71.838,
     "continuing_mtm_units": 1842,
-    "market_to_market_gain": -25160.982,
-    "market_to_market_pct": -99.71529936011908,
+    "market_to_market_gain": 0,
+    "market_to_market_pct": 0,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0,
-    "price_date": "2024-10-16T02:07:58.000Z"
+    "price_date": "2024-10-16T02:07:58.000Z",
+    "unrealised_pl": -25160.98
   },
   {
     "portfolio_id": "portfolio_1",
@@ -804,13 +840,14 @@
     "current_price": 5.86,
     "current_market_value": 58600,
     "continuing_mtm_units": 10000,
-    "market_to_market_gain": 33631,
-    "market_to_market_pct": 134.69101686090752,
+    "market_to_market_gain": 45050,
+    "market_to_market_pct": 332.47,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 1.39,
-    "price_date": "2026-06-09T06:11:47.000Z"
+    "price_date": "2026-06-09T06:11:47.000Z",
+    "unrealised_pl": 33631
   },
   {
     "portfolio_id": "portfolio_1",
@@ -826,13 +863,14 @@
     "current_price": 62.13,
     "current_market_value": 27026.550000000003,
     "continuing_mtm_units": 335,
-    "market_to_market_gain": 2228.8100000000013,
-    "market_to_market_pct": 8.987956160521085,
+    "market_to_market_gain": 1681.7,
+    "market_to_market_pct": 8.79,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.64,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 2228.81
   },
   {
     "portfolio_id": "portfolio_1",
@@ -848,13 +886,14 @@
     "current_price": 49.25,
     "current_market_value": 20931.25,
     "continuing_mtm_units": 150,
-    "market_to_market_gain": -2853.029999999999,
-    "market_to_market_pct": -11.995444049599142,
+    "market_to_market_gain": -924,
+    "market_to_market_pct": -11.12,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.49,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": -2853.03
   },
   {
     "portfolio_id": "portfolio_1",
@@ -870,13 +909,14 @@
     "current_price": 20.92,
     "current_market_value": 23012.000000000004,
     "continuing_mtm_units": 1000,
-    "market_to_market_gain": -558.9099999999962,
-    "market_to_market_pct": -2.3711854994143042,
+    "market_to_market_gain": -9380,
+    "market_to_market_pct": -30.96,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.53,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": -558.91
   },
   {
     "portfolio_id": "portfolio_1",
@@ -892,13 +932,14 @@
     "current_price": 12.48,
     "current_market_value": 28080,
     "continuing_mtm_units": 1250,
-    "market_to_market_gain": 4823.0999999999985,
-    "market_to_market_pct": 20.738361518517078,
+    "market_to_market_gain": 3350,
+    "market_to_market_pct": 27.35,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.67,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": 4823.1
   },
   {
     "portfolio_id": "portfolio_1",
@@ -914,13 +955,14 @@
     "current_price": 8.02,
     "current_market_value": 26867,
     "continuing_mtm_units": 3350,
-    "market_to_market_gain": 3673.6100000000006,
-    "market_to_market_pct": 15.839038622642057,
+    "market_to_market_gain": 134,
+    "market_to_market_pct": 0.5,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.61,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": 3673.61
   },
   {
     "portfolio_id": "portfolio_1",
@@ -936,13 +978,14 @@
     "current_price": 16.17,
     "current_market_value": 27489.000000000004,
     "continuing_mtm_units": 600,
-    "market_to_market_gain": 4310.520000000004,
-    "market_to_market_pct": 18.597077979229027,
+    "market_to_market_gain": 552,
+    "market_to_market_pct": 6.03,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.67,
-    "price_date": "2026-06-09T06:19:58.000Z"
+    "price_date": "2026-06-09T06:19:58.000Z",
+    "unrealised_pl": 4310.52
   },
   {
     "portfolio_id": "portfolio_1",
@@ -958,13 +1001,14 @@
     "current_price": 78.42,
     "current_market_value": 20389.2,
     "continuing_mtm_units": null,
-    "market_to_market_gain": -1358.8899999999994,
-    "market_to_market_pct": -6.248318817882395,
+    "market_to_market_gain": -1358.89,
+    "market_to_market_pct": -6.25,
     "price_status": "live",
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.49,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": -1358.89
   },
   {
     "portfolio_id": "portfolio_1",
@@ -980,13 +1024,14 @@
     "current_price": 10.08,
     "current_market_value": 25200,
     "continuing_mtm_units": 2350,
-    "market_to_market_gain": 3501.25,
-    "market_to_market_pct": 16.135722103807822,
+    "market_to_market_gain": 4982,
+    "market_to_market_pct": 26.63,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.65,
-    "price_date": "2026-06-09T06:16:18.000Z"
+    "price_date": "2026-06-09T06:16:18.000Z",
+    "unrealised_pl": 3501.25
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1002,13 +1047,14 @@
     "current_price": 2.42,
     "current_market_value": 10890,
     "continuing_mtm_units": 3500,
-    "market_to_market_gain": -10397.7,
-    "market_to_market_pct": -48.843698473766544,
+    "market_to_market_gain": -6895,
+    "market_to_market_pct": -44.87,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.25,
-    "price_date": "2026-06-09T06:13:01.000Z"
+    "price_date": "2026-06-09T06:13:01.000Z",
+    "unrealised_pl": -10397.7
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1024,13 +1070,14 @@
     "current_price": 22.41,
     "current_market_value": 44820,
     "continuing_mtm_units": 1500,
-    "market_to_market_gain": 23785.2,
-    "market_to_market_pct": 113.0754749272634,
+    "market_to_market_gain": 15825,
+    "market_to_market_pct": 88.95,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 1.03,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 23785.2
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1046,13 +1093,14 @@
     "current_price": 9.18,
     "current_market_value": 28917,
     "continuing_mtm_units": 3150,
-    "market_to_market_gain": 8266.55,
-    "market_to_market_pct": 40.03084678542114,
+    "market_to_market_gain": 11560.5,
+    "market_to_market_pct": 66.61,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.7,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 8266.55
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1068,13 +1116,14 @@
     "current_price": 2.52,
     "current_market_value": 4089.96,
     "continuing_mtm_units": 1623,
-    "market_to_market_gain": -16371.2,
-    "market_to_market_pct": -80.0111039647801,
+    "market_to_market_gain": -4593.09,
+    "market_to_market_pct": -52.9,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.09,
-    "price_date": "2026-06-09T06:12:39.000Z"
+    "price_date": "2026-06-09T06:12:39.000Z",
+    "unrealised_pl": -16371.2
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1090,13 +1139,14 @@
     "current_price": 51.71,
     "current_market_value": 19080.99,
     "continuing_mtm_units": 94,
-    "market_to_market_gain": -1326.1899999999987,
-    "market_to_market_pct": -6.498644104672957,
+    "market_to_market_gain": -1312.24,
+    "market_to_market_pct": -21.26,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.45,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": -1326.19
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1117,7 +1167,8 @@
     "price_status": "fallback",
     "position_status": "delisted",
     "cost_status": "complete",
-    "portfolio_weight": 0.46
+    "portfolio_weight": 0.46,
+    "unrealised_pl": -600
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1133,13 +1184,14 @@
     "current_price": 96.89,
     "current_market_value": 19378,
     "continuing_mtm_units": null,
-    "market_to_market_gain": -449.9599999999991,
-    "market_to_market_pct": -2.2693206966324277,
+    "market_to_market_gain": -449.96,
+    "market_to_market_pct": -2.27,
     "price_status": "live",
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.45,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": -449.96
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1155,13 +1207,14 @@
     "current_price": 43.24,
     "current_market_value": 25079.2,
     "continuing_mtm_units": 400,
-    "market_to_market_gain": 5315.93,
-    "market_to_market_pct": 26.898028514512024,
+    "market_to_market_gain": 320,
+    "market_to_market_pct": 1.89,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.59,
-    "price_date": "2026-06-09T06:10:14.000Z"
+    "price_date": "2026-06-09T06:10:14.000Z",
+    "unrealised_pl": 5315.93
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1177,13 +1230,14 @@
     "current_price": 8.73,
     "current_market_value": 21825,
     "continuing_mtm_units": 1800,
-    "market_to_market_gain": 2128.25,
-    "market_to_market_pct": 10.805082056684478,
+    "market_to_market_gain": 2952,
+    "market_to_market_pct": 23.13,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.52,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": 2128.25
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1199,13 +1253,14 @@
     "current_price": 3.8,
     "current_market_value": 20900,
     "continuing_mtm_units": 5500,
-    "market_to_market_gain": 1581.25,
-    "market_to_market_pct": 8.185053380782918,
+    "market_to_market_gain": 1210,
+    "market_to_market_pct": 6.15,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.48,
-    "price_date": "2026-06-09T06:13:28.000Z"
+    "price_date": "2026-06-09T06:13:28.000Z",
+    "unrealised_pl": 1581.25
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1221,13 +1276,14 @@
     "current_price": 27.05,
     "current_market_value": 18935,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 419.15999999999985,
-    "market_to_market_pct": 2.2637914347931276,
+    "market_to_market_gain": 419.16,
+    "market_to_market_pct": 2.26,
     "price_status": "live",
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.44,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": 419.16
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1243,13 +1299,14 @@
     "current_price": 1.955,
     "current_market_value": 23460,
     "continuing_mtm_units": 12000,
-    "market_to_market_gain": 5181.5999999999985,
-    "market_to_market_pct": 28.348214285714274,
+    "market_to_market_gain": 540,
+    "market_to_market_pct": 2.36,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.55,
-    "price_date": "2026-06-09T06:12:35.000Z"
+    "price_date": "2026-06-09T06:12:35.000Z",
+    "unrealised_pl": 5181.6
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1265,13 +1322,14 @@
     "current_price": 31.09,
     "current_market_value": 18654,
     "continuing_mtm_units": 600,
-    "market_to_market_gain": 801.2400000000016,
-    "market_to_market_pct": 4.488045545898794,
+    "market_to_market_gain": 4518,
+    "market_to_market_pct": 31.96,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.44,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 801.24
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1287,13 +1345,14 @@
     "current_price": 21.38,
     "current_market_value": 21380,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 4164.0999999999985,
-    "market_to_market_pct": 24.187524323445178,
+    "market_to_market_gain": 4164.1,
+    "market_to_market_pct": 24.19,
     "price_status": "live",
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.52,
-    "price_date": "2026-06-09T05:59:10.000Z"
+    "price_date": "2026-06-09T05:59:10.000Z",
+    "unrealised_pl": 4164.1
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1309,13 +1368,14 @@
     "current_price": 8.98,
     "current_market_value": 32292.08,
     "continuing_mtm_units": 3596,
-    "market_to_market_gain": 15125.140000000003,
-    "market_to_market_pct": 88.10620879434543,
+    "market_to_market_gain": 17404.64,
+    "market_to_market_pct": 116.91,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.76,
-    "price_date": "2026-06-09T06:12:07.000Z"
+    "price_date": "2026-06-09T06:12:07.000Z",
+    "unrealised_pl": 15125.14
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1331,13 +1391,14 @@
     "current_price": 3.28,
     "current_market_value": 18040,
     "continuing_mtm_units": 4500,
-    "market_to_market_gain": 1085.1500000000015,
-    "market_to_market_pct": 6.4002335614883155,
+    "market_to_market_gain": -945,
+    "market_to_market_pct": -6.02,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.42,
-    "price_date": "2026-06-09T04:15:06.000Z"
+    "price_date": "2026-06-09T04:15:06.000Z",
+    "unrealised_pl": 1085.15
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1353,13 +1414,14 @@
     "current_price": 195.27,
     "current_market_value": 21479.7,
     "continuing_mtm_units": 110,
-    "market_to_market_gain": 4558.450000000001,
-    "market_to_market_pct": 26.93920366403192,
+    "market_to_market_gain": 3693.8,
+    "market_to_market_pct": 20.77,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.51,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 4558.45
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1375,13 +1437,14 @@
     "current_price": 2.41,
     "current_market_value": 16870,
     "continuing_mtm_units": 7000,
-    "market_to_market_gain": 76.29999999999927,
-    "market_to_market_pct": 0.45433704305780903,
+    "market_to_market_gain": -420,
+    "market_to_market_pct": -2.43,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.39,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 76.3
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1397,13 +1460,14 @@
     "current_price": 6.11,
     "current_market_value": 20163,
     "continuing_mtm_units": 2800,
-    "market_to_market_gain": 4519.02,
-    "market_to_market_pct": 28.88663882209003,
+    "market_to_market_gain": -4368,
+    "market_to_market_pct": -20.34,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.47,
-    "price_date": "2026-06-09T06:10:14.000Z"
+    "price_date": "2026-06-09T06:10:14.000Z",
+    "unrealised_pl": 4519.02
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1419,13 +1483,14 @@
     "current_price": 37.64,
     "current_market_value": 11292,
     "continuing_mtm_units": 300,
-    "market_to_market_gain": -4012.2000000000007,
-    "market_to_market_pct": -26.21633277139609,
+    "market_to_market_gain": 33,
+    "market_to_market_pct": 0.29,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.26,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": -4012.2
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1441,13 +1506,14 @@
     "current_price": 10.65,
     "current_market_value": 15442.5,
     "continuing_mtm_units": 235,
-    "market_to_market_gain": 302.3199999999997,
-    "market_to_market_pct": 1.9968058503927937,
+    "market_to_market_gain": 411.25,
+    "market_to_market_pct": 19.66,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.39,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 302.32
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1463,13 +1529,14 @@
     "current_price": 102.64,
     "current_market_value": 10264,
     "continuing_mtm_units": 45,
-    "market_to_market_gain": -4771.25,
-    "market_to_market_pct": -31.733758999684074,
+    "market_to_market_gain": -9086.4,
+    "market_to_market_pct": -66.3,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.24,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": -4771.25
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1485,13 +1552,14 @@
     "current_price": 5.73,
     "current_market_value": 24352.5,
     "continuing_mtm_units": 4250,
-    "market_to_market_gain": 9796.67,
-    "market_to_market_pct": 67.3040973960262,
+    "market_to_market_gain": 7777.5,
+    "market_to_market_pct": 46.92,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.56,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 9796.67
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1507,13 +1575,14 @@
     "current_price": 10.3,
     "current_market_value": 13091.300000000001,
     "continuing_mtm_units": 1271,
-    "market_to_market_gain": -1335.4399999999987,
-    "market_to_market_pct": -9.25669971178519,
+    "market_to_market_gain": -3088.53,
+    "market_to_market_pct": -19.09,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.3,
-    "price_date": "2026-06-09T06:10:13.000Z"
+    "price_date": "2026-06-09T06:10:13.000Z",
+    "unrealised_pl": -1335.44
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1529,13 +1598,14 @@
     "current_price": 4.33,
     "current_market_value": 15155,
     "continuing_mtm_units": 3500,
-    "market_to_market_gain": 1616.6499999999996,
-    "market_to_market_pct": 11.941263152452105,
+    "market_to_market_gain": 1995,
+    "market_to_market_pct": 15.16,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.36,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 1616.65
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1551,13 +1621,14 @@
     "current_price": 2.47,
     "current_market_value": 12350.000000000002,
     "continuing_mtm_units": 1000,
-    "market_to_market_gain": -1034.9999999999982,
-    "market_to_market_pct": -7.732536421367188,
+    "market_to_market_gain": -810,
+    "market_to_market_pct": -24.7,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.29,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": -1035
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1573,13 +1644,14 @@
     "current_price": 13.39,
     "current_market_value": 16068,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 2909.040000000001,
-    "market_to_market_pct": 22.106914224224415,
+    "market_to_market_gain": 2909.04,
+    "market_to_market_pct": 22.11,
     "price_status": "live",
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.38,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": 2909.04
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1595,13 +1667,14 @@
     "current_price": 70.12,
     "current_market_value": 14024,
     "continuing_mtm_units": 100,
-    "market_to_market_gain": 978.6000000000004,
-    "market_to_market_pct": 7.501494779769118,
+    "market_to_market_gain": 746,
+    "market_to_market_pct": 11.91,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.33,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 978.6
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1617,13 +1690,14 @@
     "current_price": 5.97,
     "current_market_value": 12537,
     "continuing_mtm_units": 1600,
-    "market_to_market_gain": -37.590000000000146,
-    "market_to_market_pct": -0.2989361879790923,
+    "market_to_market_gain": -960,
+    "market_to_market_pct": -9.13,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.3,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": -37.59
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1639,13 +1713,14 @@
     "current_price": 8.5,
     "current_market_value": 12410,
     "continuing_mtm_units": 1460,
-    "market_to_market_gain": 283.96999999999935,
-    "market_to_market_pct": 2.341821684425977,
+    "market_to_market_gain": -1927.2,
+    "market_to_market_pct": -13.44,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.29,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": 283.97
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1666,7 +1741,8 @@
     "price_status": "fallback",
     "position_status": "delisted",
     "cost_status": "complete",
-    "portfolio_weight": 0.82
+    "portfolio_weight": 0.82,
+    "unrealised_pl": 23468.9
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1682,13 +1758,14 @@
     "current_price": 59.07,
     "current_market_value": 14767.5,
     "continuing_mtm_units": 250,
-    "market_to_market_gain": 3356.7999999999993,
-    "market_to_market_pct": 29.418002401254956,
+    "market_to_market_gain": 4167.5,
+    "market_to_market_pct": 39.32,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.36,
-    "price_date": "2026-06-09T05:59:54.000Z"
+    "price_date": "2026-06-09T05:59:54.000Z",
+    "unrealised_pl": 3356.8
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1704,13 +1781,14 @@
     "current_price": 11.63,
     "current_market_value": 9304,
     "continuing_mtm_units": 650,
-    "market_to_market_gain": -2044,
-    "market_to_market_pct": -18.011984490659145,
+    "market_to_market_gain": -1761.5,
+    "market_to_market_pct": -18.9,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.21,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": -2044
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1726,13 +1804,14 @@
     "current_price": 16.09,
     "current_market_value": 11263,
     "continuing_mtm_units": 700,
-    "market_to_market_gain": 238,
-    "market_to_market_pct": 2.158730158730159,
+    "market_to_market_gain": 350,
+    "market_to_market_pct": 3.21,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.27,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 238
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1748,13 +1827,14 @@
     "current_price": 38,
     "current_market_value": 9500,
     "continuing_mtm_units": null,
-    "market_to_market_gain": -647.4500000000007,
-    "market_to_market_pct": -6.380420696825317,
+    "market_to_market_gain": -647.45,
+    "market_to_market_pct": -6.38,
     "price_status": "live",
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.23,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": -647.45
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1770,13 +1850,14 @@
     "current_price": 1.55,
     "current_market_value": 2648.9500000000003,
     "continuing_mtm_units": 1709,
-    "market_to_market_gain": -7368.699999999999,
-    "market_to_market_pct": -73.55717159213987,
+    "market_to_market_gain": 478.52,
+    "market_to_market_pct": 22.05,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.06,
-    "price_date": "2026-06-09T06:10:14.000Z"
+    "price_date": "2026-06-09T06:10:14.000Z",
+    "unrealised_pl": -7368.7
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1792,13 +1873,14 @@
     "current_price": 5.29,
     "current_market_value": 10410.72,
     "continuing_mtm_units": 1968,
-    "market_to_market_gain": 607.1299999999992,
-    "market_to_market_pct": 6.192935445076745,
+    "market_to_market_gain": -157.44,
+    "market_to_market_pct": -1.49,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.24,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 607.13
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1814,13 +1896,14 @@
     "current_price": 2.5,
     "current_market_value": 8032.5,
     "continuing_mtm_units": 3213,
-    "market_to_market_gain": -1262.0699999999997,
-    "market_to_market_pct": -13.578573296021224,
+    "market_to_market_gain": -32.13,
+    "market_to_market_pct": -0.4,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.18,
-    "price_date": "2026-06-09T06:11:32.000Z"
+    "price_date": "2026-06-09T06:11:32.000Z",
+    "unrealised_pl": -1262.07
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1836,13 +1919,14 @@
     "current_price": 2.05,
     "current_market_value": 8200,
     "continuing_mtm_units": 4000,
-    "market_to_market_gain": -1059.2000000000007,
-    "market_to_market_pct": -11.439433212372565,
+    "market_to_market_gain": -960,
+    "market_to_market_pct": -10.48,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.19,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": -1059.2
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1858,13 +1942,14 @@
     "current_price": 5.08,
     "current_market_value": 8270.24,
     "continuing_mtm_units": 1628,
-    "market_to_market_gain": -420.6800000000003,
-    "market_to_market_pct": -4.840454175162127,
+    "market_to_market_gain": 0,
+    "market_to_market_pct": 0,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.19,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": -420.68
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1880,13 +1965,14 @@
     "current_price": 141.68,
     "current_market_value": 28336,
     "continuing_mtm_units": 200,
-    "market_to_market_gain": 20061.68,
-    "market_to_market_pct": 242.45714451459457,
+    "market_to_market_gain": 10530,
+    "market_to_market_pct": 59.14,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.7,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 20061.68
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1902,13 +1988,14 @@
     "current_price": 11.3,
     "current_market_value": 11865,
     "continuing_mtm_units": 750,
-    "market_to_market_gain": 4053,
-    "market_to_market_pct": 51.88172043010753,
+    "market_to_market_gain": 2632.5,
+    "market_to_market_pct": 45.06,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.29,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 4053
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1924,13 +2011,14 @@
     "current_price": 15.28,
     "current_market_value": 7640,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 177.30000000000018,
-    "market_to_market_pct": 2.3758157235317,
+    "market_to_market_gain": 177.3,
+    "market_to_market_pct": 2.38,
     "price_status": "live",
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.18,
-    "price_date": "2026-06-09T06:10:14.000Z"
+    "price_date": "2026-06-09T06:10:14.000Z",
+    "unrealised_pl": 177.3
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1946,13 +2034,14 @@
     "current_price": 0.245,
     "current_market_value": 2229.745,
     "continuing_mtm_units": 5601,
-    "market_to_market_gain": -4698.845,
-    "market_to_market_pct": -67.8181996625576,
+    "market_to_market_gain": -2156.39,
+    "market_to_market_pct": -61.11,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.05,
-    "price_date": "2026-06-09T06:17:03.000Z"
+    "price_date": "2026-06-09T06:17:03.000Z",
+    "unrealised_pl": -4698.84
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1968,13 +2057,14 @@
     "current_price": 33.7,
     "current_market_value": 6740.000000000001,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 37.00000000000091,
-    "market_to_market_pct": 0.551991645531865,
+    "market_to_market_gain": 37,
+    "market_to_market_pct": 0.55,
     "price_status": "live",
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.16,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 37
   },
   {
     "portfolio_id": "portfolio_1",
@@ -1990,13 +2080,14 @@
     "current_price": 44.23,
     "current_market_value": 9376.76,
     "continuing_mtm_units": 102,
-    "market_to_market_gain": 2743.8100000000004,
-    "market_to_market_pct": 41.36636036755893,
+    "market_to_market_gain": -801.72,
+    "market_to_market_pct": -15.09,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.22,
-    "price_date": "2026-06-09T06:11:01.000Z"
+    "price_date": "2026-06-09T06:11:01.000Z",
+    "unrealised_pl": 2743.81
   },
   {
     "portfolio_id": "portfolio_1",
@@ -2013,12 +2104,13 @@
     "current_market_value": 1794.0000000000002,
     "continuing_mtm_units": null,
     "market_to_market_gain": -4664.5,
-    "market_to_market_pct": -72.22265231864984,
+    "market_to_market_pct": -72.22,
     "price_status": "live",
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.04,
-    "price_date": "2026-06-09T08:19:03.598Z"
+    "price_date": "2026-06-09T08:19:03.598Z",
+    "unrealised_pl": -4664.5
   },
   {
     "portfolio_id": "portfolio_1",
@@ -2034,13 +2126,14 @@
     "current_price": 69.11,
     "current_market_value": 6911,
     "continuing_mtm_units": 100,
-    "market_to_market_gain": 729,
-    "market_to_market_pct": 11.792300226463928,
+    "market_to_market_gain": 684,
+    "market_to_market_pct": 10.98,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.16,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 729
   },
   {
     "portfolio_id": "portfolio_1",
@@ -2057,12 +2150,13 @@
     "current_market_value": 6516,
     "continuing_mtm_units": null,
     "market_to_market_gain": 399,
-    "market_to_market_pct": 6.5228052967140755,
+    "market_to_market_pct": 6.52,
     "price_status": "live",
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.15,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": 399
   },
   {
     "portfolio_id": "portfolio_1",
@@ -2078,13 +2172,14 @@
     "current_price": 4.19,
     "current_market_value": 10475.000000000002,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 4584.500000000002,
-    "market_to_market_pct": 77.82870724047197,
+    "market_to_market_gain": 4584.5,
+    "market_to_market_pct": 77.83,
     "price_status": "live",
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.25,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 4584.5
   },
   {
     "portfolio_id": "portfolio_1",
@@ -2101,12 +2196,13 @@
     "current_market_value": 5796,
     "continuing_mtm_units": null,
     "market_to_market_gain": 269,
-    "market_to_market_pct": 4.867016464628189,
+    "market_to_market_pct": 4.87,
     "price_status": "live",
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.14,
-    "price_date": "2026-06-09T06:15:31.000Z"
+    "price_date": "2026-06-09T06:15:31.000Z",
+    "unrealised_pl": 269
   },
   {
     "portfolio_id": "portfolio_1",
@@ -2122,13 +2218,14 @@
     "current_price": 25.76,
     "current_market_value": 5152,
     "continuing_mtm_units": 200,
-    "market_to_market_gain": -272.77999999999975,
-    "market_to_market_pct": -5.028406681929954,
+    "market_to_market_gain": 172,
+    "market_to_market_pct": 3.45,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.12,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": -272.78
   },
   {
     "portfolio_id": "portfolio_1",
@@ -2144,13 +2241,14 @@
     "current_price": 18.67,
     "current_market_value": 10268.500000000002,
     "continuing_mtm_units": 550,
-    "market_to_market_gain": 5266.3600000000015,
-    "market_to_market_pct": 105.28213924440341,
+    "market_to_market_gain": 4152.5,
+    "market_to_market_pct": 67.9,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.25,
-    "price_date": "2026-06-09T06:12:42.000Z"
+    "price_date": "2026-06-09T06:12:42.000Z",
+    "unrealised_pl": 5266.36
   },
   {
     "portfolio_id": "portfolio_1",
@@ -2167,12 +2265,13 @@
     "current_market_value": 4584,
     "continuing_mtm_units": null,
     "market_to_market_gain": -19,
-    "market_to_market_pct": -0.4127742776450141,
+    "market_to_market_pct": -0.41,
     "price_status": "live",
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.11,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": -19
   },
   {
     "portfolio_id": "portfolio_1",
@@ -2188,13 +2287,14 @@
     "current_price": 1.235,
     "current_market_value": 4940,
     "continuing_mtm_units": 4000,
-    "market_to_market_gain": 440,
-    "market_to_market_pct": 9.777777777777779,
+    "market_to_market_gain": -60,
+    "market_to_market_pct": -1.2,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.11,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 440
   },
   {
     "portfolio_id": "portfolio_1",
@@ -2210,13 +2310,14 @@
     "current_price": 3.52,
     "current_market_value": 2640,
     "continuing_mtm_units": null,
-    "market_to_market_gain": -623.0999999999999,
-    "market_to_market_pct": -19.095338788268823,
+    "market_to_market_gain": -623.1,
+    "market_to_market_pct": -19.1,
     "price_status": "live",
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.06,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": -623.1
   },
   {
     "portfolio_id": "portfolio_1",
@@ -2232,13 +2333,14 @@
     "current_price": 2.51,
     "current_market_value": 3810.18,
     "continuing_mtm_units": 1518,
-    "market_to_market_gain": 2778.09,
-    "market_to_market_pct": 269.17129320117436,
+    "market_to_market_gain": -4979.04,
+    "market_to_market_pct": -56.65,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.09,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": 2778.09
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2254,13 +2356,14 @@
     "current_price": 1.075,
     "current_market_value": 77830,
     "continuing_mtm_units": null,
-    "market_to_market_gain": -7023,
-    "market_to_market_pct": -8.27666670595029,
+    "market_to_market_gain": -7602,
+    "market_to_market_pct": -8.9,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 6.95,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": -7023
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2276,13 +2379,14 @@
     "current_price": 1.895,
     "current_market_value": 79590,
     "continuing_mtm_units": null,
-    "market_to_market_gain": -4813,
-    "market_to_market_pct": -5.702403942987808,
+    "market_to_market_gain": -4830,
+    "market_to_market_pct": -5.72,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 7.14,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": -4813
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2298,13 +2402,14 @@
     "current_price": 2.05,
     "current_market_value": 70725,
     "continuing_mtm_units": null,
-    "market_to_market_gain": -7490,
-    "market_to_market_pct": -9.576168254171195,
+    "market_to_market_gain": -8280,
+    "market_to_market_pct": -10.48,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 6.26,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": -7490
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2320,13 +2425,14 @@
     "current_price": 2.06,
     "current_market_value": 72100,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 322,
-    "market_to_market_pct": 0.44860542227423444,
+    "market_to_market_gain": 700,
+    "market_to_market_pct": 0.98,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 6.32,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": 322
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2342,13 +2448,14 @@
     "current_price": 1.385,
     "current_market_value": 51245,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 422,
-    "market_to_market_pct": 0.8303327233732758,
+    "market_to_market_gain": 555,
+    "market_to_market_pct": 1.09,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 4.51,
-    "price_date": "2026-06-09T06:14:25.000Z"
+    "price_date": "2026-06-09T06:14:25.000Z",
+    "unrealised_pl": 422
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2364,13 +2471,14 @@
     "current_price": 1.525,
     "current_market_value": 47275,
     "continuing_mtm_units": null,
-    "market_to_market_gain": -2483,
-    "market_to_market_pct": -4.990152337312593,
+    "market_to_market_gain": -2325,
+    "market_to_market_pct": -4.69,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 4.16,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": -2483
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2386,13 +2494,14 @@
     "current_price": 1.31,
     "current_market_value": 53710,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 4125,
-    "market_to_market_pct": 8.319048099223556,
+    "market_to_market_gain": 4510,
+    "market_to_market_pct": 9.17,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 4.75,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 4125
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2408,13 +2517,14 @@
     "current_price": 10.31,
     "current_market_value": 46395,
     "continuing_mtm_units": null,
-    "market_to_market_gain": -52,
-    "market_to_market_pct": -0.11195556225375158,
+    "market_to_market_gain": -45,
+    "market_to_market_pct": -0.1,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 4.08,
-    "price_date": "2026-06-09T05:43:03.000Z"
+    "price_date": "2026-06-09T05:43:03.000Z",
+    "unrealised_pl": -52
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2430,13 +2540,14 @@
     "current_price": 82.92,
     "current_market_value": 43947.6,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 3821.5999999999985,
-    "market_to_market_pct": 9.523999401884062,
+    "market_to_market_gain": 4224.1,
+    "market_to_market_pct": 10.63,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 3.88,
-    "price_date": "2026-06-09T06:20:27.000Z"
+    "price_date": "2026-06-09T06:20:27.000Z",
+    "unrealised_pl": 3821.6
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2452,13 +2563,14 @@
     "current_price": 6.11,
     "current_market_value": 58045,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 20394,
-    "market_to_market_pct": 54.16589200818039,
+    "market_to_market_gain": 22325,
+    "market_to_market_pct": 62.5,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 5.09,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 20394
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2474,13 +2586,14 @@
     "current_price": 9.18,
     "current_market_value": 45900,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 15384,
-    "market_to_market_pct": 50.41289815178922,
+    "market_to_market_gain": 18350,
+    "market_to_market_pct": 66.61,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 4.13,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 15384
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2496,13 +2609,14 @@
     "current_price": 60.08,
     "current_market_value": 42056,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 13370,
-    "market_to_market_pct": 46.60810151293314,
+    "market_to_market_gain": 16457,
+    "market_to_market_pct": 64.29,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 3.78,
-    "price_date": "2026-06-09T06:18:55.000Z"
+    "price_date": "2026-06-09T06:18:55.000Z",
+    "unrealised_pl": 13370
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2518,13 +2632,14 @@
     "current_price": 81.01,
     "current_market_value": 30783.800000000003,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 3354.800000000003,
-    "market_to_market_pct": 12.230850559626683,
+    "market_to_market_gain": 3355.4,
+    "market_to_market_pct": 12.23,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 2.71,
-    "price_date": "2026-06-09T05:55:35.000Z"
+    "price_date": "2026-06-09T05:55:35.000Z",
+    "unrealised_pl": 3354.8
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2540,13 +2655,14 @@
     "current_price": 65.84,
     "current_market_value": 46088,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 19400,
-    "market_to_market_pct": 72.69184652278177,
+    "market_to_market_gain": 30863,
+    "market_to_market_pct": 202.71,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 4.17,
-    "price_date": "2026-06-09T06:19:51.000Z"
+    "price_date": "2026-06-09T06:19:51.000Z",
+    "unrealised_pl": 19400
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2562,13 +2678,14 @@
     "current_price": 2.4,
     "current_market_value": 30000,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 4287,
-    "market_to_market_pct": 16.67250029168125,
+    "market_to_market_gain": 2750,
+    "market_to_market_pct": 10.09,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 2.66,
-    "price_date": "2026-06-09T04:39:10.000Z"
+    "price_date": "2026-06-09T04:39:10.000Z",
+    "unrealised_pl": 4287
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2585,12 +2702,13 @@
     "current_market_value": 20120,
     "continuing_mtm_units": null,
     "market_to_market_gain": -80,
-    "market_to_market_pct": -0.39603960396039606,
+    "market_to_market_pct": -0.4,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 1.77,
-    "price_date": "2026-06-09T05:59:50.000Z"
+    "price_date": "2026-06-09T05:59:50.000Z",
+    "unrealised_pl": -80
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2606,13 +2724,14 @@
     "current_price": 8.02,
     "current_market_value": 20050,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 434,
-    "market_to_market_pct": 2.2124796084828713,
+    "market_to_market_gain": 100,
+    "market_to_market_pct": 0.5,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 1.7,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": 434
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2628,13 +2747,14 @@
     "current_price": 101.56,
     "current_market_value": 20312,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 915,
-    "market_to_market_pct": 4.717224313038098,
+    "market_to_market_gain": 1054,
+    "market_to_market_pct": 5.47,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 1.78,
-    "price_date": "2026-06-09T05:40:01.000Z"
+    "price_date": "2026-06-09T05:40:01.000Z",
+    "unrealised_pl": 915
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2650,13 +2770,14 @@
     "current_price": 28,
     "current_market_value": 16800,
     "continuing_mtm_units": null,
-    "market_to_market_gain": -2253,
-    "market_to_market_pct": -11.824909463076681,
+    "market_to_market_gain": -6630,
+    "market_to_market_pct": -28.3,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 1.46,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": -2253
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2672,13 +2793,14 @@
     "current_price": 62.13,
     "current_market_value": 19260.3,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 1813.2999999999993,
-    "market_to_market_pct": 10.393190806442364,
+    "market_to_market_gain": 1556.2,
+    "market_to_market_pct": 8.79,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 1.7,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 1813.3
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2694,13 +2816,14 @@
     "current_price": 3.48,
     "current_market_value": 13920,
     "continuing_mtm_units": null,
-    "market_to_market_gain": -3016,
-    "market_to_market_pct": -17.80821917808219,
+    "market_to_market_gain": -3000,
+    "market_to_market_pct": -17.73,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 1.2,
-    "price_date": "2026-06-09T06:10:14.000Z"
+    "price_date": "2026-06-09T06:10:14.000Z",
+    "unrealised_pl": -3016
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2716,13 +2839,14 @@
     "current_price": 11.31,
     "current_market_value": 22620,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 6217,
-    "market_to_market_pct": 37.90160336523807,
+    "market_to_market_gain": 6260,
+    "market_to_market_pct": 38.26,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 1.97,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": 6217
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2738,13 +2862,14 @@
     "current_price": 37.64,
     "current_market_value": 15620.6,
     "continuing_mtm_units": null,
-    "market_to_market_gain": -416.39999999999964,
-    "market_to_market_pct": -2.596495603915942,
+    "market_to_market_gain": 45.65,
+    "market_to_market_pct": 0.29,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 1.34,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": -416.4
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2760,13 +2885,14 @@
     "current_price": 19.75,
     "current_market_value": 12442.5,
     "continuing_mtm_units": null,
-    "market_to_market_gain": -3459.5,
-    "market_to_market_pct": -21.755125141491636,
+    "market_to_market_gain": -4391.1,
+    "market_to_market_pct": -26.09,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 1.07,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": -3459.5
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2782,13 +2908,14 @@
     "current_price": 195.27,
     "current_market_value": 19527,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 4537,
-    "market_to_market_pct": 30.266844563042028,
+    "market_to_market_gain": 3358,
+    "market_to_market_pct": 20.77,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 1.73,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 4537
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2804,13 +2931,14 @@
     "current_price": 32.84,
     "current_market_value": 14778.000000000002,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 261.0000000000018,
-    "market_to_market_pct": 1.7978921264724241,
+    "market_to_market_gain": 189,
+    "market_to_market_pct": 1.3,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 1.3,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 261
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2826,13 +2954,14 @@
     "current_price": 2.41,
     "current_market_value": 13255,
     "continuing_mtm_units": null,
-    "market_to_market_gain": -269,
-    "market_to_market_pct": -1.9890564921620821,
+    "market_to_market_gain": -330,
+    "market_to_market_pct": -2.43,
     "price_status": "live",
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 1.16,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": -269
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2848,13 +2977,14 @@
     "current_price": 16.09,
     "current_market_value": 13612.14,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 652.1399999999994,
-    "market_to_market_pct": 5.031944444444441,
+    "market_to_market_gain": 423,
+    "market_to_market_pct": 3.21,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 1.21,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": 652.14
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2871,11 +3001,12 @@
     "current_market_value": 16510,
     "continuing_mtm_units": null,
     "market_to_market_gain": -690,
-    "market_to_market_pct": -4,
+    "market_to_market_pct": -4.01,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
-    "portfolio_weight": 1.45
+    "portfolio_weight": 1.45,
+    "unrealised_pl": 3552
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2891,13 +3022,14 @@
     "current_price": 34.27,
     "current_market_value": 14873.180000000002,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 2617.180000000002,
-    "market_to_market_pct": 21.354275456919076,
+    "market_to_market_gain": 1900.92,
+    "market_to_market_pct": 14.65,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 1.3,
-    "price_date": "2026-06-09T06:19:38.000Z"
+    "price_date": "2026-06-09T06:19:38.000Z",
+    "unrealised_pl": 2617.18
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2913,13 +3045,14 @@
     "current_price": 16.17,
     "current_market_value": 14763.210000000001,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 3455.210000000001,
-    "market_to_market_pct": 30.555447470817125,
+    "market_to_market_gain": 839.96,
+    "market_to_market_pct": 6.03,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 1.35,
-    "price_date": "2026-06-09T06:19:58.000Z"
+    "price_date": "2026-06-09T06:19:58.000Z",
+    "unrealised_pl": 3455.21
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2935,13 +3068,14 @@
     "current_price": 98.51,
     "current_market_value": 10048.02,
     "continuing_mtm_units": null,
-    "market_to_market_gain": -444.97999999999956,
-    "market_to_market_pct": -4.240731916515768,
+    "market_to_market_gain": -446.76,
+    "market_to_market_pct": -4.26,
     "price_status": "live",
     "position_status": "changed",
     "cost_status": "complete",
     "portfolio_weight": 0.88,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": -444.98
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2958,12 +3092,13 @@
     "current_market_value": 10215,
     "continuing_mtm_units": null,
     "market_to_market_gain": -45,
-    "market_to_market_pct": -0.43859649122807015,
+    "market_to_market_pct": -0.44,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.89,
-    "price_date": "2026-06-09T06:10:15.000Z"
+    "price_date": "2026-06-09T06:10:15.000Z",
+    "unrealised_pl": -45
   },
   {
     "portfolio_id": "portfolio_2",
@@ -2985,7 +3120,8 @@
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.71,
-    "price_date": "2019-06-28T22:07:38.000Z"
+    "price_date": "2019-06-28T22:07:38.000Z",
+    "unrealised_pl": -10111
   },
   {
     "portfolio_id": "portfolio_2",
@@ -3001,13 +3137,14 @@
     "current_price": 59.07,
     "current_market_value": 14767.5,
     "continuing_mtm_units": null,
-    "market_to_market_gain": 4776.5,
-    "market_to_market_pct": 47.808027224502055,
+    "market_to_market_gain": 4167.5,
+    "market_to_market_pct": 39.32,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 1.35,
-    "price_date": "2026-06-09T05:59:54.000Z"
+    "price_date": "2026-06-09T05:59:54.000Z",
+    "unrealised_pl": 4776.5
   },
   {
     "portfolio_id": "portfolio_2",
@@ -3023,13 +3160,14 @@
     "current_price": 58.72,
     "current_market_value": 8220.8,
     "continuing_mtm_units": null,
-    "market_to_market_gain": -1262.2000000000007,
-    "market_to_market_pct": -13.310133923863765,
+    "market_to_market_gain": -1262.51,
+    "market_to_market_pct": -13.31,
     "price_status": "live",
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.73,
-    "price_date": "2026-06-09T05:59:53.000Z"
+    "price_date": "2026-06-09T05:59:53.000Z",
+    "unrealised_pl": -1262.2
   },
   {
     "portfolio_id": "portfolio_2",
@@ -3046,12 +3184,13 @@
     "current_market_value": 5570,
     "continuing_mtm_units": null,
     "market_to_market_gain": -910,
-    "market_to_market_pct": -14.04320987654321,
+    "market_to_market_pct": -14.04,
     "price_status": "live",
     "position_status": "unchanged",
     "cost_status": "complete",
     "portfolio_weight": 0.48,
-    "price_date": "2026-06-09T06:10:14.000Z"
+    "price_date": "2026-06-09T06:10:14.000Z",
+    "unrealised_pl": -910
   },
   {
     "portfolio_id": "portfolio_2",
@@ -3068,12 +3207,13 @@
     "current_market_value": 5796,
     "continuing_mtm_units": null,
     "market_to_market_gain": 348,
-    "market_to_market_pct": 6.387665198237885,
+    "market_to_market_pct": 6.39,
     "price_status": "live",
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.51,
-    "price_date": "2026-06-09T06:15:31.000Z"
+    "price_date": "2026-06-09T06:15:31.000Z",
+    "unrealised_pl": 348
   },
   {
     "portfolio_id": "portfolio_2",
@@ -3090,11 +3230,12 @@
     "current_market_value": 4020,
     "continuing_mtm_units": null,
     "market_to_market_gain": -150,
-    "market_to_market_pct": -3.597122302158273,
+    "market_to_market_pct": -3.6,
     "price_status": "live",
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.34,
-    "price_date": "2026-06-09T06:10:16.000Z"
+    "price_date": "2026-06-09T06:10:16.000Z",
+    "unrealised_pl": -150
   }
 ]

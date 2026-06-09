@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Shell, HostedNotice } from "@/components/LocalPageShell";
-import StatementReview from "@/components/StatementReview";
+import StatementReview, { type ReversalInfo } from "@/components/StatementReview";
 import ReconcileAssistant from "@/components/ReconcileAssistant";
 import type { ParseResult } from "@/lib/statementParser/types";
 
@@ -15,7 +15,7 @@ export default function UploadPage() {
   const [stage, setStage] = useState<Stage>("pick");
   const [results, setResults] = useState<ParseResult[]>([]);
   const [mergedCount, setMergedCount] = useState(0);
-  const [mergedResults, setMergedResults] = useState<ParseResult[]>([]);
+  const [mergedResults, setMergedResults] = useState<{ result: ParseResult; reversals: ReversalInfo[] }[]>([]);
   const [error, setError] = useState("");
 
   if (MODE !== "local") return <HostedNotice feature="Statement upload" />;
@@ -43,7 +43,10 @@ export default function UploadPage() {
     setStage("review");
   }
 
-  function onMerged() { setMergedCount((c) => c + 1); }
+  function onMerged(result: ParseResult, reversals: ReversalInfo[]) {
+    setMergedCount((c) => c + 1);
+    setMergedResults((prev) => [...prev, { result, reversals }]);
+  }
 
   function discard(idx: number) {
     setResults((r) => r.filter((_, i) => i !== idx));
@@ -52,6 +55,7 @@ export default function UploadPage() {
   function reset() {
     setStage("pick"); setFiles(null); setResults([]); setMergedCount(0); setMergedResults([]); setError("");
   }
+
 
   return (
     <Shell
@@ -105,24 +109,19 @@ export default function UploadPage() {
         <StatementReview
           key={`${result.filename}-${i}`}
           result={result}
-          onMerge={() => { onMerged(); setMergedResults((prev) => [...prev, result]); }}
+          onMerge={(reversals) => onMerged(result, reversals)}
           onDiscard={() => discard(i)}
         />
       ))}
 
       {/* Step 3: Review assistant — one per merged file, focused on just that file */}
-      {mergedResults.map((result, i) => (
+      {mergedResults.map(({ result, reversals }, i) => (
         <div key={`assistant-${result.filename}-${i}`}>
-          <div className="mode-banner mode-local" style={{ marginTop: 12 }}>
-            ✅ <strong>{result.filename}</strong> merged —
-            {result.trades.length > 0 && ` ${result.trades.length} trades`}
-            {result.dividends.length > 0 && ` · ${result.dividends.length} dividends`}
-            {result.cashEntries.length > 0 && ` · ${result.cashEntries.length} cash entries`}
-          </div>
           <ReconcileAssistant
             portfolioId={result.portfolio_id}
             portfolioLabel={result.portfolio_id === "portfolio_1" ? "Portfolio 1" : "Portfolio 2"}
             parseResult={result}
+            reversals={reversals}
           />
         </div>
       ))}

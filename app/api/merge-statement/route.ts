@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ensureLocalOnly } from "@/lib/config";
 import { readDataset, writeDataset } from "@/lib/data";
+import { recalcAll } from "@/lib/recalcEngine";
+import { detectReversals } from "@/lib/statementParser/reversals";
 import type { ParseResult, ParsedTrade, ParsedDividend, ParsedCashEntry } from "@/lib/statementParser";
 import type { TransactionRow, DividendRow, CashLedgerRow } from "@/lib/types";
 
@@ -86,7 +88,10 @@ export async function POST(req: NextRequest) {
     const row: CashLedgerRow = {
       date: c.date,
       portfolio_id: c.portfolio_id as "portfolio_1" | "portfolio_2",
-      broker: result.source.startsWith("stake") ? "Stake" : result.source.startsWith("commsec") ? "CommSec" : "",
+      broker: result.source === "stake_activity_xlsx" || result.source === "stake_income_xlsx" || result.source === "stake_cash_xlsx" ? "Stake"
+            : result.source === "commsec_csv" ? "CommSec"
+            : result.source === "commbank_cash_csv" ? "CommBank"
+            : "",
       description: c.description,
       debit: c.debit,
       credit: c.credit,
@@ -121,55 +126,33 @@ export async function POST(req: NextRequest) {
     filesWritten.push("cash-ledger.json");
   }
 
-  // ── Recalculate summary closing_cash_total and dividends_received_total ──
-  // Do this whenever cash or dividends changed so the dashboard reflects reality.
-  if (newCashRows.length > 0 || newDivRows.length > 0) {
-    const summary = await readDataset("summary");
-    const updatedDiv = newDivRows.length > 0
-      ? [...existingDiv, ...newDivRows]
-      : existingDiv;
+  // ── Detect reversals in new cash rows ────────────────────────────────────
+  // Cross-reference against the full updated ledger so cross-file pairs are caught.
+  const allLedgerForReversals = [...(existingCash as CashLedgerRow[]), ...newCashRows];
+  const reversalPairs = newCashRows.length > 0
+    ? detectReversals(newCashRows, allLedgerForReversals)
+    : [];
 
-    const portfolioIds = [...new Set([
-      ...newCashRows.map((r) => r.portfolio_id),
-      ...newDivRows.map((r) => r.portfolio_id),
-    ])];
-
-    const updatedSummary = summary.map((s) => {
-      if (!portfolioIds.includes(s.portfolio_id) && s.portfolio_id !== "combined") return s;
-
-      const pid = s.portfolio_id;
-      const cashRows = (pid === "combined"
-        ? updatedCashLedger
-        : updatedCashLedger.filter((r) => r.portfolio_id === pid)) as CashLedgerRow[];
-
-      // Use the latest balance from cash ledger rows that have a balance value
-      const rowsWithBalance = cashRows.filter((r) => r.balance != null).sort((a, b) => a.date.localeCompare(b.date));
-      const latestBalance = rowsWithBalance.length > 0
-        ? rowsWithBalance[rowsWithBalance.length - 1].balance!
-        : null;
-
-      // Sum dividends received
-      const divRows = (pid === "combined"
-        ? updatedDiv
-        : updatedDiv.filter((r) => r.portfolio_id === pid)) as DividendRow[];
-      const divTotal = divRows.reduce((sum, r) => sum + (r.cash_received ?? 0), 0);
-
-      return {
-        ...s,
-        ...(latestBalance != null ? { closing_cash_total: latestBalance } : {}),
-        ...(divRows.length > 0 ? { dividends_received_total: divTotal } : {}),
-        as_of_date: new Date().toISOString().slice(0, 10),
-      };
-    });
-
-    await writeDataset("summary", updatedSummary);
-    filesWritten.push("summary.json");
+  // ── Comprehensive recalculation ─────────────────────────────────────────
+  const recalc = await recalcAll(newTxRows, { newDivRows, newCashRows });
+  for (const f of recalc.filesWritten) {
+    if (!filesWritten.includes(f)) filesWritten.push(f);
   }
 
   return NextResponse.json({
     ok: true,
     filesWritten,
-    added: { trades: addedTrades, dividends: addedDiv, cash: addedCash },
+    added:   { trades: addedTrades,   dividends: addedDiv,   cash: addedCash   },
     skipped: { trades: skippedTrades, dividends: skippedDiv, cash: skippedCash },
+    // Per-portfolio stat changes from recalc — shown in the merge confirmation banner
+    statsUpdated: recalc.changes.summaryUpdated ?? [],
+    // Reversal pairs — returned to UI for LLM explanation
+    reversals: reversalPairs.map((p) => ({
+      amount: p.amount,
+      daysBetween: p.daysBetween,
+      reason: p.reason,
+      debit:  { date: p.debit.date,  description: p.debit.description,  amount: p.debit.debit },
+      credit: { date: p.credit.date, description: p.credit.description, amount: p.credit.credit },
+    })),
   });
 }

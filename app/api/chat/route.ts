@@ -60,6 +60,7 @@ export async function POST(req: NextRequest) {
     mode?: "general" | "reconcile" | "upload-review";
     messages?: ChatMsg[];
     parseResult?: ParseResult;
+    reversals?: import("@/lib/chatContext").ReversalSummary[];
   } = {};
   try { body = await req.json(); } catch { /* ignore */ }
 
@@ -71,7 +72,7 @@ export async function POST(req: NextRequest) {
 
   let context: string;
   if (mode === "upload-review" && body.parseResult) {
-    context = buildUploadReviewContext(body.parseResult);
+    context = buildUploadReviewContext(body.parseResult, body.reversals ?? []);
   } else if (mode === "reconcile") {
     context = await buildReconcileContext(portfolioId);
   } else {

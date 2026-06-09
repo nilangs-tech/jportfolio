@@ -142,8 +142,11 @@ export interface HoldingRow {
   price_status?: PriceStatus;
   opening_units?: number | null;
   continuing_mtm_units?: number | null;
+  /** FY price movement: (current_price − opening_price) × continuing_mtm_units */
   market_to_market_gain?: number | null;
   market_to_market_pct?: number | null;
+  /** Unrealised P&L vs cost base: current_market_value − cost_base */
+  unrealised_pl?: number | null;
   portfolio_weight?: number;
   position_status?: "new" | "closed" | "changed" | "unchanged" | "delisted" | "review";
   realized_pl?: number | null;

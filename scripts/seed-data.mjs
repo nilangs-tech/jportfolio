@@ -51,8 +51,12 @@ function buildP1Holdings() {
     const openUnits = od ? od[0] : null;
     const openPrice = OPEN_PRICES[code] ?? null;
     const mtmUnits = openUnits !== null ? Math.min(units, openUnits) : null;
-    const mtmGain = (price !== null && openPrice !== null && mtmUnits !== null) ? (price-openPrice)*mtmUnits : null;
-    const mtmPct = (openPrice !== null && price !== null) ? (price-openPrice)/openPrice*100 : null;
+    // Existing positions: MTM vs 1 Jul 2025 opening price × continuing units
+    // New FY positions (no opening price): MTM vs avg cost (performance since purchase)
+    const refPrice = openPrice ?? avg;
+    const refUnits = openPrice !== null ? (mtmUnits ?? units) : units;
+    const mtmGain = (price !== null && refPrice !== null) ? (price-refPrice)*refUnits : null;
+    const mtmPct = (refPrice !== null && price !== null) ? (price-refPrice)/refPrice*100 : null;
     let status = "unchanged";
     if (NEW_SET.has(code)) status = "new";
     else if (openAvg && Math.abs(avg-openAvg) > 0.001) status = "changed";
@@ -63,6 +67,7 @@ function buildP1Holdings() {
       opening_price:openPrice, opening_units:openUnits,
       opening_market_value: (openPrice!==null && openUnits!==null) ? round2(openUnits*openPrice) : null,
       current_price:price, current_market_value:round2(mktval),
+      unrealised_pl: round2(mktval - basis),
       continuing_mtm_units:mtmUnits,
       market_to_market_gain: mtmGain!==null ? round2(mtmGain) : null,
       market_to_market_pct: mtmPct!==null ? round2(mtmPct) : null,
@@ -134,6 +139,7 @@ function buildP2Holdings() {
       units:h.units, cost_base:h.basis, avg_cost:h.avg,
       opening_price:h.openPrice, opening_units:null, opening_market_value:null,
       current_price:h.price, current_market_value:h.mktval,
+      unrealised_pl: round2(h.mktval - h.basis),
       continuing_mtm_units:null,
       market_to_market_gain:h.mtmGain, market_to_market_pct:h.mtmPct,
       price_status:"live",

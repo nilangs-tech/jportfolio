@@ -30,16 +30,23 @@ export function parseMoney(value: unknown): number {
   return parseFloat(s) || 0;
 }
 
-/** Classify a cash description into a category. */
+/** Classify a cash description into a category.
+ *
+ *  ORDER MATTERS: more-specific rules must come before general ones.
+ *  "pension" must be checked before "transfer" because descriptions often
+ *  read "Transfer To … Monthly Pension" — the word "transfer" would match
+ *  first otherwise and swallow the pension classification.
+ */
 export function classifyCash(desc: string): string {
   const d = desc.toLowerCase();
-  if (/^[bs]\s+\d|trade|brokerage/.test(d)) return "trade";
-  if (/divid|distribution|drp/.test(d)) return "dividend";
+  if (/^[bs]\s+\d|trade|brokerage/.test(d))                      return "trade";
+  if (/divid|distribution|drp/.test(d))                           return "dividend";
+  // Pension / superannuation — check BEFORE generic transfer
+  if (/pension|superannuation|super\b/.test(d))                   return "pension";
+  if (/refund|ato\b|tax.?return/.test(d))                         return "ato_refund";
+  if (/interest/.test(d))                                          return "interest";
+  if (/fee|asic|gst/.test(d))                                     return "fee";
   if (/transfer|payee|direct credit|direct debit|deposit|withdrawal/.test(d)) return "transfer";
-  if (/interest/.test(d)) return "interest";
-  if (/fee|asic|gst/.test(d)) return "fee";
-  if (/refund|ato|tax/.test(d)) return "ato_refund";
-  if (/pension|superannuation/.test(d)) return "pension";
   return "other";
 }
 

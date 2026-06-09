@@ -82,5 +82,21 @@
     ],
     "status": "success",
     "warning_count": 0
+  },
+  {
+    "run_id": "run-1781003637119",
+    "started_at": "2026-06-09T11:13:57.119Z",
+    "finished_at": "2026-06-09T11:13:57.500Z",
+    "portfolio_id": "portfolio_1",
+    "llm_provider": "none",
+    "uploaded_files": [],
+    "generated_outputs": [
+      "cash-ledger.json",
+      "transactions.json",
+      "dividends-received.json",
+      "data-quality.json"
+    ],
+    "status": "warning",
+    "warning_count": 1
   }
 ]
