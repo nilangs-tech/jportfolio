@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { Provider } from "@/components/LlmProviderSelect";
 import LlmProviderSelect from "@/components/LlmProviderSelect";
+import type { ParseResult } from "@/lib/statementParser/types";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -168,11 +169,11 @@ function MessageBubble({
 interface Props {
   portfolioId: string;
   portfolioLabel: string;
-  /** Pass the reconcile result so the assistant knows what was just processed */
-  runSummary?: string;
+  /** When provided, the assistant reviews only this freshly-merged file (upload-review mode) */
+  parseResult?: ParseResult;
 }
 
-export default function ReconcileAssistant({ portfolioId, portfolioLabel, runSummary }: Props) {
+export default function ReconcileAssistant({ portfolioId, portfolioLabel, parseResult }: Props) {
   const [provider, setProvider] = useState<Provider>("anthropic");
   const [messages, setMessages] = useState<MsgWithAmendments[]>([]);
   const [allAmendments, setAllAmendments] = useState<Record<string, Amendment>>({});
@@ -186,13 +187,20 @@ export default function ReconcileAssistant({ portfolioId, portfolioLabel, runSum
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // Auto-trigger initial analysis when component mounts
+  // Auto-trigger once on mount with a context-specific opening message
   useEffect(() => {
     if (initialized) return;
     setInitialized(true);
-    const initMsg = runSummary
-      ? `Reconciliation just completed for ${portfolioLabel}. ${runSummary}\n\nPlease analyse the results, check for any discrepancies or uncategorised entries, and let me know what needs attention.`
-      : `Please analyse the reconciliation output for ${portfolioLabel} and identify any discrepancies, uncategorised entries, or items that need review.`;
+    let initMsg: string;
+    if (parseResult) {
+      const parts: string[] = [`I just uploaded and merged **${parseResult.filename}** into ${portfolioLabel}.`];
+      if (parseResult.trades.length)      parts.push(`${parseResult.trades.length} trade(s)`);
+      if (parseResult.dividends.length)   parts.push(`${parseResult.dividends.length} dividend(s)`);
+      if (parseResult.cashEntries.length) parts.push(`${parseResult.cashEntries.length} cash entries`);
+      initMsg = parts.join(" — ") + " were added.\n\nPlease review these specific records and let me know if anything looks wrong, uncategorised, or needs correction.";
+    } else {
+      initMsg = `Please analyse the reconciliation data for ${portfolioLabel} and identify any discrepancies, uncategorised entries, or items that need review.`;
+    }
     sendMessage(initMsg, true);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -208,10 +216,11 @@ export default function ReconcileAssistant({ portfolioId, portfolioLabel, runSum
     const apiMessages = newMessages.map((m) => ({ role: m.role, content: m.raw }));
 
     try {
+      const mode = parseResult ? "upload-review" : "reconcile";
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ portfolioId, provider, mode: "reconcile", messages: apiMessages }),
+        body: JSON.stringify({ portfolioId, provider, mode, messages: apiMessages, parseResult }),
       });
       const data = await res.json();
       const replyRaw: string = data.ok ? data.reply : `⚠️ ${data.error}`;

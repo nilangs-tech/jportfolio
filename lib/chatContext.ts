@@ -1,6 +1,7 @@
 import "server-only";
 import { readDataset } from "./data";
 import { readPythonOutput, listStatements } from "./statementReader";
+import type { ParseResult } from "./statementParser";
 
 /**
  * Builds a compact, privacy-aware context for the general portfolio chat LLM.
@@ -114,6 +115,30 @@ export async function buildReconcileContext(portfolioId: string): Promise<string
       parts.push(`STATEMENT_FILES_IN_VAULT:\n` + stmts.join("\n"));
     }
   }
+
+  return parts.join("\n\n");
+}
+
+/**
+ * Builds a focused context from a just-merged ParseResult.
+ * Used by upload-review mode — LLM only sees what was just added, nothing else.
+ */
+export function buildUploadReviewContext(result: ParseResult): string {
+  const parts: string[] = [];
+  parts.push(`FILE: ${result.filename}`);
+  parts.push(`SOURCE: ${result.source}`);
+  parts.push(`PORTFOLIO: ${result.portfolio_id}`);
+
+  if (result.trades.length > 0)
+    parts.push(`TRADES_ADDED (${result.trades.length}):\n` + JSON.stringify(result.trades, null, 0));
+  if (result.dividends.length > 0)
+    parts.push(`DIVIDENDS_ADDED (${result.dividends.length}):\n` + JSON.stringify(result.dividends, null, 0));
+  if (result.cashEntries.length > 0) {
+    const sample = result.cashEntries.slice(0, 60);
+    parts.push(`CASH_ENTRIES_ADDED (${sample.length} of ${result.cashEntries.length}):\n` + JSON.stringify(sample, null, 0));
+  }
+  if (result.warnings.length > 0)
+    parts.push(`PARSE_WARNINGS:\n` + result.warnings.join("\n"));
 
   return parts.join("\n\n");
 }

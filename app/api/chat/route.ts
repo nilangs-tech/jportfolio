@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ensureLocalOnly, serverConfig, type LlmProvider } from "@/lib/config";
 import { llmChat, type ChatMsg } from "@/lib/llm/providers";
-import { buildChatContext, buildReconcileContext } from "@/lib/chatContext";
+import { buildChatContext, buildReconcileContext, buildUploadReviewContext } from "@/lib/chatContext";
+import type { ParseResult } from "@/lib/statementParser";
 
 const RECONCILE_SYSTEM = `\
 You are the JPortfolio reconciliation assistant. Your job is to help the user verify and correct the \
@@ -56,8 +57,9 @@ export async function POST(req: NextRequest) {
   let body: {
     portfolioId?: string;
     provider?: LlmProvider;
-    mode?: "general" | "reconcile";
+    mode?: "general" | "reconcile" | "upload-review";
     messages?: ChatMsg[];
+    parseResult?: ParseResult;
   } = {};
   try { body = await req.json(); } catch { /* ignore */ }
 
@@ -67,9 +69,14 @@ export async function POST(req: NextRequest) {
   const messages = body.messages ?? [];
   const lastUser = [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
 
-  const context = mode === "reconcile"
-    ? await buildReconcileContext(portfolioId)
-    : await buildChatContext(portfolioId, lastUser);
+  let context: string;
+  if (mode === "upload-review" && body.parseResult) {
+    context = buildUploadReviewContext(body.parseResult);
+  } else if (mode === "reconcile") {
+    context = await buildReconcileContext(portfolioId);
+  } else {
+    context = await buildChatContext(portfolioId, lastUser);
+  }
 
   const systemContent = (mode === "reconcile" ? RECONCILE_SYSTEM : GENERAL_SYSTEM) +
     "\n\nCONTEXT:\n" + context;

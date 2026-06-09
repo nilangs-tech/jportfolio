@@ -67,5 +67,20 @@
     ],
     "status": "success",
     "warning_count": 0
+  },
+  {
+    "run_id": "run-1780995302004",
+    "started_at": "2026-06-09T08:55:02.004Z",
+    "finished_at": "2026-06-09T08:55:02.027Z",
+    "portfolio_id": "portfolio_1",
+    "llm_provider": "anthropic",
+    "uploaded_files": [],
+    "generated_outputs": [
+      "cash-ledger.json",
+      "transactions.json",
+      "dividends-received.json"
+    ],
+    "status": "success",
+    "warning_count": 0
   }
 ]
