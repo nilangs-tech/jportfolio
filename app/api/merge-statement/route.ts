@@ -114,9 +114,56 @@ export async function POST(req: NextRequest) {
     await writeDataset("dividends-received", [...existingDiv, ...newDivRows].sort((a, b) => a.payment_date.localeCompare(b.payment_date)));
     filesWritten.push("dividends-received.json");
   }
+  let updatedCashLedger = existingCash;
   if (newCashRows.length > 0) {
-    await writeDataset("cash-ledger", sortByDate([...existingCash, ...newCashRows]));
+    updatedCashLedger = sortByDate([...existingCash, ...newCashRows]);
+    await writeDataset("cash-ledger", updatedCashLedger);
     filesWritten.push("cash-ledger.json");
+  }
+
+  // ── Recalculate summary closing_cash_total and dividends_received_total ──
+  // Do this whenever cash or dividends changed so the dashboard reflects reality.
+  if (newCashRows.length > 0 || newDivRows.length > 0) {
+    const summary = await readDataset("summary");
+    const updatedDiv = newDivRows.length > 0
+      ? [...existingDiv, ...newDivRows]
+      : existingDiv;
+
+    const portfolioIds = [...new Set([
+      ...newCashRows.map((r) => r.portfolio_id),
+      ...newDivRows.map((r) => r.portfolio_id),
+    ])];
+
+    const updatedSummary = summary.map((s) => {
+      if (!portfolioIds.includes(s.portfolio_id) && s.portfolio_id !== "combined") return s;
+
+      const pid = s.portfolio_id;
+      const cashRows = (pid === "combined"
+        ? updatedCashLedger
+        : updatedCashLedger.filter((r) => r.portfolio_id === pid)) as CashLedgerRow[];
+
+      // Use the latest balance from cash ledger rows that have a balance value
+      const rowsWithBalance = cashRows.filter((r) => r.balance != null).sort((a, b) => a.date.localeCompare(b.date));
+      const latestBalance = rowsWithBalance.length > 0
+        ? rowsWithBalance[rowsWithBalance.length - 1].balance!
+        : null;
+
+      // Sum dividends received
+      const divRows = (pid === "combined"
+        ? updatedDiv
+        : updatedDiv.filter((r) => r.portfolio_id === pid)) as DividendRow[];
+      const divTotal = divRows.reduce((sum, r) => sum + (r.cash_received ?? 0), 0);
+
+      return {
+        ...s,
+        ...(latestBalance != null ? { closing_cash_total: latestBalance } : {}),
+        ...(divRows.length > 0 ? { dividends_received_total: divTotal } : {}),
+        as_of_date: new Date().toISOString().slice(0, 10),
+      };
+    });
+
+    await writeDataset("summary", updatedSummary);
+    filesWritten.push("summary.json");
   }
 
   return NextResponse.json({
