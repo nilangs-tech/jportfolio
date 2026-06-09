@@ -47,9 +47,12 @@ async function anthropicChat(messages: ChatMsg[]): Promise<LlmResult> {
       },
       body: JSON.stringify({ model: serverConfig.anthropicModel, max_tokens: 1024, system, messages: convo }),
     });
-    const json = await res.json();
-    if (!res.ok) return { ok: false, provider: "anthropic", model: serverConfig.anthropicModel, text: "", error: json?.error?.message ?? `HTTP ${res.status}` };
-    const text = Array.isArray(json.content) ? json.content.map((c: { text?: string }) => c.text ?? "").join("") : "";
+    const raw = await res.text();
+    let json: Record<string, unknown>;
+    try { json = JSON.parse(raw); } catch { return { ok: false, provider: "anthropic", text: "", error: `Non-JSON response: ${raw.slice(0, 200)}` }; }
+    if (!res.ok) return { ok: false, provider: "anthropic", model: serverConfig.anthropicModel, text: "", error: (json?.error as { message?: string })?.message ?? `HTTP ${res.status}` };
+    const content = json.content;
+    const text = Array.isArray(content) ? (content as { text?: string }[]).map((c) => c.text ?? "").join("") : "";
     return { ok: true, provider: "anthropic", model: serverConfig.anthropicModel, text };
   } catch (e) {
     return { ok: false, provider: "anthropic", text: "", error: String(e) };
