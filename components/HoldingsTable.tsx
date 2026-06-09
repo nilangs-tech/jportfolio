@@ -2,7 +2,7 @@
 import { useMemo, useState } from "react";
 import type { HoldingRow } from "@/lib/types";
 
-type SortKey = "code" | "units" | "avg" | "basis" | "oprice" | "price" | "mtmgain" | "mtmpct" | "mktval" | "unr" | "unrpct" | "weight";
+type SortKey = "code" | "units" | "avg" | "basis" | "oprice" | "price" | "mktval" | "unr" | "unrpct" | "weight";
 type FilterKey = "all" | "new" | "changed" | "hold" | "gain" | "loss";
 
 const n = (v: number, d = 0) => v.toLocaleString("en-AU", { minimumFractionDigits: d, maximumFractionDigits: d });
@@ -35,8 +35,6 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
         case "basis": case "weight": return h.cost_base ?? 0;
         case "oprice": return h.opening_price ?? 0;
         case "price": return h.current_price ?? 0;
-        case "mtmgain": return h.market_to_market_gain ?? 0;
-        case "mtmpct": return h.market_to_market_pct ?? 0;
         case "mktval": return h.current_market_value ?? 0;
         case "unr": return unr(h);
         case "unrpct": return (h.cost_base ?? 0) > 0 ? (unr(h) / (h.cost_base ?? 1)) * 100 : 0;
@@ -77,10 +75,8 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
               {th("units", "Units")}
               {th("avg", "Avg Cost")}
               {th("basis", "Cost Basis")}
-              {th("oprice", "Open Px")}
+              {th("oprice", "Avg Cost Px")}
               {th("price", "Curr Px")}
-              {th("mtmgain", "FY26 Mkt Δ $")}
-              {th("mtmpct", "FY26 Mkt Δ %")}
               {th("mktval", "Mkt Value")}
               {th("unr", "Unr. P&L $")}
               {th("unrpct", "Unr. P&L %")}
@@ -104,10 +100,8 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
                   <td className="right">{n(h.units)}</td>
                   <td className="right">${(h.avg_cost ?? 0).toFixed(4)}</td>
                   <td className="right"><div className="mini-bar-wrap"><div className="mini-bar" style={{ width: bW, background: "#bfdbfe" }} />${n(h.cost_base ?? 0)}</div></td>
-                  <td className="right">{h.opening_price != null ? `$${h.opening_price.toFixed(3)}` : <span style={{ color: "#d1d5db" }}>New</span>}</td>
+                  <td className="right">{h.avg_cost != null ? `$${h.avg_cost.toFixed(3)}` : "—"}</td>
                   <td className="right" style={{ fontWeight: 600 }}>{h.current_price != null ? `$${h.current_price.toFixed(3)}` : "—"}</td>
-                  <td className="right">{h.market_to_market_gain != null ? <span style={{ color: h.market_to_market_gain >= 0 ? "var(--green)" : "var(--red)", fontWeight: 700 }}>{h.market_to_market_gain >= 0 ? "+" : "−"}${n(Math.abs(h.market_to_market_gain))}</span> : <span style={{ color: "#d1d5db" }}>—</span>}</td>
-                  <td className="right">{h.market_to_market_pct != null ? <span style={{ color: h.market_to_market_pct >= 0 ? "var(--green)" : "var(--red)", fontWeight: 700 }}>{h.market_to_market_pct >= 0 ? "+" : ""}{h.market_to_market_pct.toFixed(1)}%</span> : <span style={{ color: "#d1d5db" }}>—</span>}</td>
                   <td className="right"><div className="mini-bar-wrap"><div className="mini-bar" style={{ width: bW, background: unr >= 0 ? "#bbf7d0" : "#fecaca" }} />${n(mkt)}</div></td>
                   <td className="right" style={{ color: unrColor, fontWeight: 700 }}>{unr >= 0 ? "+" : "−"}${n(Math.abs(unr))}</td>
                   <td className="right" style={{ color: unrColor, fontWeight: 700 }}>{unrpct >= 0 ? "+" : ""}{unrpct.toFixed(1)}%</td>
