@@ -45,7 +45,9 @@ async function anthropicChat(messages: ChatMsg[]): Promise<LlmResult> {
         "x-api-key": serverConfig.anthropicKey,
         "anthropic-version": "2023-06-01",
       },
-      body: JSON.stringify({ model: serverConfig.anthropicModel, max_tokens: 1024, system, messages: convo }),
+      // Truncate system prompt if it exceeds ~18k chars (~4k tokens) to stay under rate limits
+      const safeSystem = system.length > 18000 ? system.slice(0, 18000) + "\n\n[context truncated to fit token limit]" : system;
+      body: JSON.stringify({ model: serverConfig.anthropicModel, max_tokens: 1024, system: safeSystem, messages: convo }),
     });
     const raw = await res.text();
     let json: Record<string, unknown>;

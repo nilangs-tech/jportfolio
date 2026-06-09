@@ -67,12 +67,33 @@ export async function buildReconcileContext(portfolioId: string): Promise<string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sum = (summary as any[]).filter((s) => wanted(s.portfolio_id));
 
+  // Slim row helper — drop large/redundant fields to save tokens
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const slim = (rows: any[], keep?: string[]) =>
+    rows.map((r) => {
+      if (!keep) return r;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const out: Record<string, any> = {};
+      for (const k of keep) if (k in r) out[k] = r[k];
+      return out;
+    });
+
   const parts: string[] = [];
 
   parts.push(`PORTFOLIO_SUMMARY:\n` + JSON.stringify(sum, null, 0));
-  parts.push(`CASH_LEDGER (${cl.length} rows — what dashboard shows):\n` + JSON.stringify(cl, null, 0));
-  parts.push(`TRANSACTIONS (${Math.min(tx.length, 60)} of ${tx.length} rows):\n` + JSON.stringify(tx.slice(0, 60), null, 0));
-  parts.push(`DIVIDENDS_RECEIVED (${div.length} rows):\n` + JSON.stringify(div, null, 0));
+
+  // Cash ledger: limit to 50 most recent rows, keep essential fields only
+  const clSlim = slim(cl.slice(-50), ["date","description","category","debit","credit","balance","portfolio_id"]);
+  parts.push(`CASH_LEDGER (showing ${clSlim.length} of ${cl.length} rows, most recent):\n` + JSON.stringify(clSlim, null, 0));
+
+  // Transactions: limit to 40 rows
+  const txSlim = slim(tx.slice(-40), ["date","symbol","type","units","price","brokerage","portfolio_id"]);
+  parts.push(`TRANSACTIONS (showing ${txSlim.length} of ${tx.length} rows, most recent):\n` + JSON.stringify(txSlim, null, 0));
+
+  // Dividends: limit to 30 rows
+  const divSlim = slim(div.slice(-30), ["date","symbol","amount","portfolio_id"]);
+  parts.push(`DIVIDENDS_RECEIVED (showing ${divSlim.length} of ${div.length} rows, most recent):\n` + JSON.stringify(divSlim, null, 0));
+
   parts.push(`CASH_CLASSIFICATION:\n` + JSON.stringify(cc, null, 0));
   parts.push(`DATA_QUALITY_WARNINGS:\n` + JSON.stringify(dqW, null, 0));
   parts.push(`RECENT_RECONCILIATION_RUNS:\n` + JSON.stringify(runs, null, 0));
@@ -82,9 +103,9 @@ export async function buildReconcileContext(portfolioId: string): Promise<string
     const py = await readPythonOutput(portfolioId);
     if (py) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const cashSample = Array.isArray(py.cash_ledger) ? (py.cash_ledger as any[]).slice(0, 40) : [];
+      const cashSample = Array.isArray(py.cash_ledger) ? (py.cash_ledger as any[]).slice(0, 20) : [];
       parts.push(
-        `PYTHON_ENGINE_RAW (for comparison — summary + first 40 cash_ledger entries before adaptation):\n` +
+        `PYTHON_ENGINE_RAW (summary + first 20 cash_ledger entries before adaptation):\n` +
         JSON.stringify({ summary: py.summary, cash_ledger_sample: cashSample }, null, 0)
       );
     }
