@@ -20,5 +20,19 @@
     "area": "source",
     "message": "Dataset seeded from HTML prototype (8 Jun 2026). Re-run reconciliation to regenerate from statements.",
     "resolution_status": "open"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "severity": "warning",
+    "area": "source",
+    "message": "Python engine exited 9009: Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Apps > Advanced app settings > App execution aliases.\r\n",
+    "resolution_status": "open"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "severity": "warning",
+    "area": "source",
+    "message": "Python engine exited 9009: Python was not found; run without arguments to install from the Microsoft Store, or disable this shortcut from Settings > Apps > Advanced app settings > App execution aliases.\r\n",
+    "resolution_status": "open"
   }
 ]

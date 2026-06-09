@@ -20,5 +20,52 @@
     ],
     "status": "success",
     "warning_count": 0
+  },
+  {
+    "run_id": "run-1780993642105",
+    "started_at": "2026-06-09T08:27:22.105Z",
+    "finished_at": "2026-06-09T08:27:22.489Z",
+    "portfolio_id": "portfolio_1",
+    "llm_provider": "anthropic",
+    "uploaded_files": [],
+    "generated_outputs": [
+      "cash-ledger.json",
+      "transactions.json",
+      "dividends-received.json",
+      "data-quality.json"
+    ],
+    "status": "warning",
+    "warning_count": 1
+  },
+  {
+    "run_id": "run-1780994231782",
+    "started_at": "2026-06-09T08:37:11.782Z",
+    "finished_at": "2026-06-09T08:37:12.087Z",
+    "portfolio_id": "portfolio_1",
+    "llm_provider": "anthropic",
+    "uploaded_files": [],
+    "generated_outputs": [
+      "cash-ledger.json",
+      "transactions.json",
+      "dividends-received.json",
+      "data-quality.json"
+    ],
+    "status": "warning",
+    "warning_count": 1
+  },
+  {
+    "run_id": "run-1780994263300",
+    "started_at": "2026-06-09T08:37:43.300Z",
+    "finished_at": "2026-06-09T08:37:43.315Z",
+    "portfolio_id": "portfolio_1",
+    "llm_provider": "anthropic",
+    "uploaded_files": [],
+    "generated_outputs": [
+      "cash-ledger.json",
+      "transactions.json",
+      "dividends-received.json"
+    ],
+    "status": "success",
+    "warning_count": 0
   }
 ]

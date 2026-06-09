@@ -1,272 +1,90 @@
 [
   {
-    "payment_date": "2026-06-08",
+    "payment_date": "2025-04-09",
     "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "FMG",
-    "name": "FMG",
-    "cash_received": 15840,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "BHP",
-    "name": "BHP",
-    "cash_received": 11138,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "STO",
-    "name": "STO",
-    "cash_received": 10091,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "RIO",
-    "name": "RIO",
-    "cash_received": 8924,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "BSL",
-    "name": "BSL",
-    "cash_received": 7925,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "WOW",
-    "name": "WOW",
-    "cash_received": 6290,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "QBE",
-    "name": "QBE",
-    "cash_received": 5902,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "TLS",
-    "name": "TLS",
-    "cash_received": 4210,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "QAN",
-    "name": "QAN",
-    "cash_received": 4158,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "PAI",
-    "name": "PAI",
-    "cash_received": 4021,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "NHC",
-    "name": "NHC",
-    "cash_received": 3200,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "SHL",
-    "name": "SHL",
-    "cash_received": 2658,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "S32",
-    "name": "S32",
-    "cash_received": 2447,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "EDV",
-    "name": "EDV",
-    "cash_received": 2376,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "AZJ",
-    "name": "AZJ",
-    "cash_received": 2090,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "ANZ",
-    "name": "ANZ",
-    "cash_received": 2053,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "IAG",
-    "name": "IAG",
-    "cash_received": 1932,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "WOR",
-    "name": "WOR",
-    "cash_received": 1908,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "MQG",
-    "name": "MQG",
-    "cash_received": 1776,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "symbol": "WDS",
-    "name": "WDS",
-    "cash_received": 1653,
-    "source": "FY2026 aggregate (seed)"
-  },
-  {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_2",
     "broker": "Stake",
-    "symbol": "MXT",
-    "name": "MXT",
-    "cash_received": 4239,
-    "source": "FY2026 aggregate (seed)"
+    "description": "Dividend - IVV Dividend",
+    "cash_received": 8.01,
+    "source": "Stake CashTransactionFY26.xlsx"
   },
   {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_2",
+    "payment_date": "2025-04-14",
+    "portfolio_id": "portfolio_1",
     "broker": "Stake",
-    "symbol": "KKC",
-    "name": "KKC",
-    "cash_received": 3816,
-    "source": "FY2026 aggregate (seed)"
+    "description": "Dividend - KKC Dividend",
+    "cash_received": 66.8,
+    "source": "Stake CashTransactionFY26.xlsx"
   },
   {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_2",
+    "payment_date": "2025-04-16",
+    "portfolio_id": "portfolio_1",
     "broker": "Stake",
-    "symbol": "AYLD",
-    "name": "AYLD",
-    "cash_received": 3296,
-    "source": "FY2026 aggregate (seed)"
+    "description": "Dividend - UMAX Dividend",
+    "cash_received": 69.83,
+    "source": "Stake CashTransactionFY26.xlsx"
   },
   {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_2",
+    "payment_date": "2025-04-16",
+    "portfolio_id": "portfolio_1",
     "broker": "Stake",
-    "symbol": "QRI",
-    "name": "QRI",
-    "cash_received": 2784,
-    "source": "FY2026 aggregate (seed)"
+    "description": "Dividend - VAS Dividend",
+    "cash_received": 36.37,
+    "source": "Stake CashTransactionFY26.xlsx"
   },
   {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_2",
+    "payment_date": "2025-05-01",
+    "portfolio_id": "portfolio_1",
     "broker": "Stake",
-    "symbol": "PCI",
-    "name": "PCI",
-    "cash_received": 2519,
-    "source": "FY2026 aggregate (seed)"
+    "description": "Dividend - BKW Dividend",
+    "cash_received": 250,
+    "source": "Stake CashTransactionFY26.xlsx"
   },
   {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_2",
+    "payment_date": "2025-05-14",
+    "portfolio_id": "portfolio_1",
     "broker": "Stake",
-    "symbol": "GCI",
-    "name": "GCI",
-    "cash_received": 2457,
-    "source": "FY2026 aggregate (seed)"
+    "description": "Dividend - KKC Dividend",
+    "cash_received": 66.8,
+    "source": "Stake CashTransactionFY26.xlsx"
   },
   {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_2",
+    "payment_date": "2025-05-14",
+    "portfolio_id": "portfolio_1",
     "broker": "Stake",
-    "symbol": "PL8",
-    "name": "PL8",
-    "cash_received": 2239,
-    "source": "FY2026 aggregate (seed)"
+    "description": "Dividend - SOL Dividend",
+    "cash_received": 176,
+    "source": "Stake CashTransactionFY26.xlsx"
   },
   {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_2",
+    "payment_date": "2025-06-03",
+    "portfolio_id": "portfolio_1",
     "broker": "Stake",
-    "symbol": "NHC",
-    "name": "NHC",
-    "cash_received": 2225,
-    "source": "FY2026 aggregate (seed)"
+    "description": "Dividend - DDR Dividend",
+    "cash_received": 346.5,
+    "source": "Stake CashTransactionFY26.xlsx"
   },
   {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_2",
+    "payment_date": "2025-06-10",
+    "portfolio_id": "portfolio_1",
     "broker": "Stake",
-    "symbol": "WLE",
-    "name": "WLE",
-    "cash_received": 1968,
-    "source": "FY2026 aggregate (seed)"
+    "description": "Dividend - WPR Dividend",
+    "cash_received": 288.4,
+    "source": "Stake CashTransactionFY26.xlsx"
   },
   {
-    "payment_date": "2026-06-08",
-    "portfolio_id": "portfolio_2",
+    "payment_date": "2025-06-12",
+    "portfolio_id": "portfolio_1",
     "broker": "Stake",
-    "symbol": "BHP",
-    "name": "BHP",
-    "cash_received": 1451,
-    "source": "FY2026 aggregate (seed)"
+    "description": "Dividend - RMD Dividend",
+    "cash_received": 28.98,
+    "source": "Stake CashTransactionFY26.xlsx"
+  },
+  {
+    "payment_date": "2025-06-13",
+    "portfolio_id": "portfolio_1",
+    "broker": "Stake",
+    "description": "Dividend - KKC Dividend",
+    "cash_received": 66.8,
+    "source": "Stake CashTransactionFY26.xlsx"
   }
 ]
