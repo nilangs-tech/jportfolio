@@ -1,11 +1,20 @@
 "use client";
 import { useEffect, useState } from "react";
 
+export interface LivePrice { price: number; status: string; }
+export type LivePrices = Record<string, LivePrice>;
+
+interface Props {
+  symbols: string[];
+  asOf: string;
+  onPrices?: (prices: LivePrices) => void;
+}
+
 /**
- * Fetches current market prices from /api/market-prices on mount and on demand.
- * Works in both local and hosted modes. Degrades gracefully if pricing is off.
+ * Fetches current market prices on mount and on demand.
+ * Calls onPrices() with the result so the dashboard can update displayed values.
  */
-export default function PriceRefresh({ symbols, asOf }: { symbols: string[]; asOf: string }) {
+export default function PriceRefresh({ symbols, asOf, onPrices }: Props) {
   const [status, setStatus] = useState<"idle" | "loading" | "ok" | "error" | "disabled">("idle");
   const [fetchedAt, setFetchedAt] = useState<string | null>(null);
   const [count, setCount] = useState(0);
@@ -20,9 +29,14 @@ export default function PriceRefresh({ symbols, asOf }: { symbols: string[]; asO
       });
       const data = await res.json();
       if (data.disabled) { setStatus("disabled"); return; }
-      setCount(data.prices ? Object.keys(data.prices).length : 0);
+
+      const prices: LivePrices = data.prices ?? {};
+      setCount(Object.keys(prices).length);
       setFetchedAt(data.fetched_at ?? new Date().toISOString());
       setStatus("ok");
+
+      // Pass live prices up so the dashboard can update figures
+      if (onPrices && Object.keys(prices).length > 0) onPrices(prices);
     } catch {
       setStatus(auto ? "idle" : "error");
     }
@@ -31,16 +45,19 @@ export default function PriceRefresh({ symbols, asOf }: { symbols: string[]; asO
   // auto-refresh on launch
   useEffect(() => { refresh(true); /* eslint-disable-next-line */ }, []);
 
-  const label = status === "loading" ? "Refreshing…"
-    : status === "ok" ? `Prices · ${count} live · ${fetchedAt ? new Date(fetchedAt).toLocaleTimeString() : ""}`
-      : status === "disabled" ? `Prices: showing stored quotes (as at ${asOf})`
-        : status === "error" ? "Price refresh failed — showing stored quotes"
-          : `As at ${asOf}`;
+  const label =
+    status === "loading" ? "Refreshing…"
+    : status === "ok"       ? `Prices · ${count} live · ${fetchedAt ? new Date(fetchedAt).toLocaleTimeString() : ""}`
+    : status === "disabled" ? `Prices: showing stored quotes (as at ${asOf})`
+    : status === "error"    ? "Price refresh failed — showing stored quotes"
+    : `As at ${asOf}`;
 
   return (
     <div className="toolbar">
       <span className="badge">{label}</span>
-      <button className="btn btn-ghost" disabled={status === "loading"} onClick={() => refresh(false)}>↻ Refresh prices</button>
+      <button className="btn btn-ghost" disabled={status === "loading"} onClick={() => refresh(false)}>
+        ↻ Refresh prices
+      </button>
     </div>
   );
 }

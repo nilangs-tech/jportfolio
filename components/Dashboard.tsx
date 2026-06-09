@@ -1,11 +1,11 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import type { Summary, PerformanceSummary, HoldingRow, PositionChangeRow } from "@/lib/types";
 import type { UiSeries, PortfolioSeries } from "@/lib/uiSeries";
 import { fmtK, money, moneyS, pctFmt } from "@/lib/format";
 import { KpiGrid, Bridge, HBarChart, MonthlyBars, MonthlyActivity } from "./Charts";
 import HoldingsTable from "./HoldingsTable";
-import PriceRefresh from "./PriceRefresh";
+import PriceRefresh, { type LivePrices } from "./PriceRefresh";
 
 interface Props {
   summary: Summary[];
@@ -19,10 +19,71 @@ interface Props {
 
 const by = <T extends { portfolio_id: string }>(rows: T[], id: string) => rows.find((r) => r.portfolio_id === id);
 
+// ─── Live-price helpers ───────────────────────────────────────────────────────
+
+/** Apply live prices to holdings — updates current_price, current_market_value, mtm figures. */
+function applyPricesToHoldings(holdings: HoldingRow[], prices: LivePrices): HoldingRow[] {
+  return holdings.map((h) => {
+    const lp = prices[h.symbol];
+    if (!lp) return h;
+    const newPrice = lp.price;
+    const newMktVal = h.units * newPrice;
+    const openMktVal = h.opening_market_value ?? (h.units * (h.opening_price ?? newPrice));
+    const mtmGain = openMktVal > 0 ? newMktVal - openMktVal : 0;
+    const mtmPct = openMktVal > 0 ? (mtmGain / openMktVal) * 100 : 0;
+    return { ...h, current_price: newPrice, current_market_value: newMktVal, market_to_market_gain: mtmGain, market_to_market_pct: mtmPct };
+  });
+}
+
+/** Recalculate summary totals from updated holdings for one portfolio. */
+function recalcSummary(base: Summary, holdings: HoldingRow[]): Summary {
+  const pid = base.portfolio_id;
+  const portHoldings = pid === "combined"
+    ? holdings
+    : holdings.filter((h) => h.portfolio_id === pid);
+  const newSharesValue = portHoldings.reduce((s, h) => s + (h.current_market_value ?? 0), 0);
+  const newTotal = newSharesValue + base.closing_cash_total;
+  const mtmReturn = newTotal - base.opening_market_value_total;
+  const mtmPct = base.opening_market_value_total > 0 ? (mtmReturn / base.opening_market_value_total) * 100 : 0;
+  // Economic return: add back pension/transfers on top of MTM
+  const econDelta = (base.economic_return ?? 0) - base.market_to_market_return;
+  return {
+    ...base,
+    market_value_total: newTotal,
+    market_to_market_return: mtmReturn,
+    market_to_market_return_pct: mtmPct,
+    economic_return: mtmReturn + econDelta,
+    economic_return_pct: base.opening_market_value_total > 0
+      ? ((mtmReturn + econDelta) / base.opening_market_value_total) * 100
+      : 0,
+  };
+}
+
+// ─── Dashboard ────────────────────────────────────────────────────────────────
+
 export default function Dashboard({ summary, performance, holdings, positions, uiSeries, asOf, mode }: Props) {
   const [tab, setTab] = useState<"summary" | "portfolio_1" | "portfolio_2">("summary");
+  const [livePrices, setLivePrices] = useState<LivePrices | null>(null);
+  const [priceAsOf, setPriceAsOf] = useState<string>(asOf);
 
   const allSymbols = useMemo(() => Array.from(new Set(holdings.map((h) => h.symbol))), [holdings]);
+
+  const handlePrices = useCallback((prices: LivePrices) => {
+    setLivePrices(prices);
+    setPriceAsOf(new Date().toLocaleTimeString("en-AU", { hour: "2-digit", minute: "2-digit" }));
+  }, []);
+
+  // Derived: holdings + summary with live prices applied (falls back to static if no prices yet)
+  const liveHoldings = useMemo(
+    () => livePrices ? applyPricesToHoldings(holdings, livePrices) : holdings,
+    [holdings, livePrices]
+  );
+  const liveSummary = useMemo(
+    () => livePrices ? summary.map((s) => recalcSummary(s, liveHoldings)) : summary,
+    [summary, liveHoldings, livePrices]
+  );
+
+  const displayAsOf = livePrices ? `Live · ${priceAsOf}` : asOf;
 
   return (
     <>
@@ -32,7 +93,7 @@ export default function Dashboard({ summary, performance, holdings, positions, u
           <p>FY2026 · Portfolio 1 &amp; Portfolio 2</p>
         </div>
         <div className="toolbar">
-          <PriceRefresh symbols={allSymbols} asOf={asOf} />
+          <PriceRefresh symbols={allSymbols} asOf={asOf} onPrices={handlePrices} />
         </div>
       </div>
 
@@ -55,14 +116,16 @@ export default function Dashboard({ summary, performance, holdings, positions, u
         <button className={`tab-btn ${tab === "portfolio_2" ? "active" : ""}`} onClick={() => setTab("portfolio_2")}>🏦 Portfolio 2</button>
       </div>
 
-      {tab === "summary" && <SummaryTab summary={summary} />}
-      {tab === "portfolio_1" && <PortfolioTab pid="portfolio_1" summary={summary} performance={performance} holdings={holdings} positions={positions} series={uiSeries.portfolio_1} asOf={asOf} accent="#064e3b" />}
-      {tab === "portfolio_2" && <PortfolioTab pid="portfolio_2" summary={summary} performance={performance} holdings={holdings} positions={positions} series={uiSeries.portfolio_2} asOf={asOf} accent="#0f4c81" />}
+      {tab === "summary" && <SummaryTab summary={liveSummary} />}
+      {tab === "portfolio_1" && <PortfolioTab pid="portfolio_1" summary={liveSummary} performance={performance} holdings={liveHoldings} positions={positions} series={uiSeries.portfolio_1} asOf={displayAsOf} accent="#064e3b" />}
+      {tab === "portfolio_2" && <PortfolioTab pid="portfolio_2" summary={liveSummary} performance={performance} holdings={liveHoldings} positions={positions} series={uiSeries.portfolio_2} asOf={displayAsOf} accent="#0f4c81" />}
 
-      <footer>JPortfolio Dashboard · FY2026 · Market prices as at {asOf} · Delisted holdings (BKW/PAI/RUL) priced from scheme/acquisition announcements</footer>
+      <footer>JPortfolio Dashboard · FY2026 · Market prices as at {displayAsOf} · Delisted holdings (BKW/PAI/RUL) priced from scheme/acquisition announcements</footer>
     </>
   );
 }
+
+// ─── Tabs ─────────────────────────────────────────────────────────────────────
 
 function SummaryTab({ summary }: { summary: Summary[] }) {
   const c = by(summary, "combined")!, p1 = by(summary, "portfolio_1")!, p2 = by(summary, "portfolio_2")!;
