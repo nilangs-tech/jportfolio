@@ -2,15 +2,18 @@ import "server-only";
 
 /**
  * Minimal Yahoo Finance current-price fetcher (no SDK).
- * Uses the public chart endpoint and reads meta.regularMarketPrice.
+ * Uses the public chart endpoint and reads meta fields.
  * Portfolio tickers are mapped to ASX provider symbols (e.g. BHP -> BHP.AX)
  * unless they already contain a suffix.
  */
 
 export interface Quote {
-  symbol: string;          // portfolio ticker
-  provider_symbol: string; // yahoo symbol
+  symbol: string;           // portfolio ticker
+  provider_symbol: string;  // yahoo symbol
   price: number | null;
+  previousClose: number | null;  // previous session close (chartPreviousClose)
+  dailyChange: number | null;    // price − previousClose ($ per share)
+  dailyChangePct: number | null; // dailyChange / previousClose × 100
   currency: string;
   quote_date: string | null;
   status: "live" | "unavailable";
@@ -23,12 +26,15 @@ export function toProviderSymbol(symbol: string): string {
 
 async function fetchOne(symbol: string): Promise<Quote> {
   const ps = toProviderSymbol(symbol);
-  const base: Quote = { symbol, provider_symbol: ps, price: null, currency: "AUD", quote_date: null, status: "unavailable" };
+  const base: Quote = {
+    symbol, provider_symbol: ps, price: null,
+    previousClose: null, dailyChange: null, dailyChangePct: null,
+    currency: "AUD", quote_date: null, status: "unavailable",
+  };
   try {
     const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(ps)}?range=1d&interval=1d`;
     const res = await fetch(url, {
       headers: { "User-Agent": "Mozilla/5.0 (jportfolio-dashboard)" },
-      // current prices should not be cached at the fetch layer
       cache: "no-store",
     });
     if (!res.ok) return base;
@@ -36,8 +42,24 @@ async function fetchOne(symbol: string): Promise<Quote> {
     const meta = json?.chart?.result?.[0]?.meta;
     const price = meta?.regularMarketPrice;
     if (typeof price !== "number") return base;
-    const ts = meta?.regularMarketTime ? new Date(meta.regularMarketTime * 1000).toISOString() : new Date().toISOString();
-    return { symbol, provider_symbol: ps, price, currency: meta?.currency ?? "AUD", quote_date: ts, status: "live" };
+
+    const ts = meta?.regularMarketTime
+      ? new Date(meta.regularMarketTime * 1000).toISOString()
+      : new Date().toISOString();
+
+    const prevClose: number | null = meta?.chartPreviousClose ?? meta?.previousClose ?? null;
+    const dailyChange = (typeof prevClose === "number") ? price - prevClose : null;
+    const dailyChangePct = (typeof prevClose === "number" && prevClose !== 0)
+      ? ((price - prevClose) / prevClose) * 100
+      : null;
+
+    return {
+      symbol, provider_symbol: ps, price,
+      previousClose: prevClose,
+      dailyChange, dailyChangePct,
+      currency: meta?.currency ?? "AUD",
+      quote_date: ts, status: "live",
+    };
   } catch {
     return base;
   }

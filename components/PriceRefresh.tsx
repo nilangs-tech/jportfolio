@@ -1,7 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export interface LivePrice { price: number; status: string; }
+export interface LivePrice {
+  price: number;
+  previousClose: number | null;
+  dailyChange: number | null;    // $ per share vs previous close
+  dailyChangePct: number | null; // % vs previous close
+  status: string;
+}
 export type LivePrices = Record<string, LivePrice>;
 
 interface Props {
@@ -11,8 +17,8 @@ interface Props {
 }
 
 /**
- * Fetches current market prices on mount and on demand.
- * Calls onPrices() with the result so the dashboard can update displayed values.
+ * Fetches current market prices (+ previous-close for daily change) on mount and on demand.
+ * Calls onPrices() with the full result so the dashboard can update all figures.
  */
 export default function PriceRefresh({ symbols, asOf, onPrices }: Props) {
   const [status, setStatus] = useState<"idle" | "loading" | "ok" | "error" | "disabled">("idle");
@@ -35,21 +41,19 @@ export default function PriceRefresh({ symbols, asOf, onPrices }: Props) {
       setFetchedAt(data.fetched_at ?? new Date().toISOString());
       setStatus("ok");
 
-      // Pass live prices up so the dashboard can update figures
       if (onPrices && Object.keys(prices).length > 0) onPrices(prices);
     } catch {
       setStatus(auto ? "idle" : "error");
     }
   }
 
-  // auto-refresh on launch
   useEffect(() => { refresh(true); /* eslint-disable-next-line */ }, []);
 
   const label =
-    status === "loading" ? "Refreshing…"
-    : status === "ok"       ? `Prices · ${count} live · ${fetchedAt ? new Date(fetchedAt).toLocaleTimeString() : ""}`
+    status === "loading"  ? "Refreshing…"
+    : status === "ok"     ? `Prices · ${count} live · ${fetchedAt ? new Date(fetchedAt).toLocaleTimeString() : ""}`
     : status === "disabled" ? `Prices: showing stored quotes (as at ${asOf})`
-    : status === "error"    ? "Price refresh failed — showing stored quotes"
+    : status === "error"  ? "Price refresh failed — showing stored quotes"
     : `As at ${asOf}`;
 
   return (

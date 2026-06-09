@@ -6,6 +6,7 @@ import { fmtK, money, moneyS, pctFmt } from "@/lib/format";
 import { KpiGrid, Bridge, HBarChart, MonthlyBars, MonthlyActivity } from "./Charts";
 import HoldingsTable from "./HoldingsTable";
 import PriceRefresh, { type LivePrices } from "./PriceRefresh";
+import TodayChange from "./TodayChange";
 
 interface Props {
   summary: Summary[];
@@ -96,6 +97,8 @@ export default function Dashboard({ summary, performance, holdings, positions, u
           <PriceRefresh symbols={allSymbols} asOf={asOf} onPrices={handlePrices} />
         </div>
       </div>
+
+      <TodayChange holdings={holdings} livePrices={livePrices} />
 
       {mode === "local" ? (
         <div className="mode-banner mode-local">
