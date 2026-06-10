@@ -104,6 +104,61 @@ export function computeMetrics(
 }
 
 /**
+ * Compute P2 performance bridge dynamically so live prices flow through.
+ */
+export function computeP2PerfBridge(
+  summary: Summary,
+  holdings: HoldingRow[],
+): PerfBridgeStep[] {
+  const portHoldings = holdings.filter((h) => h.portfolio_id === "portfolio_2");
+
+  const openingValue = Math.round(summary.opening_market_value_total ?? 0);
+  const sharesValue = Math.round(
+    portHoldings.reduce((sum, h) => sum + (h.current_market_value ?? 0), 0)
+  );
+  const cashBalance = Math.round(summary.closing_cash_total ?? 0);
+  const currentValue = sharesValue + cashBalance;
+
+  const capitalAdded = Math.round(summary.net_transfers_total ?? 0);
+  const dividends = Math.round(summary.dividends_received_total ?? 0);
+  const realizedGains = Math.round(summary.realized_pl_total ?? 0);
+
+  const continuingGain = Math.round(
+    portHoldings
+      .filter((h) => h.opening_price != null)
+      .reduce((sum, h) => sum + (h.market_to_market_gain ?? 0), 0)
+  );
+  const newPosGain = Math.round(
+    portHoldings
+      .filter((h) => h.opening_price == null && h.position_status === "new")
+      .reduce((sum, h) => sum + (h.market_to_market_gain ?? 0), 0)
+  );
+
+  const d = new Date();
+  const dayLabel = `${d.getDate()} ${d.toLocaleString("en-AU", { month: "short" })} ${d.getFullYear()}`;
+  const mtm = currentValue - openingValue;
+  const mtmPct = openingValue > 0 ? (mtm / openingValue) * 100 : 0;
+  const econReturn = Math.round(summary.economic_return ?? mtm);
+  const econReturnPct = summary.economic_return_pct ?? mtmPct;
+
+  return [
+    { label: "Opening portfolio at market (1 Jul 2025)", val: openingValue, color: "#2563eb", kind: "line" as const },
+    { label: "  Shares at Jul '25 market prices", val: openingValue, color: "#93c5fd", kind: "sub" as const },
+    { label: "  Cash balance", val: Math.round(summary.opening_cash_total ?? 0), color: "#93c5fd", kind: "sub" as const },
+    { kind: "spacer" as const },
+    { label: "+ Net capital added (FY2026 transfers)", val: capitalAdded, color: "#7c3aed", kind: "line" as const },
+    { label: "+ Market price gains on continuing positions", val: continuingGain, color: "#16a34a", kind: "line" as const },
+    { label: "+ Market price gains — new positions", val: newPosGain, color: "#16a34a", kind: "line" as const },
+    { label: "+ Dividends received", val: dividends, color: "#0d9488", kind: "line" as const },
+    { label: "+ Realised gains from sales", val: realizedGains, color: "#ea580c", kind: "line" as const },
+    { kind: "spacer" as const },
+    { label: `= Current portfolio value (${dayLabel})`, val: currentValue, color: "#047857", kind: "grand" as const },
+    { label: `Market-to-market return (+${Math.abs(mtmPct).toFixed(1)}%)`, val: Math.round(mtm), color: "#047857", kind: "subtotal" as const },
+    { label: `Economic return excl. capital added (+${Math.abs(econReturnPct).toFixed(1)}%)`, val: Math.round(econReturn), color: "#059669", kind: "grand" as const },
+  ] as PerfBridgeStep[];
+}
+
+/**
  * Compute a cost basis waterfall (costBridge).
  * Shows how cost basis changed from opening to closing.
  */
@@ -193,7 +248,11 @@ export function computeP1PerfBridge(
   // Compute the residual (new positions + rebalancing)
   const incomeSum = dividends + ato + interest;
   const netIncome = incomeSum - pension - expenses;
-  const continuingGain = 502785; // From summary (Python-managed, approximate)
+  const continuingGain = Math.round(
+    portHoldings
+      .filter((h) => h.opening_price != null)
+      .reduce((sum, h) => sum + (h.market_to_market_gain ?? 0), 0)
+  );
   const realizedGain = realizedGains;
   const expectedValue = openingValue + continuingGain + realizedGain + netIncome;
   const residual = Math.round(currentValue - expectedValue);

@@ -3,7 +3,7 @@ import { useCallback, useMemo, useState } from "react";
 import type { Summary, PerformanceSummary, HoldingRow, PositionChangeRow } from "@/lib/types";
 import type { UiSeries, PortfolioSeries } from "@/lib/uiSeries";
 import { fmtK, money, moneyS, pctFmt } from "@/lib/format";
-import { computeMetrics, computeP1PerfBridge, type ComputedMetrics } from "@/lib/computedMetrics";
+import { computeMetrics, computeP1PerfBridge, computeP2PerfBridge, type ComputedMetrics } from "@/lib/computedMetrics";
 import { KpiGrid, Bridge, HBarChart, MonthlyBars, MonthlyActivity } from "./Charts";
 import HoldingsTable from "./HoldingsTable";
 import PriceRefresh, { type LivePrices } from "./PriceRefresh";
@@ -288,14 +288,13 @@ function PortfolioTab({ pid, summary, performance, holdings, positions, series, 
   // ─── Computed metrics (always derived from source data, never static) ───
   const metrics = useMemo(() => computeMetrics(s, hold, cashClassification), [s, hold, cashClassification]);
 
-  // For P1, compute perfBridge dynamically to match KPI tiles
-  const computedPerfBridge = useMemo(
-    () => pid === "portfolio_1" ? (computeP1PerfBridge(s, hold, cashClassification) as any) : null,
+  // Compute perfBridge dynamically for both portfolios so live prices flow through
+  const perfBridgeSteps = useMemo(
+    () => pid === "portfolio_1"
+      ? computeP1PerfBridge(s, hold, cashClassification)
+      : computeP2PerfBridge(s, hold),
     [pid, s, hold, cashClassification]
   );
-
-  // Use computed perfBridge for P1, fallback to static series for P2
-  const perfBridgeSteps = computedPerfBridge ?? series.perfBridge;
 
   const dc = useMemo(() => calcDailyChange(holdings, livePrices, pid), [holdings, livePrices, pid]);
 

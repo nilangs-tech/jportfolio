@@ -2,7 +2,8 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "jportfolio-dev",
+      "name": "jportfolio-dashboard",
+      "cwd": "C:/Users/nilan/OneDrive/Projects/jportfolio-dashboard",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3000
