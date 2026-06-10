@@ -25,7 +25,7 @@ const by = <T extends { portfolio_id: string }>(rows: T[], id: string) => rows.f
 // ─── Live-price helpers ───────────────────────────────────────────────────────
 
 function applyPricesToHoldings(holdings: HoldingRow[], prices: LivePrices): HoldingRow[] {
-  const staticSymbols = ["ETPMPM"];
+  const staticSymbols = ["ETPMPM", "PMGOLD"];
   return holdings.map((h) => {
     if (staticSymbols.includes(h.symbol)) return h;
     const lp = prices[h.symbol];

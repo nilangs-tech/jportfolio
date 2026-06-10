@@ -597,11 +597,12 @@
       "quote_date": "2026-06-09T06:10:15.000Z"
     },
     "PMGOLD": {
-      "price": 17.94,
-      "previousClose": 17.94,
+      "price": 59.38,
+      "previousClose": 59.38,
       "dailyChange": 0,
       "dailyChangePct": 0,
-      "quote_date": "2026-06-09T08:19:03.598Z"
+      "quote_date": "2026-06-10T00:00:00.000Z",
+      "pinned": true
     },
     "NWS": {
       "price": 44.23,
