@@ -1,10 +1,15 @@
 [
   {
-    "effective_date": "2025-12-01",
+    "effective_date": "2025-09-24",
     "portfolio_id": "portfolio_1",
-    "action_type": "acquisition",
+    "action_type": "scheme_conversion",
     "from_symbol": "BKW",
-    "cost_base_treatment": "Scheme of arrangement — Soul Pattinson (late 2025)",
+    "to_symbol": "SOL",
+    "from_units": 1000,
+    "to_units": 820,
+    "conversion_price": 44.30,
+    "cost_base_acquired": 36326.00,
+    "cost_base_treatment": "Scheme of arrangement — 1000 BKW converted to 820 SOL at cost base $44.30 per SOL",
     "source": "ASX scheme announcement"
   },
   {
