@@ -58,6 +58,14 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
 
   const filters: [FilterKey, string][] = [["all", `All (${holdings.length})`], ["new", "New"], ["changed", "Changed"], ["hold", "Unchanged"], ["gain", "Gainers"], ["loss", "Losers"]];
 
+  const totals = useMemo(() => {
+    const costBasis = rows.reduce((s, h) => s + (h.cost_base ?? 0), 0);
+    const mktVal   = rows.reduce((s, h) => s + (h.current_market_value ?? 0), 0);
+    const unrPl    = mktVal - costBasis;
+    const unrPct   = costBasis > 0 ? (unrPl / costBasis) * 100 : 0;
+    return { costBasis, mktVal, unrPl, unrPct };
+  }, [rows]);
+
   return (
     <div>
       <div className="table-controls">
@@ -81,6 +89,22 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
               {th("unr", "Unr. P&L $")}
               {th("unrpct", "Unr. P&L %")}
               {showStatus ? <th>Status</th> : null}
+            </tr>
+            <tr style={{ background: "var(--surface2)", borderBottom: "2px solid var(--border)", fontSize: 12 }}>
+              <td style={{ fontWeight: 700, padding: "6px 8px", color: "var(--text2)" }}>TOTAL ({rows.length})</td>
+              <td className="right" style={{ padding: "6px 8px" }} />
+              <td className="right" style={{ padding: "6px 8px" }} />
+              <td className="right" style={{ fontWeight: 700, padding: "6px 8px" }}>${n(totals.costBasis)}</td>
+              <td className="right" style={{ padding: "6px 8px" }} />
+              <td className="right" style={{ padding: "6px 8px" }} />
+              <td className="right" style={{ fontWeight: 700, padding: "6px 8px" }}>${n(totals.mktVal)}</td>
+              <td className="right" style={{ fontWeight: 700, padding: "6px 8px", color: totals.unrPl >= 0 ? "var(--green)" : "var(--red)" }}>
+                {totals.unrPl >= 0 ? "+" : "−"}${n(Math.abs(totals.unrPl))}
+              </td>
+              <td className="right" style={{ fontWeight: 700, padding: "6px 8px", color: totals.unrPct >= 0 ? "var(--green)" : "var(--red)" }}>
+                {totals.unrPct >= 0 ? "+" : ""}{totals.unrPct.toFixed(1)}%
+              </td>
+              {showStatus ? <td style={{ padding: "6px 8px" }} /> : null}
             </tr>
           </thead>
           <tbody>

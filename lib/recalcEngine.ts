@@ -547,82 +547,85 @@ async function updateUiSeriesBridges(
       else if (L.startsWith("Total portfolio value"))      set(costBase + closingCash);
     }
 
-    // ── perfBridge (P1 only) ────────────────────────────────────────────────
-    // P2 uses a Python-specific "economic return excl. capital added" metric
-    // and has no residual line, so we leave P2 perfBridge for Python to manage.
-    if (pid !== "portfolio_1") continue;
-
+    // ── perfBridge (both P1 and P2) ─────────────────────────────────────────
+    // P1: full auto-update with residual line to absorb attribution drift
+    // P2: just update the final "current portfolio value" (Python manages the gains breakdown)
     const currentPortfolio = mktVal + closingCash;
-    const mtm    = currentPortfolio - openMV;
-    const mtmPct = openMV > 0 ? (mtm / openMV) * 100 : 0;
-    const econ    = mtm + pension + opExp;
-    const econPct = openMV > 0 ? (econ / openMV) * 100 : 0;
-
-    // Net income retained = all income earned minus all distributions paid.
-    // Dividends, ATO, interest are recycled (fund pension, expenses, and share
-    // purchases) so they are shown as a grouped net figure rather than separate
-    // large +/− lines that would create a misleading picture alongside share gains.
-    const netIncome = dividends + ato + interest - pension - opExp;
-
-    // The residual absorbs: (a) gain/loss on new positions bought during the year,
-    // and (b) the difference between "continuing positions gain vs opening price"
-    // (Python's figure) and "gain vs cost basis" (what unrealised_gain measures).
-    // We sum the Python-managed lines (continuing price gain + realised gains) to
-    // derive what's left.
-    const PYTHON_PERF_PREFIXES = [
-      "+ Continuing positions",
-      "+ Realised gains",
-    ];
-    let pythonFixed = openMV;
-    for (const step of ser.perfBridge ?? []) {
-      if (!step.label || step.val == null || step.kind === "sub") continue;
-      if (PYTHON_PERF_PREFIXES.some((p) => step.label!.startsWith(p))) {
-        pythonFixed += step.val;
-      }
-    }
-    // perfResidual = new positions' net P&L + attribution drift
-    const perfResidual = Math.round(currentPortfolio - pythonFixed - netIncome);
-
     const d   = new Date();
     const dayLabel = `${d.getDate()} ${d.toLocaleString("en-AU", { month: "short" })} ${d.getFullYear()}`;
 
-    for (const step of ser.perfBridge ?? []) {
-      if (!step.label) continue;
-      const set = (v: number) => { if (step.val !== v) { step.val = v; changed = true; } };
-      const L = step.label.trim(); // trim leading spaces (sub-item labels start with "  ")
+    if (pid === "portfolio_1") {
+      // P1: Full recalc with net income grouping and residual
+      const mtm    = currentPortfolio - openMV;
+      const mtmPct = openMV > 0 ? (mtm / openMV) * 100 : 0;
+      const econ    = mtm + pension + opExp;
+      const econPct = openMV > 0 ? (econ / openMV) * 100 : 0;
 
-      if (L.includes("rebalancing") || L.includes("residual") || L.includes("New positions")) {
-        set(perfResidual);
+      const netIncome = dividends + ato + interest - pension - opExp;
+
+      const PYTHON_PERF_PREFIXES = [
+        "+ Continuing positions",
+        "+ Realised gains",
+      ];
+      let pythonFixed = openMV;
+      for (const step of ser.perfBridge ?? []) {
+        if (!step.label || step.val == null || step.kind === "sub") continue;
+        if (PYTHON_PERF_PREFIXES.some((p) => step.label!.startsWith(p))) {
+          pythonFixed += step.val;
+        }
       }
-      else if (L.startsWith("Net income retained")) {
-        set(netIncome);
+      const perfResidual = Math.round(currentPortfolio - pythonFixed - netIncome);
+
+      for (const step of ser.perfBridge ?? []) {
+        if (!step.label) continue;
+        const set = (v: number) => { if (step.val !== v) { step.val = v; changed = true; } };
+        const L = step.label.trim();
+
+        if (L.includes("rebalancing") || L.includes("residual") || L.includes("New positions")) {
+          set(perfResidual);
+        }
+        else if (L.startsWith("Net income retained")) {
+          set(netIncome);
+        }
+        else if (L.startsWith("Income earned")) {
+          set(dividends + ato + interest);
+          const wantLabel = `  Income earned (dividends $${dividends.toLocaleString("en-AU")} + ATO $${ato.toLocaleString("en-AU")} + interest $${interest.toLocaleString("en-AU")})`;
+          if (step.label !== wantLabel) { step.label = wantLabel; changed = true; }
+        }
+        else if (L.startsWith("Less: pension distributions")) {
+          set(-pension);
+        }
+        else if (L.startsWith("Less: operating expenses")) {
+          set(-opExp);
+        }
+        else if (L.startsWith("= Current portfolio value")) {
+          set(currentPortfolio);
+          const wantLabel = `= Current portfolio value (${dayLabel})`;
+          if (step.label !== wantLabel) { step.label = wantLabel; changed = true; }
+        }
+        else if (L.startsWith("Market-to-market return")) {
+          set(Math.round(mtm));
+          const wantLabel = `Market-to-market return (+${mtmPct.toFixed(1)}%)`;
+          if (step.label !== wantLabel) { step.label = wantLabel; changed = true; }
+        }
+        else if (L.startsWith("Economic return incl. pension")) {
+          set(Math.round(econ));
+          const wantLabel = `Economic return incl. pension (+${econPct.toFixed(1)}%)`;
+          if (step.label !== wantLabel) { step.label = wantLabel; changed = true; }
+        }
       }
-      else if (L.startsWith("Income earned")) {
-        set(dividends + ato + interest);
-        // Update the inline breakdown so it always reflects the current amounts
-        const wantLabel = `  Income earned (dividends $${dividends.toLocaleString("en-AU")} + ATO $${ato.toLocaleString("en-AU")} + interest $${interest.toLocaleString("en-AU")})`;
-        if (step.label !== wantLabel) { step.label = wantLabel; changed = true; }
-      }
-      else if (L.startsWith("Less: pension distributions")) {
-        set(-pension);
-      }
-      else if (L.startsWith("Less: operating expenses")) {
-        set(-opExp);
-      }
-      else if (L.startsWith("= Current portfolio value")) {
-        set(currentPortfolio);
-        const wantLabel = `= Current portfolio value (${dayLabel})`;
-        if (step.label !== wantLabel) { step.label = wantLabel; changed = true; }
-      }
-      else if (L.startsWith("Market-to-market return")) {
-        set(Math.round(mtm));
-        const wantLabel = `Market-to-market return (+${mtmPct.toFixed(1)}%)`;
-        if (step.label !== wantLabel) { step.label = wantLabel; changed = true; }
-      }
-      else if (L.startsWith("Economic return incl. pension")) {
-        set(Math.round(econ));
-        const wantLabel = `Economic return incl. pension (+${econPct.toFixed(1)}%)`;
-        if (step.label !== wantLabel) { step.label = wantLabel; changed = true; }
+    } else if (pid === "portfolio_2") {
+      // P2: Only update the final "current portfolio value" line; keep Python-managed gains
+      for (const step of ser.perfBridge ?? []) {
+        if (!step.label) continue;
+        const set = (v: number) => { if (step.val !== v) { step.val = v; changed = true; } };
+        const L = step.label.trim();
+
+        if (L.startsWith("= Current portfolio value")) {
+          set(currentPortfolio);
+          const wantLabel = `= Current portfolio value (${dayLabel})`;
+          if (step.label !== wantLabel) { step.label = wantLabel; changed = true; }
+        }
       }
     }
   }
@@ -752,6 +755,15 @@ export async function recalcAll(
   // ── Update cash classification + expense panel ────────────────────────────
   if (newCashRows.length > 0) {
     await updateCashClassAndExpenses(newCashRows, allLedger, filesWritten);
+  }
+
+  // ── Compute total portfolio value at market (shares + cash) ────────────────
+  for (const s of updatedSummary) {
+    if (s.portfolio_id !== "combined") {
+      s.total_portfolio_value_at_market = Math.round(
+        (s.market_value_total ?? 0) + (s.closing_cash_total ?? 0)
+      );
+    }
   }
 
   await writeDataset("summary", updatedSummary);

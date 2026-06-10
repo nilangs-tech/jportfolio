@@ -15,6 +15,7 @@
     "market_to_market_return_pct": 27.30088725263994,
     "economic_return": 811732,
     "economic_return_pct": 22.5,
+    "total_portfolio_value_at_market": 4269076,
     "price_as_of_date": "2026-06-08",
     "price_refreshed_at": "2026-06-08T15:18:20.783Z"
   },
@@ -34,6 +35,7 @@
     "market_to_market_return_pct": 6.264294216951943,
     "economic_return": 157477,
     "economic_return_pct": 17.6,
+    "total_portfolio_value_at_market": 1125757,
     "notes": "P2 'growth' includes $86,805 net new capital; economic return is on opening capital.",
     "price_as_of_date": "2026-06-08",
     "price_refreshed_at": "2026-06-08T15:18:20.783Z"

@@ -3,6 +3,7 @@ import { useCallback, useMemo, useState } from "react";
 import type { Summary, PerformanceSummary, HoldingRow, PositionChangeRow } from "@/lib/types";
 import type { UiSeries, PortfolioSeries } from "@/lib/uiSeries";
 import { fmtK, money, moneyS, pctFmt } from "@/lib/format";
+import { computeMetrics, type ComputedMetrics } from "@/lib/computedMetrics";
 import { KpiGrid, Bridge, HBarChart, MonthlyBars, MonthlyActivity } from "./Charts";
 import HoldingsTable from "./HoldingsTable";
 import PriceRefresh, { type LivePrices } from "./PriceRefresh";
@@ -49,14 +50,27 @@ function recalcSummary(base: Summary, holdings: HoldingRow[]): Summary {
   const newTotal = newSharesValue + base.closing_cash_total;
   const mtmReturn = newTotal - base.opening_market_value_total;
   const mtmPct = base.opening_market_value_total > 0 ? (mtmReturn / base.opening_market_value_total) * 100 : 0;
-  const econDelta = (base.economic_return ?? 0) - base.market_to_market_return;
+
+  // P1: recalculate economic return by preserving the delta (pension + expenses contribution)
+  // P2: keep economic_return as-is (it's Python-managed "excl. capital added" metric)
+  if (pid === "portfolio_1") {
+    const econDelta = (base.economic_return ?? 0) - base.market_to_market_return;
+    return {
+      ...base,
+      market_value_total: newTotal,
+      market_to_market_return: mtmReturn,
+      market_to_market_return_pct: mtmPct,
+      economic_return: mtmReturn + econDelta,
+      economic_return_pct: base.opening_market_value_total > 0 ? ((mtmReturn + econDelta) / base.opening_market_value_total) * 100 : 0,
+    };
+  }
+
+  // P2 & combined: only update MTM, keep economic_return from summary
   return {
     ...base,
     market_value_total: newTotal,
     market_to_market_return: mtmReturn,
     market_to_market_return_pct: mtmPct,
-    economic_return: mtmReturn + econDelta,
-    economic_return_pct: base.opening_market_value_total > 0 ? ((mtmReturn + econDelta) / base.opening_market_value_total) * 100 : 0,
   };
 }
 
@@ -64,6 +78,13 @@ const fmtChange = (v: number) =>
   (v >= 0 ? "+" : "−") + "$" + Math.abs(v).toLocaleString("en-AU", { maximumFractionDigits: 0 });
 const fmtChangePct = (v: number) =>
   (v >= 0 ? "+" : "−") + Math.abs(v).toFixed(2) + "%";
+
+// ─── Get computed metrics (always derived, never cached) ────────────────────
+function getComputedMetrics(summary: Summary[], holdings: HoldingRow[], pid: string): ComputedMetrics | null {
+  const summaryRec = summary.find((s) => s.portfolio_id === pid);
+  if (!summaryRec) return null;
+  return computeMetrics(summaryRec, holdings);
+}
 
 // ─── Dashboard ────────────────────────────────────────────────────────────────
 
@@ -263,18 +284,24 @@ function PortfolioTab({ pid, summary, performance, holdings, positions, series, 
   const newPos = positions.filter((p) => p.portfolio_id === pid && p.change_type === "new").map((p) => p.symbol);
   const closedPos = positions.filter((p) => p.portfolio_id === pid && p.change_type === "closed").map((p) => p.symbol);
 
+  // ─── Computed metrics (always derived from source data, never static) ───
+  const metrics = useMemo(() => computeMetrics(s, hold), [s, hold]);
+
   const dc = useMemo(() => calcDailyChange(holdings, livePrices, pid), [holdings, livePrices, pid]);
 
-  const totalUnr = hold.reduce((acc, h) => acc + ((h.current_market_value ?? 0) - (h.cost_base ?? 0)), 0);
-  const withMtm = hold.filter((h) => h.market_to_market_gain != null);
-  const gainers = [...withMtm].sort((a, b) => (b.market_to_market_gain ?? 0) - (a.market_to_market_gain ?? 0)).slice(0, 10)
-    .map((h) => ({ code: h.symbol, v: h.market_to_market_gain ?? 0, pct: h.market_to_market_pct ?? undefined }));
-  const losers = [...withMtm].sort((a, b) => (a.market_to_market_gain ?? 0) - (b.market_to_market_gain ?? 0)).slice(0, 10)
-    .map((h) => ({ code: h.symbol, v: h.market_to_market_gain ?? 0, pct: h.market_to_market_pct ?? undefined }));
-  const top20 = [...hold].sort((a, b) => (b.current_market_value ?? 0) - (a.current_market_value ?? 0)).slice(0, 20)
-    .map((h) => ({ code: h.symbol, v: h.current_market_value ?? 0 }));
-  const topDiv = series.topDivPayers.map(([code, v]) => ({ code, v }));
-  const shares = money(s.market_value_total - s.closing_cash_total);
+  const totalUnr = useMemo(
+    () => hold.reduce((acc, h) => acc + ((h.current_market_value ?? 0) - (h.cost_base ?? 0)), 0),
+    [hold]
+  );
+  const withMtm = useMemo(() => hold.filter((h) => h.market_to_market_gain != null), [hold]);
+  const gainers = useMemo(() => [...withMtm].sort((a, b) => (b.market_to_market_gain ?? 0) - (a.market_to_market_gain ?? 0)).slice(0, 10)
+    .map((h) => ({ code: h.symbol, v: h.market_to_market_gain ?? 0, pct: h.market_to_market_pct ?? undefined })), [withMtm]);
+  const losers = useMemo(() => [...withMtm].sort((a, b) => (a.market_to_market_gain ?? 0) - (b.market_to_market_gain ?? 0)).slice(0, 10)
+    .map((h) => ({ code: h.symbol, v: h.market_to_market_gain ?? 0, pct: h.market_to_market_pct ?? undefined })), [withMtm]);
+  const top20 = useMemo(() => [...hold].sort((a, b) => (b.current_market_value ?? 0) - (a.current_market_value ?? 0)).slice(0, 20)
+    .map((h) => ({ code: h.symbol, v: h.current_market_value ?? 0 })), [hold]);
+  const topDiv = useMemo(() => series.topDivPayers.map(([code, v]) => ({ code, v })), [series.topDivPayers]);
+  const shares = useMemo(() => money(metrics.sharesValue), [metrics.sharesValue]);
 
   const dcColor = !dc ? undefined : dc.change >= 0 ? "#16a34a" : "#dc2626";
   const dcLabel = dc
@@ -287,14 +314,14 @@ function PortfolioTab({ pid, summary, performance, holdings, positions, series, 
       <div className="banner" style={{ background: `linear-gradient(135deg, ${accent}, #1e3a8a)` }}>
         <div className="banner-main">
           <div className="label">Total Portfolio Value — At Market</div>
-          <div className="value">{money(s.market_value_total)}</div>
-          <div className="sub">{asOf} · Shares {shares} + Cash {money(s.closing_cash_total)} · <span style={{ color: "#6ee7b7" }}>▲ {moneyS(s.market_to_market_return)} ({pctFmt(s.market_to_market_return_pct)})</span></div>
+          <div className="value">{money(metrics.totalPortfolioValue)}</div>
+          <div className="sub">{asOf} · Shares {shares} + Cash {money(metrics.cashBalance)} · <span style={{ color: "#6ee7b7" }}>▲ {moneyS(metrics.mtmReturn)} ({pctFmt(metrics.mtmReturnPct)})</span></div>
         </div>
         <div className="banner-stats">
           <Bstat val={money(s.opening_market_value_total)} lbl={`Opening (${s.period_start})`} />
-          <Bstat val={pctFmt(s.market_to_market_return_pct)} lbl="MTM / Growth" color="#6ee7b7" />
-          <Bstat val={pctFmt(s.economic_return_pct ?? 0)} lbl="Economic Return" color="#6ee7b7" />
-          <Bstat val={money(s.dividends_received_total)} lbl="Dividends" />
+          <Bstat val={pctFmt(metrics.mtmReturnPct)} lbl="MTM / Growth" color="#6ee7b7" />
+          <Bstat val={pctFmt(metrics.economicReturnPct)} lbl="Economic Return" color="#6ee7b7" />
+          <Bstat val={money(metrics.totalDividends)} lbl="Dividends" />
         </div>
       </div>
 
@@ -304,15 +331,15 @@ function PortfolioTab({ pid, summary, performance, holdings, positions, series, 
       <div className="section-label">Market Performance — As at {asOf}</div>
       <KpiGrid items={[
         { l: "Opening (Market)",       v: fmtK(s.opening_market_value_total), s: s.period_start, c: "#2563eb" },
-        { l: "Current (Market)",       v: fmtK(s.market_value_total), s: asOf, c: "#047857" },
+        { l: "Current (Market)",       v: fmtK(metrics.sharesValue), s: asOf, c: "#047857" },
         { l: "Today's Change",         v: dcLabel, s: dc ? `${dc.count} holdings vs prev close` : "—", c: dcColor ?? "#9ca3af" },
-        { l: "MTM Return",             v: moneyS(s.market_to_market_return), s: pctFmt(s.market_to_market_return_pct), c: "#16a34a" },
-        { l: "Economic Return",        v: pctFmt(s.economic_return_pct ?? 0), s: moneyS(s.economic_return ?? 0), c: "#047857" },
-        { l: "Dividends Received",     v: money(s.dividends_received_total), s: "FY2026", c: "#0d9488" },
+        { l: "MTM Return",             v: moneyS(metrics.mtmReturn), s: pctFmt(metrics.mtmReturnPct), c: "#16a34a" },
+        { l: "Economic Return",        v: pctFmt(metrics.economicReturnPct), s: moneyS(metrics.economicReturn), c: "#047857" },
+        { l: "Dividends Received",     v: money(metrics.totalDividends), s: "FY2026", c: "#0d9488" },
         { l: "Realised Gains",         v: money(s.realized_pl_total ?? 0), s: "Sells above avg cost", c: "#ea580c" },
-        { l: "Unrealised P&L vs Cost", v: moneyS(totalUnr), s: "vs avg cost", c: totalUnr >= 0 ? "#16a34a" : "#dc2626" },
-        { l: "Cost Basis",             v: fmtK(s.cost_base_total ?? 0), s: `Closing · ${asOf}`, c: "#7c3aed" },
-        { l: "Closing Cash",           v: money(s.closing_cash_total), s: asOf, c: "#2563eb" },
+        { l: "Unrealised P&L vs Cost", v: moneyS(metrics.unrealisedGain), s: "vs avg cost", c: metrics.unrealisedGain >= 0 ? "#16a34a" : "#dc2626" },
+        { l: "Cost Basis",             v: fmtK(metrics.costBasisTotal), s: `Closing · ${asOf}`, c: "#7c3aed" },
+        { l: "Closing Cash",           v: money(metrics.cashBalance), s: asOf, c: "#2563eb" },
       ]} />
 
       <div className="row row-2">

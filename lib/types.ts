@@ -38,6 +38,7 @@ export interface Summary {
   economic_return?: number;
   economic_return_pct?: number;
   cash_bridge_check?: number;
+  total_portfolio_value_at_market?: number;
   price_as_of_date?: string;
   price_refreshed_at?: string;
 }
