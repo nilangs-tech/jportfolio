@@ -40,7 +40,7 @@ function applyPricesToHoldings(holdings: HoldingRow[], prices: LivePrices): Hold
       : h.units;
     const mtmGain = refPrice != null ? (newPrice - refPrice) * contUnits : null;
     const mtmPct = refPrice != null && refPrice > 0 ? ((newPrice - refPrice) / refPrice) * 100 : null;
-    return { ...h, current_price: newPrice, current_market_value: newMktVal, unrealised_pl: unrealisedPl, market_to_market_gain: mtmGain, market_to_market_pct: mtmPct };
+    return { ...h, current_price: newPrice, current_market_value: newMktVal, prev_close_price: lp.previousClose ?? h.prev_close_price, unrealised_pl: unrealisedPl, market_to_market_gain: mtmGain, market_to_market_pct: mtmPct };
   });
 }
 
