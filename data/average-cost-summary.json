@@ -1192,22 +1192,22 @@
     "broker": "CommSec/Stake",
     "symbol": "BWP",
     "name": "BWP",
-    "units": 5500,
-    "cost_base": 19318.75,
-    "avg_cost": 3.5125,
+    "units": 5959,
+    "cost_base": 21049.18,
+    "avg_cost": 3.5324,
     "opening_price": 3.58,
     "opening_units": 5500,
     "opening_market_value": 19690,
     "current_price": 3.74,
-    "current_market_value": 20570,
+    "current_market_value": 22286.66,
     "continuing_mtm_units": 5500,
     "market_to_market_gain": 880,
     "market_to_market_pct": 4.47,
     "price_status": "live",
-    "position_status": "unchanged",
+    "position_status": "changed",
     "cost_status": "complete",
-    "portfolio_weight": 0.48,
-    "unrealised_pl": 1251.25
+    "portfolio_weight": 0.52,
+    "unrealised_pl": 1237.48
   },
   {
     "portfolio_id": "portfolio_1",
@@ -2989,7 +2989,7 @@
     "position_status": "new",
     "cost_status": "complete",
     "portfolio_weight": 0.71,
-    "prev_close_price": 391.94,
+    "prev_close_price": 378.20,
     "unrealised_pl": -2547
   },
   {

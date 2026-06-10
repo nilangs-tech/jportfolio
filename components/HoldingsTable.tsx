@@ -63,9 +63,10 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
   const totals = useMemo(() => {
     const costBasis = rows.reduce((s, h) => s + (h.cost_base ?? 0), 0);
     const mktVal   = rows.reduce((s, h) => s + (h.current_market_value ?? 0), 0);
+    const todayPl  = rows.reduce((s, h) => s + ((h.current_price ?? 0) - (h.prev_close_price ?? h.current_price ?? 0)) * (h.units ?? 0), 0);
     const unrPl    = mktVal - costBasis;
     const unrPct   = costBasis > 0 ? (unrPl / costBasis) * 100 : 0;
-    return { costBasis, mktVal, unrPl, unrPct };
+    return { costBasis, mktVal, todayPl, unrPl, unrPct };
   }, [rows]);
 
   return (
@@ -101,7 +102,7 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
               <td className="right" style={{ padding: "6px 8px" }} />
               <td className="right" style={{ padding: "6px 8px" }} />
               <td className="right" style={{ fontWeight: 700, padding: "6px 8px" }}>${n(totals.mktVal)}</td>
-              <td className="right" style={{ padding: "6px 8px" }} />
+              <td className="right" style={{ fontWeight: 700, padding: "6px 8px", color: totals.todayPl >= 0 ? "var(--green)" : "var(--red)" }}>{totals.todayPl >= 0 ? "+" : "−"}${n(Math.abs(totals.todayPl))}</td>
               <td className="right" style={{ fontWeight: 700, padding: "6px 8px", color: totals.unrPl >= 0 ? "var(--green)" : "var(--red)" }}>
                 {totals.unrPl >= 0 ? "+" : "−"}${n(Math.abs(totals.unrPl))}
               </td>
