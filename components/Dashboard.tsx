@@ -17,6 +17,7 @@ interface Props {
   uiSeries: UiSeries;
   asOf: string;
   mode: "local" | "hosted";
+  cashClassification?: any[];
 }
 
 const by = <T extends { portfolio_id: string }>(rows: T[], id: string) => rows.find((r) => r.portfolio_id === id);
@@ -88,7 +89,7 @@ function getComputedMetrics(summary: Summary[], holdings: HoldingRow[], pid: str
 
 // ─── Dashboard ────────────────────────────────────────────────────────────────
 
-export default function Dashboard({ summary, performance, holdings, positions, uiSeries, asOf, mode }: Props) {
+export default function Dashboard({ summary, performance, holdings, positions, uiSeries, asOf, mode, cashClassification }: Props) {
   const [tab, setTab] = useState<"summary" | "portfolio_1" | "portfolio_2">("summary");
   const [livePrices, setLivePrices] = useState<LivePrices | null>(null);
   const [priceAsOf, setPriceAsOf] = useState<string>(asOf);
@@ -154,7 +155,7 @@ export default function Dashboard({ summary, performance, holdings, positions, u
           pid="portfolio_1" summary={liveSummary} performance={performance}
           holdings={liveHoldings} positions={positions}
           series={uiSeries.portfolio_1} asOf={displayAsOf} accent="#064e3b"
-          livePrices={livePrices}
+          livePrices={livePrices} cashClassification={cashClassification}
         />
       )}
       {tab === "portfolio_2" && (
@@ -162,7 +163,7 @@ export default function Dashboard({ summary, performance, holdings, positions, u
           pid="portfolio_2" summary={liveSummary} performance={performance}
           holdings={liveHoldings} positions={positions}
           series={uiSeries.portfolio_2} asOf={displayAsOf} accent="#0f4c81"
-          livePrices={livePrices}
+          livePrices={livePrices} cashClassification={cashClassification}
         />
       )}
 
@@ -274,10 +275,10 @@ function PcRow({ label, value, color }: { label: string; value: string; color?: 
 
 // ─── Portfolio Tab ────────────────────────────────────────────────────────────
 
-function PortfolioTab({ pid, summary, performance, holdings, positions, series, asOf, accent, livePrices }: {
+function PortfolioTab({ pid, summary, performance, holdings, positions, series, asOf, accent, livePrices, cashClassification }: {
   pid: "portfolio_1" | "portfolio_2"; summary: Summary[]; performance: PerformanceSummary[];
   holdings: HoldingRow[]; positions: PositionChangeRow[]; series: PortfolioSeries;
-  asOf: string; accent: string; livePrices: LivePrices | null;
+  asOf: string; accent: string; livePrices: LivePrices | null; cashClassification?: any[];
 }) {
   const s = by(summary, pid)!, perf = by(performance, pid)!;
   const hold = useMemo(() => holdings.filter((h) => h.portfolio_id === pid), [holdings, pid]);
@@ -289,8 +290,8 @@ function PortfolioTab({ pid, summary, performance, holdings, positions, series, 
 
   // For P1, compute perfBridge dynamically to match KPI tiles
   const computedPerfBridge = useMemo(
-    () => pid === "portfolio_1" ? (computeP1PerfBridge(s, hold) as any) : null,
-    [pid, s, hold]
+    () => pid === "portfolio_1" ? (computeP1PerfBridge(s, hold, cashClassification) as any) : null,
+    [pid, s, hold, cashClassification]
   );
 
   // Use computed perfBridge for P1, fallback to static series for P2

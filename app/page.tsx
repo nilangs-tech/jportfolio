@@ -10,12 +10,13 @@ const EMPTY_SERIES: UiSeries["portfolio_1"] = {
 };
 
 export default async function Home() {
-  const [summary, performance, holdings, positions, ui] = await Promise.all([
+  const [summary, performance, holdings, positions, ui, cashClass] = await Promise.all([
     readDataset("summary"),
     readDataset("performance-summary"),
     readDataset("average-cost-summary"),
     readDataset("position-changes"),
     readUiSeries(),
+    readDataset("cash-classification-summary"),
   ]);
 
   const asOf = summary.find((s) => s.portfolio_id === "combined")?.as_of_date ?? "—";
@@ -30,6 +31,7 @@ export default async function Home() {
       uiSeries={uiSeries}
       asOf={asOf}
       mode={APP_MODE}
+      cashClassification={cashClass}
     />
   );
 }
