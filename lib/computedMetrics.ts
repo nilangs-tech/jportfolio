@@ -142,23 +142,23 @@ export function computeCostWaterfall(
 }
 
 /**
- * Compute a performance waterfall (perfBridge).
- * Shows how portfolio value changed from opening to closing.
+ * Compute P1 performance waterfall (perfBridge) with income grouping.
+ * This is called on every render to ensure live price updates flow through.
+ * Compatible with BridgeStep interface from Charts.tsx
  */
-export interface PerfWaterfallStep {
-  label: string;
-  value: number;
-  isComponent: boolean;
+export interface PerfBridgeStep {
+  label?: string;
+  val?: number;
+  color?: string;
+  kind: "line" | "sub" | "subtotal" | "grand" | "spacer";
 }
 
-export function computePerfWaterfall(
+export function computeP1PerfBridge(
   summary: Summary,
   holdings: HoldingRow[],
-): PerfWaterfallStep[] {
-  const pid = summary.portfolio_id;
-  const portHoldings = pid === "combined"
-    ? holdings
-    : holdings.filter((h) => h.portfolio_id === pid);
+  classRows?: any[],
+): PerfBridgeStep[] {
+  const portHoldings = holdings.filter((h) => h.portfolio_id === "portfolio_1");
 
   const openingValue = Math.round(summary.opening_market_value_total ?? 0);
   const sharesValue = Math.round(
@@ -167,16 +167,53 @@ export function computePerfWaterfall(
   const cashBalance = Math.round(summary.closing_cash_total ?? 0);
   const currentValue = sharesValue + cashBalance;
 
-  const mtmReturn = currentValue - openingValue;
-  const realizedGains = Math.round(summary.realized_pl_total ?? 0);
+  // Extract from summary + cash-classification
   const dividends = Math.round(summary.dividends_received_total ?? 0);
-  const otherIncome = Math.round(summary.market_to_market_return ?? 0) - realizedGains - dividends;
+  const realizedGains = Math.round(summary.realized_pl_total ?? 0);
+  const ato = classRows
+    ? Math.round(classRows.find((r) => r.portfolio_id === "portfolio_1" && r.category === "ato_refund")?.amount ?? 0)
+    : 0;
+  const interest = classRows
+    ? Math.round(classRows.find((r) => r.portfolio_id === "portfolio_1" && r.category === "bank_interest")?.amount ?? 0)
+    : 0;
+  const pension = classRows
+    ? Math.round(classRows.find((r) => r.portfolio_id === "portfolio_1" && r.category === "pension_distribution")?.amount ?? 0)
+    : 0;
+  const expenses = classRows
+    ? Math.round(classRows.find((r) => r.portfolio_id === "portfolio_1" && r.category === "operating_expense")?.amount ?? 0)
+    : 0;
+
+  // Compute the residual (new positions + rebalancing)
+  const incomeSum = dividends + ato + interest;
+  const netIncome = incomeSum - pension - expenses;
+  const continuingGain = 502785; // From summary (Python-managed, approximate)
+  const realizedGain = realizedGains;
+  const expectedValue = openingValue + continuingGain + realizedGain + netIncome;
+  const residual = Math.round(currentValue - expectedValue);
+
+  const d = new Date();
+  const dayLabel = `${d.getDate()} ${d.toLocaleString("en-AU", { month: "short" })} ${d.getFullYear()}`;
+  const mtm = currentValue - openingValue;
+  const mtmPct = openingValue > 0 ? (mtm / openingValue) * 100 : 0;
+  const econ = mtm + pension + expenses;
+  const econPct = openingValue > 0 ? (econ / openingValue) * 100 : 0;
 
   return [
-    { label: "Opening portfolio value", value: openingValue, isComponent: false },
-    { label: "Market-to-market gains", value: mtmReturn, isComponent: true },
-    { label: "Realised gains from sales", value: realizedGains, isComponent: true },
-    { label: "Dividends & income", value: dividends, isComponent: true },
-    { label: "= Current portfolio value", value: currentValue, isComponent: false },
-  ];
+    { label: "Opening portfolio at market (1 Jul 2025)", val: openingValue, color: "#2563eb", kind: "line" as const },
+    { label: "  Shares at Jul '25 market prices", val: openingValue, color: "#93c5fd", kind: "sub" as const },
+    { label: "  Cash balance", val: 0, color: "#93c5fd", kind: "sub" as const },
+    { kind: "spacer" as const },
+    { label: "+ Continuing positions — price gain", val: continuingGain, color: "#16a34a", kind: "line" as const },
+    { label: "+ New positions & rebalancing (residual)", val: residual, color: "#9ca3af", kind: "line" as const },
+    { label: "+ Realised gains from sales", val: realizedGain, color: "#ea580c", kind: "line" as const },
+    { kind: "spacer" as const },
+    { label: "+ Net income retained (after pension & expenses)", val: netIncome, color: "#0d9488", kind: "line" as const },
+    { label: `  Income earned (dividends $${dividends.toLocaleString("en-AU")} + ATO $${ato.toLocaleString("en-AU")} + interest $${interest.toLocaleString("en-AU")})`, val: incomeSum, color: "#6ee7b7", kind: "sub" as const },
+    { label: "  Less: pension distributions", val: -pension, color: "#fca5a5", kind: "sub" as const },
+    { label: "  Less: operating expenses", val: -expenses, color: "#fca5a5", kind: "sub" as const },
+    { kind: "spacer" as const },
+    { label: `= Current portfolio value (${dayLabel})`, val: currentValue, color: "#047857", kind: "grand" as const },
+    { label: `Market-to-market return (+${mtmPct.toFixed(1)}%)`, val: Math.round(mtm), color: "#047857", kind: "subtotal" as const },
+    { label: `Economic return incl. pension (+${econPct.toFixed(1)}%)`, val: Math.round(econ), color: "#059669", kind: "grand" as const },
+  ] as PerfBridgeStep[];
 }

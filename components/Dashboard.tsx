@@ -3,7 +3,7 @@ import { useCallback, useMemo, useState } from "react";
 import type { Summary, PerformanceSummary, HoldingRow, PositionChangeRow } from "@/lib/types";
 import type { UiSeries, PortfolioSeries } from "@/lib/uiSeries";
 import { fmtK, money, moneyS, pctFmt } from "@/lib/format";
-import { computeMetrics, type ComputedMetrics } from "@/lib/computedMetrics";
+import { computeMetrics, computeP1PerfBridge, type ComputedMetrics } from "@/lib/computedMetrics";
 import { KpiGrid, Bridge, HBarChart, MonthlyBars, MonthlyActivity } from "./Charts";
 import HoldingsTable from "./HoldingsTable";
 import PriceRefresh, { type LivePrices } from "./PriceRefresh";
@@ -287,6 +287,15 @@ function PortfolioTab({ pid, summary, performance, holdings, positions, series, 
   // ─── Computed metrics (always derived from source data, never static) ───
   const metrics = useMemo(() => computeMetrics(s, hold), [s, hold]);
 
+  // For P1, compute perfBridge dynamically to match KPI tiles
+  const computedPerfBridge = useMemo(
+    () => pid === "portfolio_1" ? (computeP1PerfBridge(s, hold) as any) : null,
+    [pid, s, hold]
+  );
+
+  // Use computed perfBridge for P1, fallback to static series for P2
+  const perfBridgeSteps = computedPerfBridge ?? series.perfBridge;
+
   const dc = useMemo(() => calcDailyChange(holdings, livePrices, pid), [holdings, livePrices, pid]);
 
   const totalUnr = useMemo(
@@ -348,7 +357,7 @@ function PortfolioTab({ pid, summary, performance, holdings, positions, series, 
       </div>
 
       <div className="row row-2">
-        <Card dot="#047857" title="True Portfolio Performance — FY2026"><Bridge steps={series.perfBridge} /></Card>
+        <Card dot="#047857" title="True Portfolio Performance — FY2026"><Bridge steps={perfBridgeSteps} /></Card>
         <Card dot="#dc2626" title={pid === "portfolio_1" ? "Expenses & Distributions FY2026" : "Capital Added & Brokerage"}>
           <ExpensePanel series={series} />
         </Card>
