@@ -1,5 +1,31 @@
 [
   {
+    "date": "2026-06-05",
+    "portfolio_id": "portfolio_1",
+    "broker": "Stake",
+    "type": "buy",
+    "symbol": "NST",
+    "units": 150,
+    "price": 20.055,
+    "cash_amount": -3008.25,
+    "currency": "AUD",
+    "source": "manual",
+    "notes": "New position"
+  },
+  {
+    "date": "2026-02-01",
+    "portfolio_id": "portfolio_1",
+    "broker": "CommSec/Stake",
+    "type": "corporate_action",
+    "symbol": "RUL",
+    "units": -7000,
+    "price": 5,
+    "cash_amount": 35000,
+    "currency": "AUD",
+    "source": "manual",
+    "notes": "Off-market corporate buyout by Caterpillar subsidiary at $5.00 — realized gain $23,468.90"
+  },
+  {
     "date": "2025-09-24",
     "portfolio_id": "portfolio_1",
     "broker": "CommSec/Stake",
