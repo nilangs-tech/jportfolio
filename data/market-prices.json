@@ -793,11 +793,11 @@
       "quote_date": "2026-06-09T06:10:15.000Z"
     },
     "ETPMPM": {
-      "price": 0,
-      "previousClose": 0,
-      "dailyChange": 0,
-      "dailyChangePct": null,
-      "quote_date": "2019-06-28T22:07:38.000Z"
+      "price": 378.90,
+      "previousClose": 391.94,
+      "dailyChange": -13.04,
+      "dailyChangePct": -3.33,
+      "quote_date": "2026-06-10T18:59:00.000Z"
     },
     "RGN": {
       "price": 2.27,
