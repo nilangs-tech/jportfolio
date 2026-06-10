@@ -140,6 +140,7 @@ export interface HoldingRow {
   opening_market_value?: number | null;
   current_price?: number | null;
   current_market_value?: number | null;
+  prev_close_price?: number | null;
   price_status?: PriceStatus;
   opening_units?: number | null;
   continuing_mtm_units?: number | null;

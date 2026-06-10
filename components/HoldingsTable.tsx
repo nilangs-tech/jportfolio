@@ -2,7 +2,7 @@
 import { useMemo, useState } from "react";
 import type { HoldingRow } from "@/lib/types";
 
-type SortKey = "code" | "units" | "avg" | "basis" | "oprice" | "price" | "mktval" | "unr" | "unrpct" | "weight";
+type SortKey = "code" | "units" | "avg" | "basis" | "oprice" | "price" | "mktval" | "today" | "unr" | "unrpct" | "weight";
 type FilterKey = "all" | "new" | "changed" | "hold" | "gain" | "loss";
 
 const n = (v: number, d = 0) => v.toLocaleString("en-AU", { minimumFractionDigits: d, maximumFractionDigits: d });
@@ -18,6 +18,7 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
 
   const rows = useMemo(() => {
     const unr = (h: HoldingRow) => (h.current_market_value ?? 0) - (h.cost_base ?? 0);
+    const today = (h: HoldingRow) => ((h.current_price ?? 0) - (h.prev_close_price ?? h.current_price ?? 0)) * (h.units ?? 0);
     let r = holdings.filter((h) => {
       if (q && !h.symbol.toUpperCase().includes(q.toUpperCase())) return false;
       if (filter === "new") return h.position_status === "new";
@@ -36,6 +37,7 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
         case "oprice": return h.opening_price ?? 0;
         case "price": return h.current_price ?? 0;
         case "mktval": return h.current_market_value ?? 0;
+        case "today": return today(h);
         case "unr": return unr(h);
         case "unrpct": return (h.cost_base ?? 0) > 0 ? (unr(h) / (h.cost_base ?? 1)) * 100 : 0;
       }
@@ -86,6 +88,7 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
               {th("oprice", "Avg Cost Px")}
               {th("price", "Curr Px")}
               {th("mktval", "Mkt Value")}
+              {th("today", "Today $")}
               {th("unr", "Unr. P&L $")}
               {th("unrpct", "Unr. P&L %")}
               {showStatus ? <th>Status</th> : null}
@@ -98,6 +101,7 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
               <td className="right" style={{ padding: "6px 8px" }} />
               <td className="right" style={{ padding: "6px 8px" }} />
               <td className="right" style={{ fontWeight: 700, padding: "6px 8px" }}>${n(totals.mktVal)}</td>
+              <td className="right" style={{ padding: "6px 8px" }} />
               <td className="right" style={{ fontWeight: 700, padding: "6px 8px", color: totals.unrPl >= 0 ? "var(--green)" : "var(--red)" }}>
                 {totals.unrPl >= 0 ? "+" : "−"}${n(Math.abs(totals.unrPl))}
               </td>
@@ -112,8 +116,10 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
               const mkt = h.current_market_value ?? 0;
               const unr = mkt - (h.cost_base ?? 0);
               const unrpct = (h.cost_base ?? 0) > 0 ? (unr / (h.cost_base ?? 1)) * 100 : 0;
+              const todayChange = ((h.current_price ?? 0) - (h.prev_close_price ?? h.current_price ?? 0)) * (h.units ?? 0);
               const bW = Math.round((mkt / maxMkt) * 80);
               const unrColor = unr >= 0 ? "var(--green)" : "var(--red)";
+              const todayColor = todayChange >= 0 ? "var(--green)" : "var(--red)";
               const tag = h.position_status === "delisted" ? <span className="tag tag-delisted">Delisted</span>
                 : h.position_status === "new" ? <span className="tag tag-new">New</span>
                   : h.position_status === "changed" ? <span className="tag tag-changed">Changed</span>
@@ -127,6 +133,7 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
                   <td className="right">{h.avg_cost != null ? `$${h.avg_cost.toFixed(3)}` : "—"}</td>
                   <td className="right" style={{ fontWeight: 600 }}>{h.current_price != null ? `$${h.current_price.toFixed(3)}` : "—"}</td>
                   <td className="right"><div className="mini-bar-wrap"><div className="mini-bar" style={{ width: bW, background: unr >= 0 ? "#bbf7d0" : "#fecaca" }} />${n(mkt)}</div></td>
+                  <td className="right" style={{ color: todayColor, fontWeight: 600 }}>{todayChange >= 0 ? "+" : "−"}${n(Math.abs(todayChange))}</td>
                   <td className="right" style={{ color: unrColor, fontWeight: 700 }}>{unr >= 0 ? "+" : "−"}${n(Math.abs(unr))}</td>
                   <td className="right" style={{ color: unrColor, fontWeight: 700 }}>{unrpct >= 0 ? "+" : ""}{unrpct.toFixed(1)}%</td>
                   {showStatus ? <td>{tag}</td> : null}
