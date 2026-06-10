@@ -36,6 +36,7 @@ export interface ComputedMetrics {
 export function computeMetrics(
   summary: Summary,
   holdings: HoldingRow[],
+  classRows?: any[],
 ): ComputedMetrics {
   const pid = summary.portfolio_id;
   const portHoldings = pid === "combined"
@@ -61,9 +62,15 @@ export function computeMetrics(
   const unrealisedGain = sharesValue - costBasisTotal;
   const unrealisedGainPct = costBasisTotal > 0 ? (unrealisedGain / costBasisTotal) * 100 : 0;
 
-  // Economic return (from summary, adjusted for live prices)
-  // For P1: includes pension + expenses; For P2: Python-managed metric
-  const economicReturn = summary.economic_return ?? mtmReturn;
+  // Economic return: for P1, includes pension + expenses; for P2, use Python-managed metric
+  let economicReturn = mtmReturn;
+  if (pid === "portfolio_1" && classRows) {
+    const pension = Math.round(classRows.find((r) => r.portfolio_id === "portfolio_1" && r.category === "pension_distribution")?.amount ?? 0);
+    const expenses = Math.round(classRows.find((r) => r.portfolio_id === "portfolio_1" && r.category === "operating_expense")?.amount ?? 0);
+    economicReturn = mtmReturn + pension + expenses;
+  } else {
+    economicReturn = summary.economic_return ?? mtmReturn;
+  }
   const economicReturnPct = openingValue > 0 ? (economicReturn / openingValue) * 100 : 0;
 
   // Cash flows (from summary)

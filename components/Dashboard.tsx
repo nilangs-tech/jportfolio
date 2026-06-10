@@ -286,7 +286,7 @@ function PortfolioTab({ pid, summary, performance, holdings, positions, series, 
   const closedPos = positions.filter((p) => p.portfolio_id === pid && p.change_type === "closed").map((p) => p.symbol);
 
   // ─── Computed metrics (always derived from source data, never static) ───
-  const metrics = useMemo(() => computeMetrics(s, hold), [s, hold]);
+  const metrics = useMemo(() => computeMetrics(s, hold, cashClassification), [s, hold, cashClassification]);
 
   // For P1, compute perfBridge dynamically to match KPI tiles
   const computedPerfBridge = useMemo(
