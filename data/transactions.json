@@ -1,5 +1,31 @@
 [
   {
+    "date": "2025-08-26",
+    "portfolio_id": "portfolio_1",
+    "broker": "CommSec",
+    "type": "corporate_action",
+    "symbol": "PAI",
+    "units": -20000,
+    "price": 0,
+    "cash_amount": 0,
+    "currency": "AUD",
+    "source": "manual",
+    "notes": "ETF conversion — 20,000 PAI cancelled, 3,636 PAXX issued at 0.1818:1"
+  },
+  {
+    "date": "2025-08-26",
+    "portfolio_id": "portfolio_1",
+    "broker": "CommSec",
+    "type": "corporate_action",
+    "symbol": "PAXX",
+    "units": 3636,
+    "price": 0,
+    "cash_amount": 0,
+    "currency": "AUD",
+    "source": "manual",
+    "notes": "ETF conversion — 3,636 PAXX received for 20,000 PAI, cost base $20,000 carried over"
+  },
+  {
     "date": "2026-06-05",
     "portfolio_id": "portfolio_1",
     "broker": "Stake",

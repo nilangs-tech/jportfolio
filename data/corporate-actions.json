@@ -13,12 +13,15 @@
     "source": "ASX scheme announcement"
   },
   {
-    "effective_date": "2025-08-01",
+    "effective_date": "2025-08-26",
     "portfolio_id": "portfolio_1",
-    "action_type": "ticker_change",
+    "action_type": "unit_conversion",
     "from_symbol": "PAI",
     "to_symbol": "PAXX",
-    "cost_base_treatment": "Converted to PAXX ETF (Aug 2025)",
+    "from_units": 20000,
+    "to_units": 3636,
+    "conversion_ratio": 0.1818,
+    "cost_base_treatment": "Cost base $20,000 carried over — 20,000 PAI converted to 3,636 PAXX at 0.1818:1, trading commenced 26 Aug 2025",
     "source": "Issuer notice"
   },
   {
