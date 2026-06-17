@@ -162,7 +162,7 @@
       },
       {
         "label": "= Closing cost basis (shares)",
-        "val": 3308633,
+        "val": 3278232,
         "color": "#1d4ed8",
         "kind": "subtotal"
       },
@@ -195,13 +195,13 @@
       },
       {
         "label": "− Net cash into shares (buys − sale proceeds)",
-        "val": -11157,
+        "val": -3657,
         "color": "#9ca3af",
         "kind": "line"
       },
       {
         "label": "− Pension paid (12 × $7,500 + 2 × NAB + $3,310 top-up)",
-        "val": -133310,
+        "val": -140810,
         "color": "#dc2626",
         "kind": "line"
       },
@@ -222,7 +222,7 @@
       },
       {
         "label": "Total portfolio value (at cost + cash)",
-        "val": 3346678,
+        "val": 3316277,
         "color": "#1d4ed8",
         "kind": "grand"
       }
@@ -257,7 +257,7 @@
       },
       {
         "label": "+ New positions & rebalancing (residual)",
-        "val": -19032,
+        "val": -59562,
         "color": "#9ca3af",
         "kind": "line"
       },
@@ -284,7 +284,7 @@
       },
       {
         "label": "  Less: pension distributions",
-        "val": -133310,
+        "val": -140810,
         "color": "#fca5a5",
         "kind": "sub"
       },
@@ -298,20 +298,20 @@
         "kind": "spacer"
       },
       {
-        "label": "= Current portfolio value (9 Jun 2026)",
-        "val": 4269076,
+        "label": "= Current portfolio value (17 Jun 2026)",
+        "val": 4221046,
         "color": "#047857",
         "kind": "grand"
       },
       {
-        "label": "Market-to-market return (+18.2%)",
-        "val": 658202,
+        "label": "Market-to-market return (+16.9%)",
+        "val": 610172,
         "color": "#047857",
         "kind": "subtotal"
       },
       {
-        "label": "Economic return incl. pension (+22.1%)",
-        "val": 797189,
+        "label": "Economic return incl. pension (+21.0%)",
+        "val": 756659,
         "color": "#059669",
         "kind": "grand"
       }
@@ -503,7 +503,7 @@
       },
       {
         "label": "= Closing cost basis (shares)",
-        "val": 1052611,
+        "val": 1053058,
         "color": "#1d4ed8",
         "kind": "subtotal"
       },
@@ -545,7 +545,7 @@
       },
       {
         "label": "Total portfolio value (at cost + cash)",
-        "val": 1055576,
+        "val": 1056023,
         "color": "#1d4ed8",
         "kind": "grand"
       }
@@ -609,8 +609,8 @@
         "kind": "spacer"
       },
       {
-        "label": "= Current portfolio value (10 Jun 2026)",
-        "val": 1125757,
+        "label": "= Current portfolio value (17 Jun 2026)",
+        "val": 1135440,
         "color": "#047857",
         "kind": "grand"
       },

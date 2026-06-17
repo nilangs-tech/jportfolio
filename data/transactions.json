@@ -1,96 +1,5 @@
 [
   {
-    "date": "2025-08-26",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec",
-    "type": "corporate_action",
-    "symbol": "PAI",
-    "units": -20000,
-    "price": 0,
-    "cash_amount": 0,
-    "currency": "AUD",
-    "source": "manual",
-    "notes": "ETF conversion — 20,000 PAI cancelled, 3,636 PAXX issued at 0.1818:1"
-  },
-  {
-    "date": "2025-08-26",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec",
-    "type": "corporate_action",
-    "symbol": "PAXX",
-    "units": 3636,
-    "price": 0,
-    "cash_amount": 0,
-    "currency": "AUD",
-    "source": "manual",
-    "notes": "ETF conversion — 3,636 PAXX received for 20,000 PAI, cost base $20,000 carried over"
-  },
-  {
-    "date": "2026-06-05",
-    "portfolio_id": "portfolio_1",
-    "broker": "Stake",
-    "type": "buy",
-    "symbol": "NST",
-    "units": 150,
-    "price": 20.055,
-    "cash_amount": -3008.25,
-    "currency": "AUD",
-    "source": "manual",
-    "notes": "New position"
-  },
-  {
-    "date": "2026-02-01",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "type": "corporate_action",
-    "symbol": "RUL",
-    "units": -7000,
-    "price": 5,
-    "cash_amount": 35000,
-    "currency": "AUD",
-    "source": "manual",
-    "notes": "Off-market corporate buyout by Caterpillar subsidiary at $5.00 — realized gain $23,468.90"
-  },
-  {
-    "date": "2025-09-24",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "type": "corporate_action",
-    "symbol": "BKW",
-    "units": -1000,
-    "price": 36.33,
-    "cash_amount": 0,
-    "currency": "AUD",
-    "source": "manual",
-    "notes": "Scheme of arrangement — BKW converted to SOL"
-  },
-  {
-    "date": "2025-09-24",
-    "portfolio_id": "portfolio_1",
-    "broker": "CommSec/Stake",
-    "type": "corporate_action",
-    "symbol": "SOL",
-    "units": 820,
-    "price": 36.33,
-    "cash_amount": 0,
-    "currency": "AUD",
-    "source": "manual",
-    "notes": "Scheme of arrangement — 820 SOL received for 1000 BKW at cost base $44.30 per share"
-  },
-  {
-    "date": "2026-05-22",
-    "portfolio_id": "portfolio_1",
-    "broker": "Stake",
-    "type": "buy",
-    "symbol": "BWP",
-    "units": 459,
-    "price": 3.77,
-    "cash_amount": -1730.43,
-    "currency": "AUD",
-    "source": "manual",
-    "notes": "SPP allotment"
-  },
-  {
     "date": "2025-07-28",
     "portfolio_id": "portfolio_1",
     "broker": "CommSec",
@@ -202,6 +111,32 @@
     "date": "2025-08-26",
     "portfolio_id": "portfolio_1",
     "broker": "CommSec",
+    "type": "corporate_action",
+    "symbol": "PAI",
+    "units": -20000,
+    "price": 0,
+    "cash_amount": 0,
+    "currency": "AUD",
+    "source": "manual",
+    "notes": "ETF conversion — 20,000 PAI cancelled, 3,636 PAXX issued at 0.1818:1"
+  },
+  {
+    "date": "2025-08-26",
+    "portfolio_id": "portfolio_1",
+    "broker": "CommSec",
+    "type": "corporate_action",
+    "symbol": "PAXX",
+    "units": 3636,
+    "price": 0,
+    "cash_amount": 0,
+    "currency": "AUD",
+    "source": "manual",
+    "notes": "ETF conversion — 3,636 PAXX received for 20,000 PAI, cost base $20,000 carried over"
+  },
+  {
+    "date": "2025-08-26",
+    "portfolio_id": "portfolio_1",
+    "broker": "CommSec",
     "type": "sell",
     "symbol": "NEM",
     "units": 100,
@@ -233,6 +168,32 @@
     "cash_amount": 12310.05,
     "currency": "AUD",
     "source": "Transactions_5427552_01072025_07062026.csv"
+  },
+  {
+    "date": "2025-09-24",
+    "portfolio_id": "portfolio_1",
+    "broker": "CommSec/Stake",
+    "type": "corporate_action",
+    "symbol": "BKW",
+    "units": -1000,
+    "price": 36.33,
+    "cash_amount": 0,
+    "currency": "AUD",
+    "source": "manual",
+    "notes": "Scheme of arrangement — BKW converted to SOL"
+  },
+  {
+    "date": "2025-09-24",
+    "portfolio_id": "portfolio_1",
+    "broker": "CommSec/Stake",
+    "type": "corporate_action",
+    "symbol": "SOL",
+    "units": 820,
+    "price": 36.33,
+    "cash_amount": 0,
+    "currency": "AUD",
+    "source": "manual",
+    "notes": "Scheme of arrangement — 820 SOL received for 1000 BKW at cost base $44.30 per share"
   },
   {
     "date": "2025-10-14",
@@ -379,6 +340,19 @@
     "source": "Transactions_5427552_01072025_07062026.csv"
   },
   {
+    "date": "2026-02-01",
+    "portfolio_id": "portfolio_1",
+    "broker": "CommSec/Stake",
+    "type": "corporate_action",
+    "symbol": "RUL",
+    "units": -7000,
+    "price": 5,
+    "cash_amount": 35000,
+    "currency": "AUD",
+    "source": "manual",
+    "notes": "Off-market corporate buyout by Caterpillar subsidiary at $5.00 — realized gain $23,468.90"
+  },
+  {
     "date": "2026-02-03",
     "portfolio_id": "portfolio_1",
     "broker": "CommSec",
@@ -475,6 +449,19 @@
     "source": "Transactions_5427552_01072025_07062026.csv"
   },
   {
+    "date": "2026-05-22",
+    "portfolio_id": "portfolio_1",
+    "broker": "Stake",
+    "type": "buy",
+    "symbol": "BWP",
+    "units": 459,
+    "price": 3.77,
+    "cash_amount": -1730.43,
+    "currency": "AUD",
+    "source": "manual",
+    "notes": "SPP allotment"
+  },
+  {
     "date": "2026-05-26",
     "portfolio_id": "portfolio_1",
     "broker": "CommSec",
@@ -497,5 +484,29 @@
     "cash_amount": 6162.05,
     "currency": "AUD",
     "source": "Transactions_5427552_01072025_07062026.csv"
+  },
+  {
+    "date": "2026-06-05",
+    "portfolio_id": "portfolio_1",
+    "broker": "Stake",
+    "type": "buy",
+    "symbol": "NST",
+    "units": 150,
+    "price": 20.055,
+    "cash_amount": -3008.25,
+    "currency": "AUD",
+    "source": "manual",
+    "notes": "New position"
+  },
+  {
+    "date": "2026-06-15",
+    "portfolio_id": "portfolio_1",
+    "type": "sell",
+    "symbol": "NEM",
+    "units": 100,
+    "price": 144.35,
+    "fees": 32.67,
+    "cash_amount": 14405.05,
+    "source": "C176015787.pdf"
   }
 ]

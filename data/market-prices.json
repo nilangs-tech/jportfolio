@@ -597,8 +597,8 @@
       "quote_date": "2026-06-09T06:10:15.000Z"
     },
     "PMGOLD": {
-      "price": 59.38,
-      "previousClose": 59.38,
+      "price": 60.85,
+      "previousClose": 60.85,
       "dailyChange": 0,
       "dailyChangePct": 0,
       "quote_date": "2026-06-10T00:00:00.000Z",
@@ -794,8 +794,8 @@
       "quote_date": "2026-06-09T06:10:15.000Z"
     },
     "ETPMPM": {
-      "price": 378.20,
-      "previousClose": 378.20,
+      "price": 394.22,
+      "previousClose": 394.22,
       "dailyChange": 0,
       "dailyChangePct": 0,
       "quote_date": "2026-06-10T18:59:00.000Z",
