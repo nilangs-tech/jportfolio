@@ -4,6 +4,7 @@ import type { ParseResult, BrokerSource } from "./types";
 import { parseCommSecCsv } from "./commsecCsv";
 import { parseStakeActivity, parseStakeIncome, parseStakeCash } from "./stakeXlsx";
 import { parseCashCsv } from "./cashCsv";
+import { parseCommSecPdf } from "./commsecPdf";
 
 export type { ParseResult, ParsedTrade, ParsedDividend, ParsedCashEntry, BrokerSource } from "./types";
 
@@ -66,14 +67,8 @@ export async function parseStatement(
 ): Promise<ParseResult> {
   const lower = filename.toLowerCase();
 
-  // PDF: not yet supported via this path (handled by LLM route)
   if (lower.endsWith(".pdf")) {
-    return {
-      source: "pdf_llm", filename, portfolio_id: portfolioId,
-      trades: [], dividends: [], cashEntries: [],
-      warnings: ["PDF parsing is not yet supported — please convert to CSV or XLSX first."],
-      skippedRows: 0,
-    };
+    return parseCommSecPdf(buffer, portfolioId, filename);
   }
 
   try {

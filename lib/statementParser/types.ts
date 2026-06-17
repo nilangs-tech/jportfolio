@@ -8,6 +8,7 @@ export type BrokerSource =
   | "commbank_cash_csv"
   | "unknown_csv"
   | "unknown_xlsx"
+  | "commsec_pdf"
   | "pdf_llm";
 
 export interface ParsedTrade {
