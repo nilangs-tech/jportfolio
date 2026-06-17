@@ -39,3 +39,6 @@ yarn-error.log*
 # Private chat / decision logs may quote raw statement text — keep local only.
 /data/chat-history.json
 /data/reconciliation-decisions.json
+
+# pdf-parse test fixture (required on disk but not committed)
+/test/data/05-versions-space.pdf
