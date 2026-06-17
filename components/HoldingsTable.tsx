@@ -16,9 +16,10 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
   const totalMkt = useMemo(() => holdings.reduce((s, h) => s + (h.current_market_value ?? 0), 0), [holdings]);
   const maxMkt = useMemo(() => Math.max(1, ...holdings.map((h) => h.current_market_value ?? 0)), [holdings]);
 
+  const unr = (h: HoldingRow) => (h.current_market_value ?? 0) - (h.cost_base ?? 0);
+  const today = (h: HoldingRow) => ((h.current_price ?? 0) - (h.prev_close_price ?? h.current_price ?? 0)) * (h.units ?? 0);
+
   const rows = useMemo(() => {
-    const unr = (h: HoldingRow) => (h.current_market_value ?? 0) - (h.cost_base ?? 0);
-    const today = (h: HoldingRow) => ((h.current_price ?? 0) - (h.prev_close_price ?? h.current_price ?? 0)) * (h.units ?? 0);
     let r = holdings.filter((h) => {
       if (q && !h.symbol.toUpperCase().includes(q.toUpperCase())) return false;
       if (filter === "new") return h.position_status === "new";
@@ -50,6 +51,9 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
     return r;
   }, [holdings, q, filter, sortCol, sortDir]);
 
+  const activeRows = useMemo(() => rows.filter((h) => h.position_status !== "closed"), [rows]);
+  const closedRows = useMemo(() => rows.filter((h) => h.position_status === "closed"), [rows]);
+
   const sortBy = (col: SortKey) => {
     if (sortCol === col) setSortDir((d) => -d);
     else { setSortCol(col); setSortDir(-1); }
@@ -61,13 +65,13 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
   const filters: [FilterKey, string][] = [["all", `All (${holdings.length})`], ["new", "New"], ["changed", "Changed"], ["hold", "Unchanged"], ["gain", "Gainers"], ["loss", "Losers"]];
 
   const totals = useMemo(() => {
-    const costBasis = rows.reduce((s, h) => s + (h.cost_base ?? 0), 0);
-    const mktVal   = rows.reduce((s, h) => s + (h.current_market_value ?? 0), 0);
-    const todayPl  = rows.reduce((s, h) => s + ((h.current_price ?? 0) - (h.prev_close_price ?? h.current_price ?? 0)) * (h.units ?? 0), 0);
+    const costBasis = activeRows.reduce((s, h) => s + (h.cost_base ?? 0), 0);
+    const mktVal   = activeRows.reduce((s, h) => s + (h.current_market_value ?? 0), 0);
+    const todayPl  = activeRows.reduce((s, h) => s + ((h.current_price ?? 0) - (h.prev_close_price ?? h.current_price ?? 0)) * (h.units ?? 0), 0);
     const unrPl    = mktVal - costBasis;
     const unrPct   = costBasis > 0 ? (unrPl / costBasis) * 100 : 0;
     return { costBasis, mktVal, todayPl, unrPl, unrPct };
-  }, [rows]);
+  }, [activeRows]);
 
   return (
     <div>
@@ -76,7 +80,7 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
         {filters.map(([f, lbl]) => (
           <button key={f} className={`filter-btn ${filter === f ? "active" : ""}`} onClick={() => setFilter(f)}>{lbl}</button>
         ))}
-        <span style={{ marginLeft: "auto", fontSize: 11, color: "var(--text4)" }}>{rows.length} positions</span>
+        <span style={{ marginLeft: "auto", fontSize: 11, color: "var(--text4)" }}>{activeRows.length} active{closedRows.length > 0 ? ` + ${closedRows.length} closed` : ""} positions</span>
       </div>
       <div style={{ overflowX: "auto" }}>
         <table>
@@ -113,7 +117,7 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
             </tr>
           </thead>
           <tbody>
-            {rows.map((h) => {
+            {activeRows.map((h) => {
               const mkt = h.current_market_value ?? 0;
               const unr = mkt - (h.cost_base ?? 0);
               const unrpct = (h.cost_base ?? 0) > 0 ? (unr / (h.cost_base ?? 1)) * 100 : 0;
@@ -142,6 +146,41 @@ export default function HoldingsTable({ holdings, showStatus = true }: { holding
               );
             })}
           </tbody>
+          {closedRows.length > 0 && (
+            <tbody>
+              <tr style={{ height: 8 }}><td colSpan={showStatus ? 11 : 10} style={{ padding: 0, background: "transparent", borderBottom: "none" }} /></tr>
+              <tr style={{ background: "var(--surface2)", borderBottom: "2px solid var(--border)", fontSize: 12 }}>
+                <td colSpan={showStatus ? 11 : 10} style={{ padding: "6px 8px", fontWeight: 700, color: "var(--text3)" }}>
+                  CLOSED POSITIONS ({closedRows.length})
+                </td>
+              </tr>
+              {closedRows.map((h) => {
+                const mkt = h.current_market_value ?? 0;
+                const unr = mkt - (h.cost_base ?? 0);
+                const unrpct = (h.cost_base ?? 0) > 0 ? (unr / (h.cost_base ?? 1)) * 100 : 0;
+                const todayChange = ((h.current_price ?? 0) - (h.prev_close_price ?? h.current_price ?? 0)) * (h.units ?? 0);
+                const bW = Math.round((mkt / maxMkt) * 80);
+                const unrColor = unr >= 0 ? "var(--green)" : "var(--red)";
+                const todayColor = todayChange >= 0 ? "var(--green)" : "var(--red)";
+                const tag = <span className="tag tag-hold">Closed</span>;
+                return (
+                  <tr key={h.symbol} style={{ opacity: 0.7 }}>
+                    <td style={{ fontWeight: 700 }}>{h.symbol}</td>
+                    <td className="right">{n(h.units)}</td>
+                    <td className="right">${(h.avg_cost ?? 0).toFixed(4)}</td>
+                    <td className="right"><div className="mini-bar-wrap"><div className="mini-bar" style={{ width: bW, background: "#bfdbfe" }} />${n(h.cost_base ?? 0)}</div></td>
+                    <td className="right">{h.avg_cost != null ? `$${h.avg_cost.toFixed(3)}` : "—"}</td>
+                    <td className="right" style={{ fontWeight: 600 }}>{h.current_price != null ? `$${h.current_price.toFixed(3)}` : "—"}</td>
+                    <td className="right"><div className="mini-bar-wrap"><div className="mini-bar" style={{ width: bW, background: unr >= 0 ? "#bbf7d0" : "#fecaca" }} />${n(mkt)}</div></td>
+                    <td className="right" style={{ color: todayColor, fontWeight: 600 }}>{todayChange >= 0 ? "+" : "−"}${n(Math.abs(todayChange))}</td>
+                    <td className="right" style={{ color: unrColor, fontWeight: 700 }}>{unr >= 0 ? "+" : "−"}${n(Math.abs(unr))}</td>
+                    <td className="right" style={{ color: unrColor, fontWeight: 700 }}>{unrpct >= 0 ? "+" : ""}{unrpct.toFixed(1)}%</td>
+                    {showStatus ? <td>{tag}</td> : null}
+                  </tr>
+                );
+              })}
+            </tbody>
+          )}
         </table>
       </div>
     </div>
