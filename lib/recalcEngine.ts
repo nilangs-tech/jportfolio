@@ -676,6 +676,12 @@ export async function recalcAll(
     }
     await writeDataset("holdings", updatedHoldings);
     filesWritten.push("holdings.json");
+    // average-cost-summary.json is the file the dashboard UI actually reads
+    // (see app/page.tsx). It is a strict mirror of holdings.json, so keep the two
+    // in lock-step here — otherwise a merged sell (e.g. closing out a position)
+    // updates holdings.json but the UI keeps showing the stale prior units.
+    await writeDataset("average-cost-summary", updatedHoldings);
+    filesWritten.push("average-cost-summary.json");
     changes.holdingsUpdated = newTrades.length;
   }
 
