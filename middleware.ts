@@ -33,16 +33,26 @@ function timingSafeEqual(a: string, b: string): boolean {
   return diff === 0;
 }
 
+// TEMPORARY diagnostic — remove once the auth gate is confirmed working.
+// Reports (never leaks values) whether the middleware sees the env vars it needs.
+function withDebugHeaders(res: NextResponse, extra: Record<string, string>): NextResponse {
+  res.headers.set("X-Auth-Debug-Local", process.env.JPORTFOLIO_IS_LOCAL === "true" ? "true" : "false");
+  res.headers.set("X-Auth-Debug-User-Set", process.env.DASHBOARD_AUTH_USER ? "yes" : "no");
+  res.headers.set("X-Auth-Debug-Hash-Set", process.env.DASHBOARD_AUTH_PASSWORD_HASH ? "yes" : "no");
+  for (const [k, v] of Object.entries(extra)) res.headers.set(k, v);
+  return res;
+}
+
 export async function middleware(req: NextRequest) {
   const isLocal = process.env.JPORTFOLIO_IS_LOCAL === "true";
-  if (isLocal) return NextResponse.next();
+  if (isLocal) return withDebugHeaders(NextResponse.next(), { "X-Auth-Debug-Reason": "local-mode" });
 
   const user = process.env.DASHBOARD_AUTH_USER;
   const saltedHash = process.env.DASHBOARD_AUTH_PASSWORD_HASH; // "<salt>:<sha256-hex>"
-  if (!user || !saltedHash) return NextResponse.next(); // not configured → no gate
+  if (!user || !saltedHash) return withDebugHeaders(NextResponse.next(), { "X-Auth-Debug-Reason": "not-configured" }); // not configured → no gate
 
   const [salt, expectedHash] = saltedHash.split(":");
-  if (!salt || !expectedHash) return NextResponse.next();
+  if (!salt || !expectedHash) return withDebugHeaders(NextResponse.next(), { "X-Auth-Debug-Reason": "malformed-hash" });
 
   const header = req.headers.get("authorization");
   if (header) {
@@ -54,15 +64,18 @@ export async function middleware(req: NextRequest) {
       const p = decoded.slice(idx + 1);
       if (u === user) {
         const actualHash = await sha256Hex(salt + p);
-        if (timingSafeEqual(actualHash, expectedHash)) return NextResponse.next();
+        if (timingSafeEqual(actualHash, expectedHash)) return withDebugHeaders(NextResponse.next(), { "X-Auth-Debug-Reason": "authenticated" });
       }
     }
   }
 
-  return new NextResponse("Authentication required", {
-    status: 401,
-    headers: { "WWW-Authenticate": 'Basic realm="JPortfolio Dashboard"' },
-  });
+  return withDebugHeaders(
+    new NextResponse("Authentication required", {
+      status: 401,
+      headers: { "WWW-Authenticate": 'Basic realm="JPortfolio Dashboard"' },
+    }),
+    { "X-Auth-Debug-Reason": "challenge" },
+  );
 }
 
 export const config = {
