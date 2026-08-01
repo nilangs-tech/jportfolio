@@ -9,8 +9,9 @@
 [build.environment]
   NODE_VERSION = "22"
   # Do NOT set JPORTFOLIO_IS_LOCAL=true here — keep the hosted site dashboard-only.
-  # Set DASHBOARD_AUTH_USER / DASHBOARD_AUTH_PASSWORD and YAHOO_FINANCE_ENABLED
+  # Set DASHBOARD_AUTH_USER / DASHBOARD_AUTH_PASSWORD_HASH and YAHOO_FINANCE_ENABLED
   # in the Netlify UI (Site settings → Environment variables).
+  # Generate the hash with: node scripts/hash-dashboard-password.mjs "<password>"
 
 # The official Next.js runtime (auto-installed by Netlify, pinned here for clarity).
 [[plugins]]

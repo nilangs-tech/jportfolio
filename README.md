@@ -44,10 +44,10 @@ Upload → vault (Portfolio 1 or Portfolio 2 folder)
 
 - `.env.local`, raw statements, and private chat/decision logs are git-ignored.
 - Only dashboard-safe JSON in `/data` is meant for the repo.
-- Hosted site requires `DASHBOARD_AUTH_USER` / `DASHBOARD_AUTH_PASSWORD` (set in Netlify) to lock it down (see `middleware.ts`).
+- Hosted site requires `DASHBOARD_AUTH_USER` / `DASHBOARD_AUTH_PASSWORD_HASH` (set in Netlify) to lock it down (see `middleware.ts`). The password is only ever stored as a salted SHA-256 hash, never plaintext — generate it with `node scripts/hash-dashboard-password.mjs "<password>"`.
 
 ## Netlify deploy
 
 Push to a **private** GitHub repo → connect to Netlify. `netlify.toml` sets the Next.js build.
 Do **not** set `JPORTFOLIO_IS_LOCAL=true` on Netlify — that keeps the hosted site dashboard-only.
-Set `DASHBOARD_AUTH_USER`, `DASHBOARD_AUTH_PASSWORD`, and `YAHOO_FINANCE_ENABLED=true` in the Netlify UI.
+Set `DASHBOARD_AUTH_USER`, `DASHBOARD_AUTH_PASSWORD_HASH`, and `YAHOO_FINANCE_ENABLED=true` in the Netlify UI.
