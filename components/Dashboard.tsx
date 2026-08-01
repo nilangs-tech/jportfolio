@@ -1,8 +1,8 @@
 "use client";
 import { useCallback, useMemo, useState } from "react";
-import type { Summary, PerformanceSummary, HoldingRow, PositionChangeRow } from "@/lib/types";
+import type { Summary, PerformanceSummary, HoldingRow, PositionChangeRow, FyFinalResult } from "@/lib/types";
 import type { UiSeries, PortfolioSeries } from "@/lib/uiSeries";
-import { fmtK, money, moneyS, pctFmt } from "@/lib/format";
+import { fmtK, money, moneyS, pctFmt, dateStr } from "@/lib/format";
 import { computeMetrics, computeP1PerfBridge, computeP2PerfBridge, type ComputedMetrics } from "@/lib/computedMetrics";
 import { KpiGrid, Bridge, HBarChart, MonthlyBars, MonthlyActivity } from "./Charts";
 import HoldingsTable from "./HoldingsTable";
@@ -18,6 +18,8 @@ interface Props {
   asOf: string;
   mode: "local" | "hosted";
   cashClassification?: any[];
+  lastCashDate?: Record<string, string>;
+  fy2026Final?: FyFinalResult[];
 }
 
 const by = <T extends { portfolio_id: string }>(rows: T[], id: string) => rows.find((r) => r.portfolio_id === id);
@@ -91,7 +93,7 @@ function getComputedMetrics(summary: Summary[], holdings: HoldingRow[], pid: str
 
 // ─── Dashboard ────────────────────────────────────────────────────────────────
 
-export default function Dashboard({ summary, performance, holdings, positions, uiSeries, asOf, mode, cashClassification }: Props) {
+export default function Dashboard({ summary, performance, holdings, positions, uiSeries, asOf, mode, cashClassification, lastCashDate, fy2026Final }: Props) {
   const [tab, setTab] = useState<"summary" | "portfolio_1" | "portfolio_2">("summary");
   const [livePrices, setLivePrices] = useState<LivePrices | null>(null);
   const [priceAsOf, setPriceAsOf] = useState<string>(asOf);
@@ -119,7 +121,7 @@ export default function Dashboard({ summary, performance, holdings, positions, u
       <div className="header">
         <div>
           <h1>📊 Portfolio Dashboard</h1>
-          <p>FY2026 · Portfolio 1 &amp; Portfolio 2</p>
+          <p>FY2027 · Portfolio 1 &amp; Portfolio 2</p>
         </div>
         <div className="toolbar">
           <PriceRefresh symbols={allSymbols} asOf={asOf} onPrices={handlePrices} />
@@ -150,6 +152,7 @@ export default function Dashboard({ summary, performance, holdings, positions, u
           summary={liveSummary}
           holdings={liveHoldings}
           livePrices={livePrices}
+          fy2026Final={fy2026Final}
         />
       )}
       {tab === "portfolio_1" && (
@@ -158,6 +161,7 @@ export default function Dashboard({ summary, performance, holdings, positions, u
           holdings={liveHoldings} positions={positions}
           series={uiSeries.portfolio_1} asOf={displayAsOf} accent="#064e3b"
           livePrices={livePrices} cashClassification={cashClassification}
+          lastCashDate={lastCashDate?.["portfolio_1"]}
         />
       )}
       {tab === "portfolio_2" && (
@@ -166,10 +170,11 @@ export default function Dashboard({ summary, performance, holdings, positions, u
           holdings={liveHoldings} positions={positions}
           series={uiSeries.portfolio_2} asOf={displayAsOf} accent="#0f4c81"
           livePrices={livePrices} cashClassification={cashClassification}
+          lastCashDate={lastCashDate?.["portfolio_2"]}
         />
       )}
 
-      <footer>JPortfolio Dashboard · FY2026 · Market prices as at {displayAsOf} · Delisted holdings (BKW/PAI/RUL) priced from scheme/acquisition announcements</footer>
+      <footer>JPortfolio Dashboard · FY2027 · Market prices as at {displayAsOf} · Delisted holdings (BKW/PAI/RUL) priced from scheme/acquisition announcements</footer>
     </>
   );
 }
@@ -177,13 +182,17 @@ export default function Dashboard({ summary, performance, holdings, positions, u
 // ─── Summary Tab ─────────────────────────────────────────────────────────────
 
 function SummaryTab({
-  summary, holdings, livePrices,
+  summary, holdings, livePrices, fy2026Final,
 }: {
   summary: Summary[];
   holdings: HoldingRow[];
   livePrices: LivePrices | null;
+  fy2026Final?: FyFinalResult[];
 }) {
   const c = by(summary, "combined")!, p1 = by(summary, "portfolio_1")!, p2 = by(summary, "portfolio_2")!;
+  const fyC = fy2026Final ? by(fy2026Final, "combined") : undefined;
+  const fyP1 = fy2026Final ? by(fy2026Final, "portfolio_1") : undefined;
+  const fyP2 = fy2026Final ? by(fy2026Final, "portfolio_2") : undefined;
 
   const dc = {
     combined: calcDailyChange(holdings, livePrices, "combined"),
@@ -198,7 +207,7 @@ function SummaryTab({
 
   const items = [
     { l: "Combined Market Value", v: money(c.market_value_total), s: "All shares + cash both portfolios", c: "#1d4ed8" },
-    { l: "Combined Opening",       v: money(c.opening_market_value_total), s: "30 Jun 2025 at market", c: "#7c3aed" },
+    { l: "Combined Opening",       v: money(c.opening_market_value_total), s: `${c.period_start} at market`, c: "#7c3aed" },
     { l: "Combined Dividends",     v: money(c.dividends_received_total), s: `P1 ${money(p1.dividends_received_total)} + P2 ${money(p2.dividends_received_total)}`, c: "#0d9488" },
     { l: "P1 Economic Return",     v: pctFmt(p1.economic_return_pct ?? 0), s: "MTM + dividends on opening", c: "#16a34a" },
     { l: "P2 Economic Return",     v: pctFmt(p2.economic_return_pct ?? 0), s: "On opening capital (net flows)", c: "#059669" },
@@ -239,6 +248,26 @@ function SummaryTab({
         </div>
       </div>
 
+      {/* FY2026 final results — frozen at 30 Jun 2026, now that FY2027 tracking has started */}
+      {fyC && fyP1 && fyP2 && (
+        <div className="combined-banner fy-final-banner" style={{ marginTop: 14 }}>
+          <h2>FY2026 FINAL RESULTS — CLOSED 30 JUN 2026</h2>
+          <div className="cb-val">{money(fyC.closing_total)}</div>
+          <div className="cb-sub">
+            Opening {money(fyC.opening_total)} ({fyC.period_start}) → Closing {money(fyC.closing_total)} ({fyC.period_end}) ·{" "}
+            <span style={{ color: "#6ee7b7" }}>▲ {moneyS(fyC.market_to_market_return)} ({pctFmt(fyC.market_to_market_return_pct)})</span>
+          </div>
+          <div className="cb-stats">
+            <div className="cb-stat"><div className="label">Portfolio 1 MTM</div><div className="value">{pctFmt(fyP1.market_to_market_return_pct)}</div></div>
+            <div className="cb-stat"><div className="label">Portfolio 2 MTM</div><div className="value">{pctFmt(fyP2.market_to_market_return_pct)}</div></div>
+            <div className="cb-stat"><div className="label">Combined Dividends</div><div className="value">{money(fyC.dividends_received_total)}</div></div>
+            <div className="cb-stat"><div className="label">Combined Realised Gains</div><div className="value">{money(fyC.realized_pl_total)}</div></div>
+            <div className="cb-stat"><div className="label">P1 Economic Return</div><div className="value">{pctFmt(fyP1.economic_return_pct)}</div></div>
+            <div className="cb-stat"><div className="label">P2 Economic Return</div><div className="value">{pctFmt(fyP2.economic_return_pct)}</div></div>
+          </div>
+        </div>
+      )}
+
       {/* Port cards */}
       <div className="summary-grid" style={{ marginTop: 14 }}>
         <div className="port-card">
@@ -247,8 +276,8 @@ function SummaryTab({
           <div className="pc-sub" style={{ marginBottom: 14 }}>Shares {shares(p1)} + Cash {money(p1.closing_cash_total)}</div>
           <PcRow label={`Opening (${p1.period_start})`} value={money(p1.opening_market_value_total)} />
           <PcRow label="Today's Change" value={dcLabel(dc.p1)} color={dcColor(dc.p1)} />
-          <PcRow label="MTM Return FY2026" value={pctFmt(p1.market_to_market_return_pct)} color="var(--green)" />
-          <PcRow label="Dividends FY2026" value={money(p1.dividends_received_total)} color="var(--teal)" />
+          <PcRow label="MTM Return FY2027" value={pctFmt(p1.market_to_market_return_pct)} color="var(--green)" />
+          <PcRow label="Dividends FY2027" value={money(p1.dividends_received_total)} color="var(--teal)" />
           <PcRow label="Economic Return" value={pctFmt(p1.economic_return_pct ?? 0)} color="var(--green)" />
           <PcRow label="Realised Gains" value={money(p1.realized_pl_total ?? 0)} color="var(--orange)" />
         </div>
@@ -258,8 +287,8 @@ function SummaryTab({
           <div className="pc-sub" style={{ marginBottom: 14 }}>Shares {shares(p2)} + Cash {money(p2.closing_cash_total)}</div>
           <PcRow label={`Opening (${p2.period_start})`} value={money(p2.opening_market_value_total)} />
           <PcRow label="Today's Change" value={dcLabel(dc.p2)} color={dcColor(dc.p2)} />
-          <PcRow label="Growth FY2026" value={pctFmt(p2.market_to_market_return_pct)} color="var(--green)" />
-          <PcRow label="Dividends FY2026" value={money(p2.dividends_received_total)} color="var(--teal)" />
+          <PcRow label="Growth FY2027" value={pctFmt(p2.market_to_market_return_pct)} color="var(--green)" />
+          <PcRow label="Dividends FY2027" value={money(p2.dividends_received_total)} color="var(--teal)" />
           <PcRow label="Economic Return" value={pctFmt(p2.economic_return_pct ?? 0)} color="var(--green)" />
           <PcRow label="Net Capital Added" value={money(p2.net_transfers_total ?? 0)} color="var(--accent)" />
         </div>
@@ -277,10 +306,11 @@ function PcRow({ label, value, color }: { label: string; value: string; color?: 
 
 // ─── Portfolio Tab ────────────────────────────────────────────────────────────
 
-function PortfolioTab({ pid, summary, performance, holdings, positions, series, asOf, accent, livePrices, cashClassification }: {
+function PortfolioTab({ pid, summary, performance, holdings, positions, series, asOf, accent, livePrices, cashClassification, lastCashDate }: {
   pid: "portfolio_1" | "portfolio_2"; summary: Summary[]; performance: PerformanceSummary[];
   holdings: HoldingRow[]; positions: PositionChangeRow[]; series: PortfolioSeries;
   asOf: string; accent: string; livePrices: LivePrices | null; cashClassification?: any[];
+  lastCashDate?: string;
 }) {
   const s = by(summary, pid)!, perf = by(performance, pid)!;
   const hold = useMemo(() => holdings.filter((h) => h.portfolio_id === pid), [holdings, pid]);
@@ -326,7 +356,7 @@ function PortfolioTab({ pid, summary, performance, holdings, positions, series, 
         <div className="banner-main">
           <div className="label">Total Portfolio Value — At Market</div>
           <div className="value">{money(metrics.totalPortfolioValue)}</div>
-          <div className="sub">{asOf} · Shares {shares} + Cash {money(metrics.cashBalance)} · <span style={{ color: "#6ee7b7" }}>▲ {moneyS(metrics.mtmReturn)} ({pctFmt(metrics.mtmReturnPct)})</span></div>
+          <div className="sub">{asOf} · Shares {shares} + Cash {money(metrics.cashBalance)} <span style={{ opacity: 0.8 }}>(as of {dateStr(lastCashDate ?? s.as_of_date)})</span> · <span style={{ color: "#6ee7b7" }}>▲ {moneyS(metrics.mtmReturn)} ({pctFmt(metrics.mtmReturnPct)})</span></div>
         </div>
         <div className="banner-stats">
           <Bstat val={money(s.opening_market_value_total)} lbl={`Opening (${s.period_start})`} />
@@ -346,7 +376,7 @@ function PortfolioTab({ pid, summary, performance, holdings, positions, series, 
         { l: "Today's Change",         v: dcLabel, s: dc ? `${dc.count} holdings vs prev close` : "—", c: dcColor ?? "#9ca3af" },
         { l: "MTM Return",             v: moneyS(metrics.mtmReturn), s: pctFmt(metrics.mtmReturnPct), c: "#16a34a" },
         { l: "Economic Return",        v: pctFmt(metrics.economicReturnPct), s: moneyS(metrics.economicReturn), c: "#047857" },
-        { l: "Dividends Received",     v: money(metrics.totalDividends), s: "FY2026", c: "#0d9488" },
+        { l: "Dividends Received",     v: money(metrics.totalDividends), s: "FY2027", c: "#0d9488" },
         { l: "Realised Gains",         v: money(s.realized_pl_total ?? 0), s: "Sells above avg cost", c: "#ea580c" },
         { l: "Unrealised P&L vs Cost", v: moneyS(metrics.unrealisedGain), s: "vs avg cost", c: metrics.unrealisedGain >= 0 ? "#16a34a" : "#dc2626" },
         { l: "Cost Basis",             v: fmtK(metrics.costBasisTotal), s: `Closing · ${asOf}`, c: "#7c3aed" },
@@ -359,7 +389,7 @@ function PortfolioTab({ pid, summary, performance, holdings, positions, series, 
       </div>
 
       <div className="row row-2">
-        <Card dot="#047857" title="True Portfolio Performance — FY2026"><Bridge steps={perfBridgeSteps} /></Card>
+        <Card dot="#047857" title="True Portfolio Performance — FY2027"><Bridge steps={perfBridgeSteps} /></Card>
         <Card dot="#dc2626" title={pid === "portfolio_1" ? "Expenses & Distributions FY2026" : "Capital Added & Brokerage"}>
           <ExpensePanel series={series} />
         </Card>

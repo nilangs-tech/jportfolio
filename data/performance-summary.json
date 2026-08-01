@@ -7,7 +7,7 @@
     "market_to_market_return_pct": 18.9,
     "continuing_position_mtm_gain": 502785,
     "new_positions_rebalancing_residual": -4285,
-    "dividends_received": 135277,
+    "dividends_received": 45757.49,
     "realized_pl": 145430,
     "ato_refund": 32057,
     "bank_interest": 468,
@@ -36,7 +36,7 @@
     "current_market_value": 5432528,
     "market_to_market_return": 956779,
     "market_to_market_return_pct": 21.4,
-    "dividends_received": 183248,
+    "dividends_received": 93728.49,
     "realized_pl": 162045,
     "economic_return": 969209,
     "economic_return_pct": 21.7

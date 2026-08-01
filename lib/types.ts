@@ -43,6 +43,27 @@ export interface Summary {
   price_refreshed_at?: string;
 }
 
+// fy2026-final.json — frozen prior-FY result, captured when the FY2027 baseline was rebased
+export interface FyFinalResult {
+  portfolio_id: PortfolioId;
+  period_start: string;
+  period_end: string;
+  opening_market_value_total: number;
+  opening_cash_total: number;
+  opening_total: number;
+  closing_market_value_total: number;
+  closing_cash_total: number;
+  closing_total: number;
+  market_to_market_return: number;
+  market_to_market_return_pct: number;
+  dividends_received_total: number;
+  realized_pl_total: number;
+  economic_return: number;
+  economic_return_pct: number;
+  net_transfers_total?: number;
+  notes?: string;
+}
+
 // 2. portfolios.json
 export interface PortfolioMeta {
   portfolio_id: PortfolioId;
@@ -283,6 +304,7 @@ export interface ChatMessage {
 /** Map of all dataset file names → their row/object type. */
 export interface DataBundle {
   summary: Summary[];
+  "fy2026-final": FyFinalResult[];
   portfolios: PortfolioMeta[];
   "cash-ledger": CashLedgerRow[];
   "cash-bridge": CashBridgeStep[];

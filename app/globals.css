@@ -120,6 +120,7 @@ footer { text-align:center; margin-top:24px; font-size:11px; color:var(--text4);
 .cb-stats { display:flex; gap:28px; margin-top:16px; flex-wrap:wrap; }
 .cb-stat .label { font-size:10px; opacity:.65; text-transform:uppercase; letter-spacing:.6px; }
 .cb-stat .value { font-size:18px; font-weight:800; margin-top:2px; }
+.fy-final-banner { background: linear-gradient(135deg,#3f3f52,#585873); box-shadow: 0 4px 20px rgba(63,63,82,.25); }
 /* mode / setup banners */
 .mode-banner { display:flex; align-items:center; gap:10px; font-size:12px; padding:8px 14px; border-radius:10px; margin-bottom:14px; font-weight:600; }
 .mode-local { background:var(--green-lt); color:#166534; border:1px solid #bbf7d0; }

@@ -142,8 +142,8 @@ export function computeP2PerfBridge(
   const econReturnPct = summary.economic_return_pct ?? mtmPct;
 
   return [
-    { label: "Opening portfolio at market (1 Jul 2025)", val: openingValue, color: "#2563eb", kind: "line" as const },
-    { label: "  Shares at Jul '25 market prices", val: openingValue, color: "#93c5fd", kind: "sub" as const },
+    { label: `Opening portfolio at market (${summary.period_start})`, val: openingValue, color: "#2563eb", kind: "line" as const },
+    { label: "  Shares at Jul '26 market prices", val: openingValue, color: "#93c5fd", kind: "sub" as const },
     { label: "  Cash balance", val: Math.round(summary.opening_cash_total ?? 0), color: "#93c5fd", kind: "sub" as const },
     { kind: "spacer" as const },
     { label: "+ Net capital added (FY2026 transfers)", val: capitalAdded, color: "#7c3aed", kind: "line" as const },
@@ -265,9 +265,9 @@ export function computeP1PerfBridge(
   const econPct = openingValue > 0 ? (econ / openingValue) * 100 : 0;
 
   return [
-    { label: "Opening portfolio at market (1 Jul 2025)", val: openingValue, color: "#2563eb", kind: "line" as const },
-    { label: "  Shares at Jul '25 market prices", val: openingValue, color: "#93c5fd", kind: "sub" as const },
-    { label: "  Cash balance", val: 0, color: "#93c5fd", kind: "sub" as const },
+    { label: `Opening portfolio at market (${summary.period_start})`, val: openingValue, color: "#2563eb", kind: "line" as const },
+    { label: "  Shares at Jul '26 market prices", val: openingValue, color: "#93c5fd", kind: "sub" as const },
+    { label: "  Cash balance", val: Math.round(summary.opening_cash_total ?? 0), color: "#93c5fd", kind: "sub" as const },
     { kind: "spacer" as const },
     { label: "+ Continuing positions — price gain", val: continuingGain, color: "#16a34a", kind: "line" as const },
     { label: "+ New positions & rebalancing (residual)", val: residual, color: "#9ca3af", kind: "line" as const },

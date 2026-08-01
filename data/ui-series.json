@@ -177,7 +177,7 @@
       },
       {
         "label": "+ Dividends & distributions received",
-        "val": 135277,
+        "val": 205713,
         "color": "#0d9488",
         "kind": "line"
       },
@@ -189,19 +189,19 @@
       },
       {
         "label": "+ Bank interest",
-        "val": 672,
+        "val": 735,
         "color": "#7c3aed",
         "kind": "line"
       },
       {
         "label": "− Net cash into shares (buys − sale proceeds)",
-        "val": -3657,
+        "val": -294405,
         "color": "#9ca3af",
         "kind": "line"
       },
       {
         "label": "− Pension paid (12 × $7,500 + 2 × NAB + $3,310 top-up)",
-        "val": -140810,
+        "val": -148310,
         "color": "#dc2626",
         "kind": "line"
       },
@@ -213,7 +213,7 @@
       },
       {
         "label": "= Closing cash",
-        "val": 38045,
+        "val": 60677,
         "color": "#1d4ed8",
         "kind": "subtotal"
       },
@@ -222,7 +222,7 @@
       },
       {
         "label": "Total portfolio value (at cost + cash)",
-        "val": 3316277,
+        "val": 3338909,
         "color": "#1d4ed8",
         "kind": "grand"
       }
@@ -257,7 +257,7 @@
       },
       {
         "label": "+ New positions & rebalancing (residual)",
-        "val": -59562,
+        "val": -99929,
         "color": "#9ca3af",
         "kind": "line"
       },
@@ -277,14 +277,14 @@
         "kind": "line"
       },
       {
-        "label": "  Income earned (dividends $135,277 + ATO $32,057 + interest $672)",
-        "val": 168006,
+        "label": "  Income earned (dividends $205,713 + ATO $32,057 + interest $735)",
+        "val": 238505,
         "color": "#6ee7b7",
         "kind": "sub"
       },
       {
         "label": "  Less: pension distributions",
-        "val": -140810,
+        "val": -148310,
         "color": "#fca5a5",
         "kind": "sub"
       },
@@ -298,20 +298,20 @@
         "kind": "spacer"
       },
       {
-        "label": "= Current portfolio value (17 Jun 2026)",
-        "val": 4221046,
+        "label": "= Current portfolio value (1 Aug 2026)",
+        "val": 4243678,
         "color": "#047857",
         "kind": "grand"
       },
       {
-        "label": "Market-to-market return (+16.9%)",
-        "val": 610172,
+        "label": "Market-to-market return (+17.5%)",
+        "val": 632804,
         "color": "#047857",
         "kind": "subtotal"
       },
       {
-        "label": "Economic return incl. pension (+21.0%)",
-        "val": 756659,
+        "label": "Economic return incl. pension (+21.8%)",
+        "val": 786791,
         "color": "#059669",
         "kind": "grand"
       }
@@ -357,6 +357,12 @@
         "cat": "Pension",
         "name": "Transfer to other Bank NetBank Monthly Pension",
         "detail": "2026-06-01 — CommBank (uploaded)",
+        "amt": 7500
+      },
+      {
+        "cat": "Pension",
+        "name": "Transfer to other Bank NetBank Monthly Pension",
+        "detail": "2026-07-01 — CommBank (uploaded)",
         "amt": 7500
       }
     ]
@@ -503,7 +509,7 @@
       },
       {
         "label": "= Closing cost basis (shares)",
-        "val": 1053058,
+        "val": 1056316,
         "color": "#1d4ed8",
         "kind": "subtotal"
       },
@@ -524,19 +530,19 @@
       },
       {
         "label": "+ Dividends received",
-        "val": 47971,
+        "val": 61514,
         "color": "#0d9488",
         "kind": "line"
       },
       {
         "label": "− Net deployed into shares (incl. brokerage)",
-        "val": -131811,
+        "val": -132230,
         "color": "#dc2626",
         "kind": "line"
       },
       {
         "label": "= Closing cash",
-        "val": 2965,
+        "val": 16089,
         "color": "#1d4ed8",
         "kind": "subtotal"
       },
@@ -545,7 +551,7 @@
       },
       {
         "label": "Total portfolio value (at cost + cash)",
-        "val": 1056023,
+        "val": 1072405,
         "color": "#1d4ed8",
         "kind": "grand"
       }
@@ -609,8 +615,8 @@
         "kind": "spacer"
       },
       {
-        "label": "= Current portfolio value (17 Jun 2026)",
-        "val": 1135440,
+        "label": "= Current portfolio value (1 Aug 2026)",
+        "val": 1151789,
         "color": "#047857",
         "kind": "grand"
       },

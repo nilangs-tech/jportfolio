@@ -1,90 +1,1358 @@
 [
   {
-    "payment_date": "2025-04-09",
+    "payment_date": "2025-07-01",
     "portfolio_id": "portfolio_1",
-    "broker": "Stake",
+    "symbol": "ANZ",
+    "description": "Dividend - ANZ Dividend",
+    "cash_received": 207.5,
+    "gross_amount": 207.5,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-07-02",
+    "portfolio_id": "portfolio_1",
+    "symbol": "MQG",
+    "description": "Dividend - MQG Dividend",
+    "cash_received": 253.5,
+    "gross_amount": 253.5,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-07-02",
+    "portfolio_id": "portfolio_1",
+    "symbol": "IFT",
+    "description": "Dividend - IFT Dividend",
+    "cash_received": 130.58,
+    "gross_amount": 130.58,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-07-11",
+    "portfolio_id": "portfolio_1",
+    "symbol": "IWLD",
+    "description": "Dividend - IWLD Dividend",
+    "cash_received": 51.73,
+    "gross_amount": 51.73,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-07-11",
+    "portfolio_id": "portfolio_1",
+    "symbol": "IOO",
+    "description": "Dividend - IOO Dividend",
+    "cash_received": 159.27,
+    "gross_amount": 159.27,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-07-11",
+    "portfolio_id": "portfolio_1",
+    "symbol": "IVV",
     "description": "Dividend - IVV Dividend",
-    "cash_received": 8.01,
-    "source": "Stake CashTransactionFY26.xlsx"
+    "cash_received": 17.37,
+    "gross_amount": 17.37,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
   },
   {
-    "payment_date": "2025-04-14",
+    "payment_date": "2025-07-11",
     "portfolio_id": "portfolio_1",
-    "broker": "Stake",
+    "symbol": "IZZ",
+    "description": "Dividend - IZZ Dividend",
+    "cash_received": 95.08,
+    "gross_amount": 95.08,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-07-14",
+    "portfolio_id": "portfolio_1",
+    "symbol": "KKC",
     "description": "Dividend - KKC Dividend",
     "cash_received": 66.8,
-    "source": "Stake CashTransactionFY26.xlsx"
+    "gross_amount": 66.8,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
   },
   {
-    "payment_date": "2025-04-16",
+    "payment_date": "2025-07-16",
     "portfolio_id": "portfolio_1",
-    "broker": "Stake",
-    "description": "Dividend - UMAX Dividend",
-    "cash_received": 69.83,
-    "source": "Stake CashTransactionFY26.xlsx"
-  },
-  {
-    "payment_date": "2025-04-16",
-    "portfolio_id": "portfolio_1",
-    "broker": "Stake",
+    "symbol": "VAS",
     "description": "Dividend - VAS Dividend",
-    "cash_received": 36.37,
-    "source": "Stake CashTransactionFY26.xlsx"
+    "cash_received": 32.51,
+    "gross_amount": 32.51,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
   },
   {
-    "payment_date": "2025-05-01",
+    "payment_date": "2025-07-16",
     "portfolio_id": "portfolio_1",
-    "broker": "Stake",
-    "description": "Dividend - BKW Dividend",
-    "cash_received": 250,
-    "source": "Stake CashTransactionFY26.xlsx"
+    "symbol": "TECH",
+    "description": "Dividend - TECH Dividend",
+    "cash_received": 851.36,
+    "gross_amount": 851.36,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
   },
   {
-    "payment_date": "2025-05-14",
+    "payment_date": "2025-07-16",
     "portfolio_id": "portfolio_1",
-    "broker": "Stake",
-    "description": "Dividend - KKC Dividend",
-    "cash_received": 66.8,
-    "source": "Stake CashTransactionFY26.xlsx"
+    "symbol": "NDIA",
+    "description": "Dividend - NDIA Dividend",
+    "cash_received": 500.8,
+    "gross_amount": 500.8,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
   },
   {
-    "payment_date": "2025-05-14",
+    "payment_date": "2025-07-16",
     "portfolio_id": "portfolio_1",
-    "broker": "Stake",
-    "description": "Dividend - SOL Dividend",
-    "cash_received": 176,
-    "source": "Stake CashTransactionFY26.xlsx"
+    "symbol": "URNM",
+    "description": "Dividend - URNM Dividend",
+    "cash_received": 46.37,
+    "gross_amount": 46.37,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
   },
   {
-    "payment_date": "2025-06-03",
+    "payment_date": "2025-07-16",
     "portfolio_id": "portfolio_1",
-    "broker": "Stake",
+    "symbol": "GGUS",
+    "description": "Dividend - GGUS Dividend",
+    "cash_received": 217.64,
+    "gross_amount": 217.64,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-07-16",
+    "portfolio_id": "portfolio_1",
+    "symbol": "HACK",
+    "description": "Dividend - HACK Dividend",
+    "cash_received": 260.8,
+    "gross_amount": 260.8,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-07-16",
+    "portfolio_id": "portfolio_1",
+    "symbol": "ETHI",
+    "description": "Dividend - ETHI Dividend",
+    "cash_received": 214.62,
+    "gross_amount": 214.62,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-07-16",
+    "portfolio_id": "portfolio_1",
+    "symbol": "ASIA",
+    "description": "Dividend - ASIA Dividend",
+    "cash_received": 41.96,
+    "gross_amount": 41.96,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-07-16",
+    "portfolio_id": "portfolio_1",
+    "symbol": "UMAX",
+    "description": "Dividend - UMAX Dividend",
+    "cash_received": 82.71,
+    "gross_amount": 82.71,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-07-23",
+    "portfolio_id": "portfolio_1",
+    "symbol": "IISV",
+    "description": "Dividend - IISV Dividend",
+    "cash_received": 1188.33,
+    "gross_amount": 1188.33,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-07-25",
+    "portfolio_id": "portfolio_1",
+    "symbol": "MOAT",
+    "description": "Dividend - MOAT Dividend",
+    "cash_received": 945,
+    "gross_amount": 945,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-07-25",
+    "portfolio_id": "portfolio_1",
+    "symbol": "QUAL",
+    "description": "Dividend - QUAL Dividend",
+    "cash_received": 412.05,
+    "gross_amount": 412.05,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-08-27",
+    "portfolio_id": "portfolio_1",
+    "symbol": "BWP",
+    "description": "Dividend - BWP Dividend",
+    "cash_received": 519.75,
+    "gross_amount": 519.75,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-08-29",
+    "portfolio_id": "portfolio_1",
+    "symbol": "DGT",
+    "description": "Dividend - DGT Dividend",
+    "cash_received": 109,
+    "gross_amount": 109,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-09-01",
+    "portfolio_id": "portfolio_1",
+    "symbol": "DDR",
     "description": "Dividend - DDR Dividend",
     "cash_received": 346.5,
-    "source": "Stake CashTransactionFY26.xlsx"
+    "gross_amount": 346.5,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
   },
   {
-    "payment_date": "2025-06-10",
+    "payment_date": "2025-09-05",
     "portfolio_id": "portfolio_1",
-    "broker": "Stake",
+    "symbol": "SOL",
+    "description": "Dividend - SOL Dividend",
+    "cash_received": 236,
+    "gross_amount": 236,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-09-05",
+    "portfolio_id": "portfolio_1",
+    "symbol": "BKW",
+    "description": "Dividend - BKW Dividend",
+    "cash_received": 484,
+    "gross_amount": 484,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-09-10",
+    "portfolio_id": "portfolio_1",
+    "symbol": "WPR",
     "description": "Dividend - WPR Dividend",
     "cash_received": 288.4,
-    "source": "Stake CashTransactionFY26.xlsx"
+    "gross_amount": 288.4,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
   },
   {
-    "payment_date": "2025-06-12",
+    "payment_date": "2025-09-16",
     "portfolio_id": "portfolio_1",
-    "broker": "Stake",
-    "description": "Dividend - RMD Dividend",
-    "cash_received": 28.98,
-    "source": "Stake CashTransactionFY26.xlsx"
+    "symbol": "WHC",
+    "description": "Dividend - WHC Dividend",
+    "cash_received": 210,
+    "gross_amount": 210,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
   },
   {
-    "payment_date": "2025-06-13",
+    "payment_date": "2025-09-18",
     "portfolio_id": "portfolio_1",
-    "broker": "Stake",
+    "symbol": "SHL",
+    "description": "Dividend - SHL Dividend",
+    "cash_received": 1480.5,
+    "gross_amount": 1480.5,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-09-19",
+    "portfolio_id": "portfolio_1",
+    "symbol": "HSN",
+    "description": "Dividend - HSN Dividend",
+    "cash_received": 225,
+    "gross_amount": 225,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-09-24",
+    "portfolio_id": "portfolio_1",
+    "symbol": "KKC",
     "description": "Dividend - KKC Dividend",
     "cash_received": 66.8,
-    "source": "Stake CashTransactionFY26.xlsx"
+    "gross_amount": 66.8,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-09-24",
+    "portfolio_id": "portfolio_1",
+    "symbol": "MAF",
+    "description": "Dividend - MAF Dividend",
+    "cash_received": 168,
+    "gross_amount": 168,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-09-25",
+    "portfolio_id": "portfolio_1",
+    "symbol": "BHP",
+    "description": "Dividend - BHP Dividend",
+    "cash_received": 1195.05,
+    "gross_amount": 1195.05,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-09-25",
+    "portfolio_id": "portfolio_1",
+    "symbol": "ALD",
+    "description": "Dividend - ALD Dividend",
+    "cash_received": 300,
+    "gross_amount": 300,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-09-26",
+    "portfolio_id": "portfolio_1",
+    "symbol": "PWH",
+    "description": "Dividend - PWH Dividend",
+    "cash_received": 36,
+    "gross_amount": 36,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-09-26",
+    "portfolio_id": "portfolio_1",
+    "symbol": "WOW",
+    "description": "Dividend - WOW Dividend",
+    "cash_received": 247.5,
+    "gross_amount": 247.5,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-09-29",
+    "portfolio_id": "portfolio_1",
+    "symbol": "KAR",
+    "description": "Dividend - KAR Dividend",
+    "cash_received": 288,
+    "gross_amount": 288,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-10-01",
+    "portfolio_id": "portfolio_1",
+    "symbol": "STO",
+    "description": "Dividend - STO Dividend",
+    "cash_received": 329.52,
+    "gross_amount": 329.52,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-10-03",
+    "portfolio_id": "portfolio_1",
+    "symbol": "EVN",
+    "description": "Dividend - EVN Dividend",
+    "cash_received": 97.5,
+    "gross_amount": 97.5,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-10-03",
+    "portfolio_id": "portfolio_1",
+    "symbol": "PIC",
+    "description": "Dividend - PIC Dividend",
+    "cash_received": 220,
+    "gross_amount": 220,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-10-03",
+    "portfolio_id": "portfolio_1",
+    "symbol": "AIA",
+    "description": "Dividend - AIA Dividend",
+    "cash_received": 298.65,
+    "gross_amount": 298.65,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-10-07",
+    "portfolio_id": "portfolio_1",
+    "symbol": "CNU",
+    "description": "Dividend - CNU Dividend",
+    "cash_received": 876.39,
+    "gross_amount": 876.39,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-10-08",
+    "portfolio_id": "portfolio_1",
+    "symbol": "NHC",
+    "description": "Dividend - NHC Dividend",
+    "cash_received": 900,
+    "gross_amount": 900,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-10-14",
+    "portfolio_id": "portfolio_1",
+    "symbol": "EDV",
+    "description": "Dividend - EDV Dividend",
+    "cash_received": 378,
+    "gross_amount": 378,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-10-15",
+    "portfolio_id": "portfolio_1",
+    "symbol": "IVV",
+    "description": "Dividend - IVV Dividend",
+    "cash_received": 16.78,
+    "gross_amount": 16.78,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-10-16",
+    "portfolio_id": "portfolio_1",
+    "symbol": "SUL",
+    "description": "Dividend - SUL Dividend",
+    "cash_received": 416,
+    "gross_amount": 416,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-10-16",
+    "portfolio_id": "portfolio_1",
+    "symbol": "LOV",
+    "description": "Dividend - LOV Dividend",
+    "cash_received": 270,
+    "gross_amount": 270,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-10-16",
+    "portfolio_id": "portfolio_1",
+    "symbol": "UMAX",
+    "description": "Dividend - UMAX Dividend",
+    "cash_received": 64.26,
+    "gross_amount": 64.26,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-10-24",
+    "portfolio_id": "portfolio_1",
+    "symbol": "KKC",
+    "description": "Dividend - KKC Dividend",
+    "cash_received": 66.8,
+    "gross_amount": 66.8,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-12-08",
+    "portfolio_id": "portfolio_1",
+    "symbol": "ALL",
+    "description": "Dividend - ALL Dividend",
+    "cash_received": 46.06,
+    "gross_amount": 46.06,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-12-10",
+    "portfolio_id": "portfolio_1",
+    "symbol": "WPR",
+    "description": "Dividend - WPR Dividend",
+    "cash_received": 294,
+    "gross_amount": 294,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-12-16",
+    "portfolio_id": "portfolio_1",
+    "symbol": "IFT",
+    "description": "Dividend - IFT Dividend",
+    "cash_received": 104.71,
+    "gross_amount": 104.71,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-12-17",
+    "portfolio_id": "portfolio_1",
+    "symbol": "MQG",
+    "description": "Dividend - MQG Dividend",
+    "cash_received": 182,
+    "gross_amount": 182,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2025-12-18",
+    "portfolio_id": "portfolio_1",
+    "symbol": "RMD",
+    "description": "Dividend - RMD Dividend",
+    "cash_received": 32.16,
+    "gross_amount": 32.16,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-01-09",
+    "portfolio_id": "portfolio_1",
+    "symbol": "IVV",
+    "description": "Dividend - IVV Dividend",
+    "cash_received": 20.14,
+    "gross_amount": 20.14,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-01-09",
+    "portfolio_id": "portfolio_1",
+    "symbol": "IOO",
+    "description": "Dividend - IOO Dividend",
+    "cash_received": 61.62,
+    "gross_amount": 61.62,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-01-09",
+    "portfolio_id": "portfolio_1",
+    "symbol": "IZZ",
+    "description": "Dividend - IZZ Dividend",
+    "cash_received": 70.71,
+    "gross_amount": 70.71,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-01-19",
+    "portfolio_id": "portfolio_1",
+    "symbol": "IWLD",
+    "description": "Dividend - IWLD Dividend",
+    "cash_received": 30.38,
+    "gross_amount": 30.38,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-01-19",
+    "portfolio_id": "portfolio_1",
+    "symbol": "ETHI",
+    "description": "Dividend - ETHI Dividend",
+    "cash_received": 28.2,
+    "gross_amount": 28.2,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-01-19",
+    "portfolio_id": "portfolio_1",
+    "symbol": "UMAX",
+    "description": "Dividend - UMAX Dividend",
+    "cash_received": 74.5,
+    "gross_amount": 74.5,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-01-19",
+    "portfolio_id": "portfolio_1",
+    "symbol": "ASIA",
+    "description": "Dividend - ASIA Dividend",
+    "cash_received": 133.86,
+    "gross_amount": 133.86,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-01-19",
+    "portfolio_id": "portfolio_1",
+    "symbol": "URNM",
+    "description": "Dividend - URNM Dividend",
+    "cash_received": 24.84,
+    "gross_amount": 24.84,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-01-27",
+    "portfolio_id": "portfolio_1",
+    "symbol": "KKC",
+    "description": "Dividend - KKC Dividend",
+    "cash_received": 66.8,
+    "gross_amount": 66.8,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-02-17",
+    "portfolio_id": "portfolio_1",
+    "symbol": "UMAX",
+    "description": "Dividend - UMAX Dividend",
+    "cash_received": 18.41,
+    "gross_amount": 18.41,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-02-24",
+    "portfolio_id": "portfolio_1",
+    "symbol": "KKC",
+    "description": "Dividend - KKC Dividend",
+    "cash_received": 66.8,
+    "gross_amount": 66.8,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-02-26",
+    "portfolio_id": "portfolio_1",
+    "symbol": "DGT",
+    "description": "Dividend - DGT Dividend",
+    "cash_received": 180,
+    "gross_amount": 180,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-02-27",
+    "portfolio_id": "portfolio_1",
+    "symbol": "BWP",
+    "description": "Dividend - BWP Dividend",
+    "cash_received": 526.9,
+    "gross_amount": 526.9,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-03-10",
+    "portfolio_id": "portfolio_1",
+    "symbol": "WPR",
+    "description": "Dividend - WPR Dividend",
+    "cash_received": 294,
+    "gross_amount": 294,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-03-13",
+    "portfolio_id": "portfolio_1",
+    "symbol": "WHC",
+    "description": "Dividend - WHC Dividend",
+    "cash_received": 126,
+    "gross_amount": 126,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-03-17",
+    "portfolio_id": "portfolio_1",
+    "symbol": "UMAX",
+    "description": "Dividend - UMAX Dividend",
+    "cash_received": 20.09,
+    "gross_amount": 20.09,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-03-17",
+    "portfolio_id": "portfolio_1",
+    "symbol": "MAF",
+    "description": "Dividend - MAF Dividend",
+    "cash_received": 392,
+    "gross_amount": 392,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-03-19",
+    "portfolio_id": "portfolio_1",
+    "symbol": "RMD",
+    "description": "Dividend - RMD Dividend",
+    "cash_received": 56.26,
+    "gross_amount": 56.26,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-03-19",
+    "portfolio_id": "portfolio_1",
+    "symbol": "SHL",
+    "description": "Dividend - SHL Dividend",
+    "cash_received": 1177.2,
+    "gross_amount": 1177.2,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-03-19",
+    "portfolio_id": "portfolio_1",
+    "symbol": "DDR",
+    "description": "Dividend - DDR Dividend",
+    "cash_received": 402.5,
+    "gross_amount": 402.5,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-03-20",
+    "portfolio_id": "portfolio_1",
+    "symbol": "PWH",
+    "description": "Dividend - PWH Dividend",
+    "cash_received": 75,
+    "gross_amount": 75,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-03-23",
+    "portfolio_id": "portfolio_1",
+    "symbol": "ASX",
+    "description": "Dividend - ASX Dividend",
+    "cash_received": 102,
+    "gross_amount": 102,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-03-23",
+    "portfolio_id": "portfolio_1",
+    "symbol": "ABB",
+    "description": "Dividend - ABB Dividend",
+    "cash_received": 101.8,
+    "gross_amount": 101.8,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-03-24",
+    "portfolio_id": "portfolio_1",
+    "symbol": "KKC",
+    "description": "Dividend - KKC Dividend",
+    "cash_received": 66.8,
+    "gross_amount": 66.8,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-03-25",
+    "portfolio_id": "portfolio_1",
+    "symbol": "STO",
+    "description": "Dividend - STO Dividend",
+    "cash_received": 235.56,
+    "gross_amount": 235.56,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-03-26",
+    "portfolio_id": "portfolio_1",
+    "symbol": "BHP",
+    "description": "Dividend - BHP Dividend",
+    "cash_received": 1246.16,
+    "gross_amount": 1246.16,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-03-26",
+    "portfolio_id": "portfolio_1",
+    "symbol": "LOV",
+    "description": "Dividend - LOV Dividend",
+    "cash_received": 530,
+    "gross_amount": 530,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-03-27",
+    "portfolio_id": "portfolio_1",
+    "symbol": "WDS",
+    "description": "Dividend - WDS Dividend",
+    "cash_received": 166.98,
+    "gross_amount": 166.98,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-03-27",
+    "portfolio_id": "portfolio_1",
+    "symbol": "HSN",
+    "description": "Dividend - HSN Dividend",
+    "cash_received": 350,
+    "gross_amount": 350,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-03-31",
+    "portfolio_id": "portfolio_1",
+    "symbol": "KAR",
+    "description": "Dividend - KAR Dividend",
+    "cash_received": 372,
+    "gross_amount": 372,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-04-02",
+    "portfolio_id": "portfolio_1",
+    "symbol": "EVN",
+    "description": "Dividend - EVN Dividend",
+    "cash_received": 150,
+    "gross_amount": 150,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-04-02",
+    "portfolio_id": "portfolio_1",
+    "symbol": "SUL",
+    "description": "Dividend - SUL Dividend",
+    "cash_received": 208,
+    "gross_amount": 208,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-04-02",
+    "portfolio_id": "portfolio_1",
+    "symbol": "WOW",
+    "description": "Dividend - WOW Dividend",
+    "cash_received": 405,
+    "gross_amount": 405,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-04-02",
+    "portfolio_id": "portfolio_1",
+    "symbol": "AIA",
+    "description": "Dividend - AIA Dividend",
+    "cash_received": 262.27,
+    "gross_amount": 262.27,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-04-09",
+    "portfolio_id": "portfolio_1",
+    "symbol": "PIC",
+    "description": "Dividend - PIC Dividend",
+    "cash_received": 220,
+    "gross_amount": 220,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-04-13",
+    "portfolio_id": "portfolio_1",
+    "symbol": "CAR",
+    "description": "Dividend - CAR Dividend",
+    "cash_received": 255,
+    "gross_amount": 255,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-04-13",
+    "portfolio_id": "portfolio_1",
+    "symbol": "IVV",
+    "description": "Dividend - IVV Dividend",
+    "cash_received": 27.9,
+    "gross_amount": 27.9,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-04-14",
+    "portfolio_id": "portfolio_1",
+    "symbol": "CNU",
+    "description": "Dividend - CNU Dividend",
+    "cash_received": 563.69,
+    "gross_amount": 563.69,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-04-15",
+    "portfolio_id": "portfolio_1",
+    "symbol": "EDV",
+    "description": "Dividend - EDV Dividend",
+    "cash_received": 756,
+    "gross_amount": 756,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-04-20",
+    "portfolio_id": "portfolio_1",
+    "symbol": "NHC",
+    "description": "Dividend - NHC Dividend",
+    "cash_received": 800,
+    "gross_amount": 800,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-04-20",
+    "portfolio_id": "portfolio_1",
+    "symbol": "UMAX",
+    "description": "Dividend - UMAX Dividend",
+    "cash_received": 22.74,
+    "gross_amount": 22.74,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-04-22",
+    "portfolio_id": "portfolio_1",
+    "symbol": "SXE",
+    "description": "Dividend - SXE Dividend",
+    "cash_received": 62.5,
+    "gross_amount": 62.5,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-04-27",
+    "portfolio_id": "portfolio_1",
+    "symbol": "KKC",
+    "description": "Dividend - KKC Dividend",
+    "cash_received": 66.8,
+    "gross_amount": 66.8,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-05-14",
+    "portfolio_id": "portfolio_1",
+    "symbol": "SOL",
+    "description": "Dividend - SOL Dividend",
+    "cash_received": 672,
+    "gross_amount": 672,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-05-18",
+    "portfolio_id": "portfolio_1",
+    "symbol": "UMAX",
+    "description": "Dividend - UMAX Dividend",
+    "cash_received": 31.15,
+    "gross_amount": 31.15,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-05-21",
+    "portfolio_id": "portfolio_1",
+    "symbol": "MYR",
+    "description": "Dividend - MYR Dividend",
+    "cash_received": 136.52,
+    "gross_amount": 136.52,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-05-22",
+    "portfolio_id": "portfolio_1",
+    "symbol": "WPR",
+    "description": "Dividend - WPR Dividend",
+    "cash_received": 297.5,
+    "gross_amount": 297.5,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-05-25",
+    "portfolio_id": "portfolio_1",
+    "symbol": "KKC",
+    "description": "Dividend - KKC Dividend",
+    "cash_received": 66.8,
+    "gross_amount": 66.8,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-06-02",
+    "portfolio_id": "portfolio_1",
+    "symbol": "DDR",
+    "description": "Dividend - DDR Dividend",
+    "cash_received": 402.5,
+    "gross_amount": 402.5,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-06-17",
+    "portfolio_id": "portfolio_1",
+    "symbol": "UMAX",
+    "description": "Dividend - UMAX Dividend",
+    "cash_received": 23.18,
+    "gross_amount": 23.18,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-06-18",
+    "portfolio_id": "portfolio_1",
+    "symbol": "RMD",
+    "description": "Dividend - RMD Dividend",
+    "cash_received": 69.8,
+    "gross_amount": 69.8,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-06-24",
+    "portfolio_id": "portfolio_1",
+    "symbol": "KKC",
+    "description": "Dividend - KKC Dividend",
+    "cash_received": 66.8,
+    "gross_amount": 66.8,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-06-29",
+    "portfolio_id": "portfolio_1",
+    "symbol": "IFT",
+    "description": "Dividend - IFT Dividend",
+    "cash_received": 216.16,
+    "gross_amount": 216.16,
+    "source": "384ea784-219a-4c63-8414-9e4677228f99.xlsx"
+  },
+  {
+    "payment_date": "2026-07-01",
+    "portfolio_id": "portfolio_1",
+    "symbol": "ANZ",
+    "description": "Dividend - ANZ Dividend",
+    "cash_received": 207.5,
+    "gross_amount": 207.5,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-01",
+    "portfolio_id": "portfolio_1",
+    "symbol": "ALL",
+    "description": "Dividend - ALL Dividend",
+    "cash_received": 184.5,
+    "gross_amount": 184.5,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-01",
+    "portfolio_id": "portfolio_2",
+    "symbol": "ANZ",
+    "description": "Dividend - ANZ Dividend",
+    "cash_received": 371.01,
+    "gross_amount": 371.01,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-02",
+    "portfolio_id": "portfolio_1",
+    "symbol": "MQG",
+    "description": "Dividend - MQG Dividend",
+    "cash_received": 273,
+    "gross_amount": 273,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-08",
+    "portfolio_id": "portfolio_2",
+    "symbol": "GCI",
+    "description": "Dividend - GCI Dividend",
+    "cash_received": 483,
+    "gross_amount": 483,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-08",
+    "portfolio_id": "portfolio_2",
+    "symbol": "MXT",
+    "description": "Dividend - MXT Dividend",
+    "cash_received": 537.6,
+    "gross_amount": 537.6,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-13",
+    "portfolio_id": "portfolio_1",
+    "symbol": "IVV",
+    "description": "Dividend - IVV Dividend",
+    "cash_received": 46.6,
+    "gross_amount": 46.6,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-13",
+    "portfolio_id": "portfolio_1",
+    "symbol": "IZZ",
+    "description": "Dividend - IZZ Dividend",
+    "cash_received": 190.35,
+    "gross_amount": 190.35,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-13",
+    "portfolio_id": "portfolio_1",
+    "symbol": "IWLD",
+    "description": "Dividend - IWLD Dividend",
+    "cash_received": 65.88,
+    "gross_amount": 65.88,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-13",
+    "portfolio_id": "portfolio_1",
+    "symbol": "IOO",
+    "description": "Dividend - IOO Dividend",
+    "cash_received": 199.66,
+    "gross_amount": 199.66,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-13",
+    "portfolio_id": "portfolio_2",
+    "symbol": "IEU",
+    "description": "Dividend - IEU Dividend",
+    "cash_received": 1440.85,
+    "gross_amount": 1440.85,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-13",
+    "portfolio_id": "portfolio_2",
+    "symbol": "IOO",
+    "description": "Dividend - IOO Dividend",
+    "cash_received": 181.51,
+    "gross_amount": 181.51,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-14",
+    "portfolio_id": "portfolio_2",
+    "symbol": "NNUK",
+    "description": "Dividend - NNUK Dividend",
+    "cash_received": 2831.57,
+    "gross_amount": 2831.57,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-15",
+    "portfolio_id": "portfolio_2",
+    "symbol": "QRI",
+    "description": "Dividend - QRI Dividend",
+    "cash_received": 350.58,
+    "gross_amount": 350.58,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-15",
+    "portfolio_id": "portfolio_2",
+    "symbol": "PCI",
+    "description": "Dividend - PCI Dividend",
+    "cash_received": 869.84,
+    "gross_amount": 869.84,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-16",
+    "portfolio_id": "portfolio_1",
+    "symbol": "NDIA",
+    "description": "Dividend - NDIA Dividend",
+    "cash_received": 894.23,
+    "gross_amount": 894.23,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-16",
+    "portfolio_id": "portfolio_1",
+    "symbol": "TECH",
+    "description": "Dividend - TECH Dividend",
+    "cash_received": 1148.36,
+    "gross_amount": 1148.36,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-16",
+    "portfolio_id": "portfolio_1",
+    "symbol": "ETHI",
+    "description": "Dividend - ETHI Dividend",
+    "cash_received": 184.39,
+    "gross_amount": 184.39,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-16",
+    "portfolio_id": "portfolio_1",
+    "symbol": "HACK",
+    "description": "Dividend - HACK Dividend",
+    "cash_received": 1046.66,
+    "gross_amount": 1046.66,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-16",
+    "portfolio_id": "portfolio_1",
+    "symbol": "UMAX",
+    "description": "Dividend - UMAX Dividend",
+    "cash_received": 24.6,
+    "gross_amount": 24.6,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-16",
+    "portfolio_id": "portfolio_1",
+    "symbol": "URNM",
+    "description": "Dividend - URNM Dividend",
+    "cash_received": 314.86,
+    "gross_amount": 314.86,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-16",
+    "portfolio_id": "portfolio_1",
+    "symbol": "ASIA",
+    "description": "Dividend - ASIA Dividend",
+    "cash_received": 629.07,
+    "gross_amount": 629.07,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-16",
+    "portfolio_id": "portfolio_1",
+    "symbol": "AQLT",
+    "description": "Dividend - AQLT Dividend",
+    "cash_received": 194.3,
+    "gross_amount": 194.3,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-16",
+    "portfolio_id": "portfolio_2",
+    "symbol": "VHY",
+    "description": "Dividend - VHY Dividend",
+    "cash_received": 215.45,
+    "gross_amount": 215.45,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-16",
+    "portfolio_id": "portfolio_2",
+    "symbol": "VVLU",
+    "description": "Dividend - VVLU Dividend",
+    "cash_received": 2355.75,
+    "gross_amount": 2355.75,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-16",
+    "portfolio_id": "portfolio_2",
+    "symbol": "AYLD",
+    "description": "Dividend - AYLD Dividend",
+    "cash_received": 1071.1,
+    "gross_amount": 1071.1,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-16",
+    "portfolio_id": "portfolio_2",
+    "symbol": "NDIA",
+    "description": "Dividend - NDIA Dividend",
+    "cash_received": 178.85,
+    "gross_amount": 178.85,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-16",
+    "portfolio_id": "portfolio_2",
+    "symbol": "ETHI",
+    "description": "Dividend - ETHI Dividend",
+    "cash_received": 222.85,
+    "gross_amount": 222.85,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-16",
+    "portfolio_id": "portfolio_2",
+    "symbol": "QLTY",
+    "description": "Dividend - QLTY Dividend",
+    "cash_received": 462.94,
+    "gross_amount": 462.94,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-16",
+    "portfolio_id": "portfolio_2",
+    "symbol": "HBRD",
+    "description": "Dividend - HBRD Dividend",
+    "cash_received": 100.92,
+    "gross_amount": 100.92,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-16",
+    "portfolio_id": "portfolio_2",
+    "symbol": "HACK",
+    "description": "Dividend - HACK Dividend",
+    "cash_received": 562.12,
+    "gross_amount": 562.12,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-20",
+    "portfolio_id": "portfolio_2",
+    "symbol": "DN",
+    "description": "Dividend - DN1 Dividend",
+    "cash_received": 61.03,
+    "gross_amount": 61.03,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-23",
+    "portfolio_id": "portfolio_1",
+    "symbol": "MCCL",
+    "description": "Dividend - MCCL Dividend",
+    "cash_received": 2989.16,
+    "gross_amount": 2989.16,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-23",
+    "portfolio_id": "portfolio_1",
+    "symbol": "IISV",
+    "description": "Dividend - IISV Dividend",
+    "cash_received": 1876.26,
+    "gross_amount": 1876.26,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-23",
+    "portfolio_id": "portfolio_1",
+    "symbol": "KKC",
+    "description": "Dividend - KKC Dividend",
+    "cash_received": 66.8,
+    "gross_amount": 66.8,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-23",
+    "portfolio_id": "portfolio_2",
+    "symbol": "KKC",
+    "description": "Dividend - KKC Dividend",
+    "cash_received": 576.15,
+    "gross_amount": 576.15,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-27",
+    "portfolio_id": "portfolio_1",
+    "symbol": "QUAL",
+    "description": "Dividend - QUAL Dividend",
+    "cash_received": 939.6,
+    "gross_amount": 939.6,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-29.xlsx"
+  },
+  {
+    "payment_date": "2026-07-27",
+    "portfolio_id": "portfolio_2",
+    "symbol": "QUAL",
+    "description": "Dividend - QUAL Dividend",
+    "cash_received": 669.6,
+    "gross_amount": 669.6,
+    "source": "CASH_TRANSACTION_2026-07-01-2026-07-30.xlsx"
+  },
+  {
+    "payment_date": "2026-07-01",
+    "portfolio_id": "portfolio_1",
+    "broker": "CommBank",
+    "symbol": "ANZ",
+    "description": "Direct Credit 397204 ANZ DIVIDEND A081/00744481",
+    "cash_received": 922.96,
+    "gross_amount": 922.96,
+    "source": "CSVData.xlsx"
+  },
+  {
+    "payment_date": "2026-07-02",
+    "portfolio_id": "portfolio_1",
+    "broker": "CommBank",
+    "symbol": "MQG",
+    "description": "Direct Credit 077669 MQG FNL DIV 001357084523",
+    "cash_received": 840,
+    "gross_amount": 840,
+    "source": "CSVData.xlsx"
+  },
+  {
+    "payment_date": "2026-07-02",
+    "portfolio_id": "portfolio_1",
+    "broker": "CommBank",
+    "symbol": "DNL",
+    "description": "Direct Credit 251919 DNL DIV 001357859484",
+    "cash_received": 373.89,
+    "gross_amount": 373.89,
+    "source": "CSVData.xlsx"
+  },
+  {
+    "payment_date": "2026-07-14",
+    "portfolio_id": "portfolio_1",
+    "broker": "CommBank",
+    "symbol": "RHC",
+    "description": "Direct Credit 423240 RHC DIVIDEND S00133075411",
+    "cash_received": 120,
+    "gross_amount": 120,
+    "source": "CSVData.xlsx"
+  },
+  {
+    "payment_date": "2026-07-16",
+    "portfolio_id": "portfolio_1",
+    "broker": "CommBank",
+    "symbol": "L1IF",
+    "description": "Direct Credit 389158 L1 CAPITAL L1 CAPIT0006577572",
+    "cash_received": 2543.73,
+    "gross_amount": 2543.73,
+    "source": "CSVData.xlsx"
+  },
+  {
+    "payment_date": "2026-07-20",
+    "portfolio_id": "portfolio_1",
+    "broker": "CommBank",
+    "symbol": "DMNHA",
+    "description": "Direct Credit 255730 DMNHA S00133713727",
+    "cash_received": 112,
+    "gross_amount": 112,
+    "source": "CSVData.xlsx"
   }
 ]

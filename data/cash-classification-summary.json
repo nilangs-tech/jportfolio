@@ -1,53 +1,53 @@
 [
   {
     "portfolio_id": "portfolio_1",
-    "period_start": "2025-07-01",
-    "period_end": "2026-06-08",
+    "period_start": "2026-07-01",
+    "period_end": "2026-08-01",
     "category": "dividends",
-    "amount": 135277,
+    "amount": 16388.36,
     "cash_direction": "inflow",
-    "source_count": 199
+    "source_count": 25
   },
   {
     "portfolio_id": "portfolio_1",
     "category": "ato_refund",
-    "amount": 32057,
+    "amount": 0,
     "cash_direction": "inflow",
-    "notes": "29 Apr 2026 — FY2025 tax return"
+    "notes": "No FY2027 ATO refund yet (FY2026 refund of $32,057 on 29 Apr 2026 is in fy2026-final.json)"
   },
   {
     "portfolio_id": "portfolio_1",
     "category": "bank_interest",
-    "amount": 672.46,
+    "amount": 0,
     "cash_direction": "inflow",
-    "notes": "CommSec CDIA + CommBank Jun 2026 interest"
+    "notes": "No FY2027 interest classified yet"
   },
   {
     "portfolio_id": "portfolio_1",
     "category": "pension_distribution",
-    "amount": 140810,
+    "amount": 7500,
     "cash_direction": "outflow",
-    "notes": "12 × $7,500 + 2 × NAB transfers + May $3,310 top-up"
+    "notes": "1 × $7,500 NetBank monthly pension, 1 Jul 2026"
   },
   {
     "portfolio_id": "portfolio_1",
     "category": "operating_expense",
-    "amount": 5677,
+    "amount": 0,
     "cash_direction": "outflow",
-    "notes": "Accounting + ASIC"
+    "notes": "No FY2027 operating expenses classified yet"
   },
   {
     "portfolio_id": "portfolio_2",
     "category": "dividends",
-    "amount": 47971,
+    "amount": 21431.57,
     "cash_direction": "inflow"
   },
   {
     "portfolio_id": "portfolio_2",
     "category": "transfer",
-    "amount": 86805,
+    "amount": 0,
     "cash_direction": "inflow",
-    "notes": "Net new capital: $114k deposits − $27.2k withdrawals"
+    "notes": "No FY2027 capital added yet (FY2026 net capital added of $86,805 is in fy2026-final.json)"
   },
   {
     "portfolio_id": "portfolio_2",
@@ -55,5 +55,11 @@
     "amount": 24,
     "cash_direction": "display_only",
     "notes": "Stake — 8 trades — informational; embedded in net settlement amounts, not deducted from cash balance"
+  },
+  {
+    "portfolio_id": "portfolio_1",
+    "category": "transfer",
+    "amount": 250381.03000000003,
+    "cash_direction": "neutral"
   }
 ]

@@ -20,4 +20,11 @@ export const num = (v: number, d = 0): string =>
 export const priceStr = (v: number | null | undefined, d = 3): string =>
   v === null || v === undefined ? "—" : "$" + v.toFixed(d);
 
+export const dateStr = (v: string | null | undefined): string => {
+  if (!v) return "—";
+  const d = new Date(v);
+  if (isNaN(d.getTime())) return v;
+  return d.toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" });
+};
+
 export const signColor = (v: number): string => (v >= 0 ? "var(--green)" : "var(--red)");
