@@ -49,13 +49,22 @@ function parseCsvBuffer(buf: Buffer): Record<string, string>[] {
 
 function parseXlsxBuffer(buf: Buffer): Record<string, unknown>[] {
   const wb = XLSX.read(buf, { type: "buffer", cellDates: false, raw: false });
-  // Try each sheet until we find one with data rows
+  let fallbackRows: Record<string, unknown>[] = [];
+
+  // Statements can contain non-data tabs such as a disclaimer or a summary before
+  // the activity tab. Prefer the first sheet with a recognised statement layout.
   for (const name of wb.SheetNames) {
     const sheet = wb.Sheets[name];
     const rows = XLSX.utils.sheet_to_json<Record<string, unknown>>(sheet, { defval: "" });
-    if (rows.length > 0) return rows;
+    if (rows.length === 0) continue;
+
+    if (fallbackRows.length === 0) fallbackRows = rows;
+
+    const source = detectSource("statement.xlsx", Object.keys(rows[0]));
+    if (source !== "unknown_xlsx") return rows;
   }
-  return [];
+
+  return fallbackRows;
 }
 
 // ─── Main entry point ─────────────────────────────────────────────────────────
