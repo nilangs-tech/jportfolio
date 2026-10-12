@@ -113,5 +113,33 @@
     ],
     "status": "success",
     "warning_count": 0
+  },
+  {
+    "run_id": "run-1791796083039",
+    "started_at": "2026-10-12T09:08:03.039Z",
+    "finished_at": "2026-10-12T09:08:03.049Z",
+    "portfolio_id": "portfolio_1",
+    "llm_provider": "none",
+    "uploaded_files": [],
+    "generated_outputs": [
+      "cash-ledger.json",
+      "transactions.json"
+    ],
+    "status": "warning",
+    "warning_count": 1
+  },
+  {
+    "run_id": "run-1791796394146",
+    "started_at": "2026-10-12T09:13:14.146Z",
+    "finished_at": "2026-10-12T09:13:14.166Z",
+    "portfolio_id": "combined",
+    "llm_provider": "none",
+    "uploaded_files": [],
+    "generated_outputs": [
+      "cash-ledger.json",
+      "transactions.json"
+    ],
+    "status": "warning",
+    "warning_count": 2
   }
 ]
