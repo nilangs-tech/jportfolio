@@ -141,5 +141,19 @@
     ],
     "status": "warning",
     "warning_count": 2
+  },
+  {
+    "run_id": "run-1791796806404",
+    "started_at": "2026-10-12T09:20:06.404Z",
+    "finished_at": "2026-10-12T09:20:06.413Z",
+    "portfolio_id": "portfolio_1",
+    "llm_provider": "none",
+    "uploaded_files": [],
+    "generated_outputs": [
+      "cash-ledger.json",
+      "transactions.json"
+    ],
+    "status": "warning",
+    "warning_count": 1
   }
 ]
