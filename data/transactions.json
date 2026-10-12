@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "date": "2026-08-13",
+    "portfolio_id": "portfolio_1",
+    "broker": "CommSec/Stake",
+    "type": "sell",
+    "symbol": "KAR",
+    "units": 12000,
+    "price": 1.7,
+    "gross_amount": 20400,
+    "fees": 3,
+    "cash_amount": 20397,
+    "currency": "AUD",
+    "source": "manual history"
+  },
+  {
+    "date": "2026-09-01",
+    "portfolio_id": "portfolio_1",
+    "broker": "CommSec/Stake",
+    "type": "sell",
+    "symbol": "SFR",
+    "units": 250,
+    "price": 23.3,
+    "gross_amount": 5825,
+    "fees": 3,
+    "cash_amount": 5822,
+    "currency": "AUD",
+    "source": "manual history"
+  },
+  {
+    "date": "2026-09-15",
+    "portfolio_id": "portfolio_1",
+    "broker": "CommSec/Stake",
+    "type": "sell",
+    "symbol": "SFR",
+    "units": 300,
+    "price": 20.8568,
+    "gross_amount": 6257.04,
+    "fees": 3,
+    "cash_amount": 6254.04,
+    "currency": "AUD",
+    "source": "manual history"
+  }
+]

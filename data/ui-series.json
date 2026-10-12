@@ -536,13 +536,13 @@
       },
       {
         "label": "− Net deployed into shares (incl. brokerage)",
-        "val": -30089,
+        "val": -44159,
         "color": "#dc2626",
         "kind": "line"
       },
       {
         "label": "= Closing cash",
-        "val": 16089,
+        "val": 2019,
         "color": "#1d4ed8",
         "kind": "subtotal"
       },
@@ -551,7 +551,7 @@
       },
       {
         "label": "Total portfolio value (at cost + cash)",
-        "val": 1097445,
+        "val": 1083375,
         "color": "#1d4ed8",
         "kind": "grand"
       }
@@ -616,7 +616,7 @@
       },
       {
         "label": "= Current portfolio value (12 Oct 2026)",
-        "val": 1177222,
+        "val": 1163152,
         "color": "#047857",
         "kind": "grand"
       },
